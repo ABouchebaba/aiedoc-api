@@ -1,2 +1,3 @@
-# s-backend
-This is the backend of the s-school website
+# AieDoc
+
+This is the backend of the Aiedoc app
