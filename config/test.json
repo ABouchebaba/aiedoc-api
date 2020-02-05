@@ -1,7 +1,6 @@
 {
-  "name": "Test Backend Template",
-  "jwtPrivateKey": "12345",
-  "db": "mongodb+srv://db_test_user:P1kPxqkLMDfzX8AQ@cluster0-tiwkc.mongodb.net/db_test?retryWrites=true",
+  "name": "Backend AIEDOC",
+  "db": "mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority",
   "mail": {
     "password": ""
   }

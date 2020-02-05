@@ -1,7 +1,6 @@
 {
-  "name": "Backend Template",
-  "jwtPrivateKey": "",
-  "db": "mongodb://localhost/TemplateDB",
+  "name": "Backend AIEDOC",
+  "db": "mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority",
   "mail": {
     "password": ""
   }

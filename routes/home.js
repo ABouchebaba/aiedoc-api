@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("Welcome to s-school backend home");
+  res.send("Welcome to nodejs REST API");
 });
 
 module.exports = router;

@@ -5,9 +5,11 @@ require("express-async-errors");
 module.exports = function() {
   // used to log errors in logfile and in DB
   winston.add(winston.transports.File, { filename: "logfile.log" });
-  winston.add(winston.transports.MongoDB, {
-    db: "mongodb://localhost/TemplateDB"
-  });
+
+  // not using the local db
+  // winston.add(winston.transports.MongoDB, {
+  //   db: "mongodb://localhost/TemplateDB"
+  // });
 
   process.on("unhandledRejection", e => {
     // this catches promise rejections
