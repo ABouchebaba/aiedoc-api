@@ -1,6 +1,6 @@
 {
   "name": "Backend AIEDOC",
-  "db": "mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority",
+  "db": "mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority",
   "mail": {
     "host": "mail.development.com"
   }

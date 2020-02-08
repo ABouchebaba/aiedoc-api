@@ -7,7 +7,11 @@ const _ = require("lodash");
 
 module.exports = function(roles) {
   return (req, res, next) => {
-    const role_intersect = _.intersection(roles, req.user.roles);
+    // admins might have differente roles, clients and SPs don't
+    // req.user.roles will be undefined for clients and SPs
+    // so they will be treated as admins who don't have the relevant role
+    // that explains this code => '|| []'
+    const role_intersect = _.intersection(roles, req.user.roles || []);
 
     if (role_intersect.length == 0)
       return res.status(403).send("Unauthorized action");

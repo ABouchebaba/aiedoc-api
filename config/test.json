@@ -1,5 +1,6 @@
 {
   "name": "Backend AIEDOC",
+  "jwtPrivateKey": "12345",
   "db": "mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority",
   "mail": {
     "password": ""

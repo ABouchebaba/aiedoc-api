@@ -1,7 +1,7 @@
 {
   "name": "DEV_BACKEND_NAME",
+  "jwtPrivateKey": "BACKEND_TEMPLATE_JWT_PRIVATE_KEY",
   "mail": {
     "password": "APP_MAIL_SERVER_PASS"
-  },
-  "db": "db"
+  }
 }

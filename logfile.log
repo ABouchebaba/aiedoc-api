@@ -793,3 +793,253 @@
 {"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T13:30:35.022Z"}
 {"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T13:33:30.920Z"}
 {"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T13:33:32.258Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T13:52:37.546Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T13:52:39.896Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T13:54:24.765Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T13:54:26.127Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:01:22.535Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T14:01:23.978Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:03:49.629Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T14:04:12.241Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:04:32.219Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T14:04:33.384Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:05:42.610Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T14:05:44.039Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:08:19.996Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T14:08:22.422Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:08:44.655Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T14:08:46.776Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:11:19.062Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T14:11:21.846Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:20:01.345Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T14:20:03.422Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:20:33.783Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T14:20:35.042Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:20:59.264Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T14:21:00.667Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:21:41.735Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:21:43.881Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T14:21:45.185Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:22:02.340Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T14:22:03.718Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T14:29:17.123Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T14:29:19.260Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T18:17:31.313Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T18:19:23.495Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T18:22:11.930Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T18:23:56.888Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T18:24:25.228Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T18:24:27.922Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T18:25:00.857Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T18:25:08.597Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T18:25:27.285Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T18:25:29.473Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T18:38:57.696Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T18:39:01.771Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T19:03:21.347Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T19:03:23.219Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T19:18:28.642Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T19:18:30.002Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T19:19:09.651Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T19:19:10.907Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T19:19:26.931Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T19:19:28.179Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T19:22:53.354Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T19:22:55.572Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T19:22:58.161Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-05T19:22:59.470Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T19:42:38.120Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T19:43:18.270Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-05T19:43:37.035Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T08:11:30.228Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T08:11:33.697Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T08:22:26.180Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T08:22:52.224Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T08:23:16.591Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T08:23:17.731Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T08:24:05.046Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T08:24:08.146Z"}
+{"message":"Client is not defined","stack":"ReferenceError: Client is not defined\n    at module.exports._verifyPhone (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\clientController.js:21:18)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at Route.dispatch (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:281:22\n    at Function.process_params (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at Function.handle (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:174:3)\n    at router (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:284:7","level":"error","timestamp":"2020-02-06T08:24:52.574Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T08:25:31.658Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T08:25:33.131Z"}
+{"message":"Converting circular structure to JSON","stack":"TypeError: Converting circular structure to JSON\n    at JSON.stringify (<anonymous>)\n    at stringify (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\response.js:1123:12)\n    at ServerResponse.json (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\response.js:260:14)\n    at ServerResponse.send (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\response.js:158:21)\n    at module.exports._verifyPhone (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\clientController.js:22:26)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at Route.dispatch (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:281:22\n    at Function.process_params (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at Function.handle (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:174:3)\n    at router (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:47:12)","level":"error","timestamp":"2020-02-06T08:25:49.340Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T08:27:26.834Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T08:27:28.296Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T08:30:58.025Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T08:30:59.965Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T08:36:40.665Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T08:36:41.868Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T08:40:58.140Z"}
+{"message":"User is not defined","stack":"ReferenceError: User is not defined\n    at module.exports._create (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\clientController.js:5:14)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\middlewares\\validateBody.js:6:5\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at Route.dispatch (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:281:22\n    at Function.process_params (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at Function.handle (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:174:3)\n    at router (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:47:12)","level":"error","timestamp":"2020-02-06T08:40:59.551Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T08:40:59.686Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T08:43:31.855Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T08:43:33.528Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T08:45:18.651Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T08:45:19.812Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T08:47:32.464Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T08:47:39.276Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T09:02:21.159Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T09:02:29.181Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T09:04:40.873Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T09:04:46.084Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-06T11:52:39.134Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-06T11:52:40.725Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T10:34:59.777Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T10:35:03.265Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T10:46:17.057Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T10:46:18.986Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T10:58:51.521Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T10:58:52.864Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T16:01:26.371Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T16:01:28.706Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T20:49:43.167Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T20:49:46.728Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T20:51:00.953Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T20:51:04.193Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T20:54:19.438Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T20:54:22.794Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T20:56:39.896Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T20:56:42.778Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T20:57:21.672Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T20:57:24.507Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:00:20.713Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:00:24.277Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:01:50.210Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:01:53.291Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:13:24.504Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:13:27.761Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:16:07.020Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:16:11.046Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:18:43.656Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:18:46.308Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:19:23.267Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:19:25.773Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:19:43.955Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:19:47.058Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:22:58.540Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:23:01.777Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:23:40.520Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:23:43.359Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:24:41.494Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:24:43.661Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:24:51.263Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:25:15.010Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:29:29.071Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:29:31.533Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:29:50.069Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:29:52.598Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:30:37.887Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:30:40.298Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:30:44.297Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:30:46.631Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:33:07.632Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:33:11.393Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:34:11.378Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:34:14.129Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:34:25.907Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:34:28.526Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:38:14.748Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:38:17.714Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:41:45.429Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:41:48.044Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:42:24.055Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:42:26.262Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T21:44:37.671Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T21:44:41.311Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:00:20.736Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:00:23.720Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:04:18.332Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:04:23.740Z"}
+{"message":"Admin validation failed: roles.0: `admin8` is not a valid enum value for path `roles.0`.","errors":{"roles.0":{"message":"`admin8` is not a valid enum value for path `roles.0`.","name":"ValidatorError","properties":{"message":"`admin8` is not a valid enum value for path `roles.0`.","type":"enum","enumValues":["admin","admin_1","admin_2"],"path":"roles.0","value":"admin8"},"kind":"enum","path":"roles.0","value":"admin8"}},"_message":"Admin validation failed","stack":"ValidationError: Admin validation failed: roles.0: `admin8` is not a valid enum value for path `roles.0`.\n    at new ValidationError (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\error\\validation.js:30:11)\n    at model.Document.invalidate (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\document.js:2317:32)\n    at p.doValidate.skipSchemaValidators (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\document.js:2166:17)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\schematype.js:1037:9\n    at process._tickCallback (internal/process/next_tick.js:61:11)","name":"ValidationError","level":"error","timestamp":"2020-02-07T22:06:22.980Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:10:15.742Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:10:19.367Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:13:33.314Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:13:36.057Z"}
+{"message":"Joi.array(...).min(...).array is not a function","stack":"TypeError: Joi.array(...).min(...).array is not a function\n    at validateAdmin (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\models\\admin.js:90:8)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\middlewares\\validateBody.js:3:23\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at Route.dispatch (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:281:22\n    at Function.process_params (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at Function.handle (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:174:3)\n    at router (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:317:13)","level":"error","timestamp":"2020-02-07T22:13:38.536Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:15:15.883Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:15:18.604Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:19:08.466Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:19:10.902Z"}
+{"message":"E11000 duplicate key error collection: test.admins index: username_1 dup key: { username: null }","stack":"MongoError: E11000 duplicate key error collection: test.admins index: username_1 dup key: { username: null }\n    at Function.create (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\error.js:43:12)\n    at toError (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\utils.js:149:22)\n    at coll.s.topology.insert (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\operations\\collection_ops.js:859:39)\n    at handler (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\topologies\\replset.js:1155:22)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\connection\\pool.js:397:18\n    at process._tickCallback (internal/process/next_tick.js:61:11)","driver":true,"name":"MongoError","index":0,"code":11000,"keyPattern":{"username":1},"keyValue":{"username":null},"errmsg":"E11000 duplicate key error collection: test.admins index: username_1 dup key: { username: null }","level":"error","timestamp":"2020-02-07T22:24:09.756Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:27:18.390Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:27:20.581Z"}
+{"message":"E11000 duplicate key error collection: test.admins index: username_1 dup key: { username: null }","stack":"MongoError: E11000 duplicate key error collection: test.admins index: username_1 dup key: { username: null }\n    at Function.create (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\error.js:43:12)\n    at toError (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\utils.js:149:22)\n    at coll.s.topology.insert (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\operations\\collection_ops.js:859:39)\n    at handler (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\topologies\\replset.js:1155:22)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\connection\\pool.js:397:18\n    at process._tickCallback (internal/process/next_tick.js:61:11)","driver":true,"name":"MongoError","index":0,"code":11000,"keyPattern":{"username":1},"keyValue":{"username":null},"errmsg":"E11000 duplicate key error collection: test.admins index: username_1 dup key: { username: null }","level":"error","timestamp":"2020-02-07T22:27:36.442Z"}
+{"message":"E11000 duplicate key error collection: test.admins index: username_1 dup key: { username: null }","stack":"MongoError: E11000 duplicate key error collection: test.admins index: username_1 dup key: { username: null }\n    at Function.create (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\error.js:43:12)\n    at toError (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\utils.js:149:22)\n    at coll.s.topology.insert (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\operations\\collection_ops.js:859:39)\n    at handler (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\topologies\\replset.js:1155:22)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\connection\\pool.js:397:18\n    at process._tickCallback (internal/process/next_tick.js:61:11)","driver":true,"name":"MongoError","index":0,"code":11000,"keyPattern":{"username":1},"keyValue":{"username":null},"errmsg":"E11000 duplicate key error collection: test.admins index: username_1 dup key: { username: null }","level":"error","timestamp":"2020-02-07T22:28:06.347Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:29:55.576Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:30:03.537Z"}
+{"message":"E11000 duplicate key error collection: test.admins index: username_1 dup key: { username: null }","stack":"MongoError: E11000 duplicate key error collection: test.admins index: username_1 dup key: { username: null }\n    at Function.create (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\error.js:43:12)\n    at toError (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\utils.js:149:22)\n    at coll.s.topology.insert (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\operations\\collection_ops.js:859:39)\n    at handler (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\topologies\\replset.js:1155:22)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\connection\\pool.js:397:18\n    at process._tickCallback (internal/process/next_tick.js:61:11)","driver":true,"name":"MongoError","index":0,"code":11000,"keyPattern":{"username":1},"keyValue":{"username":null},"errmsg":"E11000 duplicate key error collection: test.admins index: username_1 dup key: { username: null }","level":"error","timestamp":"2020-02-07T22:30:06.888Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:30:53.587Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:30:55.688Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:39:18.268Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/test?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:39:21.215Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:39:31.744Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:39:34.383Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:42:47.058Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:42:50.667Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:43:33.942Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:43:36.277Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:44:14.811Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:44:16.562Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:44:24.118Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:46:08.172Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:46:11.504Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:50:55.305Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:50:57.296Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:52:25.815Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:52:28.055Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:54:15.287Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:54:38.575Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:54:40.287Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T22:57:25.267Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T22:57:27.203Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T23:00:05.723Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T23:00:07.895Z"}
+{"message":"Cannot set headers after they are sent to the client","stack":"Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n    at ServerResponse.setHeader (_http_outgoing.js:470:11)\n    at ServerResponse.header (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\response.js:771:10)\n    at module.exports._create (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\adminsController.js:36:6)\n    at process._tickCallback (internal/process/next_tick.js:68:7)","level":"error","timestamp":"2020-02-07T23:00:41.267Z"}
+{"message":"Cannot set headers after they are sent to the client","stack":"Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n    at ServerResponse.setHeader (_http_outgoing.js:470:11)\n    at ServerResponse.header (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\response.js:771:10)\n    at ServerResponse.send (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\response.js:170:12)\n    at module.exports._create (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\adminsController.js:18:37)\n    at process._tickCallback (internal/process/next_tick.js:68:7)","level":"error","timestamp":"2020-02-07T23:00:55.045Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T23:04:08.205Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T23:04:21.115Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T23:04:22.734Z"}
+{"message":"Cannot set headers after they are sent to the client","stack":"Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n    at ServerResponse.setHeader (_http_outgoing.js:470:11)\n    at ServerResponse.header (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\response.js:771:10)\n    at module.exports._create (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\adminsController.js:36:6)\n    at process._tickCallback (internal/process/next_tick.js:68:7)","level":"error","timestamp":"2020-02-07T23:05:12.410Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T23:06:28.515Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T23:06:33.676Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T23:07:38.000Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T23:07:45.273Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T23:07:57.556Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T23:07:59.092Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T23:08:49.245Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T23:08:52.031Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T23:09:09.938Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T23:09:32.668Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T23:10:52.599Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T23:10:54.250Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T23:12:39.616Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T23:12:41.110Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T23:13:45.389Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T23:13:47.682Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-07T23:14:33.015Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-07T23:14:34.322Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T10:18:39.894Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-08T10:18:42.235Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T10:45:52.620Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T10:56:04.087Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T11:00:59.101Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-08T11:01:18.678Z"}
+{"message":"bcrypt is not defined","stack":"ReferenceError: bcrypt is not defined\n    at module.exports._authenticate (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\adminsController.js:44:25)\n    at process._tickCallback (internal/process/next_tick.js:68:7)","level":"error","timestamp":"2020-02-08T11:01:29.401Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T11:01:53.650Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-08T11:02:29.409Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T11:05:07.200Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-08T11:05:08.534Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T11:11:43.919Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-08T11:11:45.254Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T11:12:45.891Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-08T11:12:47.426Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T11:13:21.555Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-08T11:13:22.708Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T11:17:44.896Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-08T11:17:46.398Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T11:21:34.977Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-08T11:21:36.564Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T11:22:27.875Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-08T11:22:29.096Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T11:24:15.276Z"}
+{"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-08T11:24:16.846Z"}
