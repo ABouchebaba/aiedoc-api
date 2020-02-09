@@ -1,14 +1,17 @@
 const auth = require("../middlewares/auth");
 const validateBody = require("../middlewares/validateBody");
-const { validate, validatePhone } = require("../models/client");
+const { validate, validatePhone } = require("../models/serviceProvider");
 const express = require("express");
 const router = express.Router();
 
 const {
   _create,
   _read_id,
+  _read,
   _verifyPhone
-} = require("../controllers/clientController");
+} = require("../controllers/serviceProvidersController");
+
+router.get("/", auth, _read);
 
 router.get("/me", auth, _read_id);
 

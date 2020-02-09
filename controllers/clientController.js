@@ -22,7 +22,7 @@ module.exports._create = async (req, res) => {
   return res.header("x-auth-token", token).send(client);
 };
 
-module.exports._read = async (req, res) => {
+module.exports._read_id = async (req, res) => {
   const client = await Client.findById(req.user._id);
   if (!client) return res.status(404).send("Client id not found");
 
