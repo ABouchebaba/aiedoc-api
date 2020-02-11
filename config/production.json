@@ -1,6 +1,3 @@
 {
-  "name": "Backend AIEDOC",
-  "mail": {
-    "host": "mail.production.com"
-  }
+  "name": "AIEDOC API - PROD"
 }

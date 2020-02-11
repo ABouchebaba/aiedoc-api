@@ -1,8 +1,3 @@
 {
-  "name": "Backend AIEDOC",
-  "jwtPrivateKey": "",
-  "db": "mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority",
-  "mail": {
-    "password": ""
-  }
+  "name": "AIEDOC API"
 }

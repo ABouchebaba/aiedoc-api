@@ -1101,3 +1101,28 @@
 {"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T18:37:08.229Z"}
 {"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-08T18:40:33.644Z"}
 {"level":"info","message":"Connected to mongodb+srv://aiedoc:AMINE5AGG95@cluster0-tiwkc.mongodb.net/aiedoc?retryWrites=true&w=majority...","timestamp":"2020-02-08T18:40:35.429Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-11T13:41:48.813Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-11T13:43:11.612Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-02-11T13:43:11.649Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-11T13:43:27.602Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-02-11T13:43:27.626Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-11T13:44:54.070Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-02-11T13:44:54.095Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-11T13:45:05.798Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-02-11T13:45:05.841Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-11T13:45:13.519Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-02-11T13:45:13.542Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-11T13:45:19.330Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-02-11T13:45:19.357Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-11T13:53:41.726Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-02-11T13:53:41.748Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-11T13:53:50.140Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-02-11T13:53:50.163Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-11T14:04:27.911Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-02-11T14:04:27.934Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-11T14:04:50.087Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-02-11T14:04:50.111Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-11T14:06:08.976Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-02-11T14:06:09.000Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-02-11T14:06:15.940Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-02-11T14:06:15.966Z"}
