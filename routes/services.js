@@ -1,5 +1,5 @@
 const auth = require("../middlewares/auth");
-const role = require("../middlewares/role");
+const isAdmin = require("../middlewares/isAdmin");
 const escapeString = require("../middlewares/escapeString");
 const validateBody = require("../middlewares/validateBody");
 const validateObjectId = require("../middlewares/validateObjectId");
@@ -16,17 +16,6 @@ const {
   _delete
 } = require("../controllers/servicesController");
 
-/*
- * here are defined roles for each route
- * routes that are not listed in the object
- * are accessible for all roles
- */
-const roles = {
-  post: ["admin"],
-  put: ["admin"],
-  delete: ["admin"]
-};
-
 router.get("/", _read);
 
 router.get("/:id", validateObjectId, _read_id);
@@ -37,7 +26,7 @@ router.get("/:id", validateObjectId, _read_id);
  * 2. to be allowed to do the specified action (role)
  * 3. to have a valid request body
  */
-router.post("/", [auth, role(roles.post), validateBody(validate)], _create);
+router.post("/", [auth, isAdmin, validateBody(validate)], _create);
 
 /*
  * The user needs
@@ -48,7 +37,7 @@ router.post("/", [auth, role(roles.post), validateBody(validate)], _create);
  */
 const put_middlewares = [
   auth,
-  role(roles.put),
+  isAdmin,
   validateObjectId,
   validateBody(validate)
 ];
@@ -60,6 +49,6 @@ router.put("/:id", put_middlewares, _update);
  * 2. to be allowed to do the specified action (role)
  * 3. to provide a valid object Id as a param
  */
-router.delete("/:id", [auth, role(roles.delete), validateObjectId], _delete);
+router.delete("/:id", [auth, isAdmin, validateObjectId], _delete);
 
 module.exports = router;

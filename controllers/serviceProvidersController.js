@@ -35,7 +35,7 @@ module.exports._read = async (req, res) => {
 };
 
 module.exports._read_id = async (req, res) => {
-  const sp = await ServiceProvider.findById(req.user._id);
+  const sp = await ServiceProvider.findById(req.params.id);
   if (!sp) return res.status(404).send("Service provider id not found");
 
   return res.send(sp);
@@ -51,4 +51,44 @@ module.exports._verifyPhone = async (req, res) => {
   return res
     .status(404)
     .send("No service provider with this phone number was found");
+};
+
+module.exports._validate = async (req, res) => {
+  const sp = await ServiceProvider.findByIdAndUpdate(
+    req.params.id,
+    {
+      status: "validated"
+    },
+    { new: true }
+  );
+  if (!sp) return res.status(404).send("Service provider id not found");
+
+  return res.send(sp);
+};
+
+module.exports._ban = async (req, res) => {
+  const sp = await ServiceProvider.findByIdAndUpdate(
+    req.params.id,
+    {
+      status: "banned"
+    },
+    { new: true }
+  );
+  if (!sp) return res.status(404).send("Service provider id not found");
+
+  return res.send(sp);
+};
+
+module.exports._interventions = async (req, res) => {
+  const sp = await ServiceProvider.findById(req.params.id, "interventions");
+  if (!sp) return res.status(404).send("Service provider id not found");
+
+  return res.send(sp);
+};
+
+module.exports._payments = async (req, res) => {
+  const sp = await ServiceProvider.findById(req.params.id, "payments");
+  if (!sp) return res.status(404).send("Service provider id not found");
+
+  return res.send(sp);
 };

@@ -6,6 +6,7 @@ const location = require("./location");
 
 const wilayas = ["Alger", "Annaba", "Constantine", "Oran", "Tizi Ouzou"];
 const spStates = ["notReady", "Ready", "EmergencyReady"];
+const spStatuses = ["not validated", "validated", "banned"];
 const types = ["Licence", "Master", "Doctorat", "Technicien"];
 
 const spSchema = new mongoose.Schema(
@@ -77,6 +78,11 @@ const spSchema = new mongoose.Schema(
       enum: spStates,
       default: spStates[0]
     },
+    status: {
+      type: String,
+      enum: spStatuses,
+      default: spStatuses[0]
+    },
     services: [String],
     picture: String,
     description: {
@@ -112,7 +118,13 @@ const spSchema = new mongoose.Schema(
     location: {
       type: location
       // required: true
-    }
+    },
+    payments: [
+      {
+        date: Date,
+        amount: Number
+      }
+    ]
   },
   {
     timestamps: true

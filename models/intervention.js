@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const interventionSummary = new mongoose.Schema({
+const intervention = new mongoose.Schema({
   _id: {
     type: mongoose.Schema.Types.ObjectId,
     required: true
@@ -19,4 +19,4 @@ const interventionSummary = new mongoose.Schema({
   }
 });
 
-exports.interventionSummary = interventionSummary;
+exports.intervention = intervention;

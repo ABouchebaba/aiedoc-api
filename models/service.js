@@ -41,7 +41,7 @@ function validateService(service) {
       .min(3)
       .max(100)
       .required(),
-    price: Joi.Number()
+    price: Joi.number()
       .min(0)
       .required(),
     type: Joi.string()

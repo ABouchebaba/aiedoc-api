@@ -2,37 +2,7 @@ const mongoose = require("mongoose");
 const Joi = require("joi");
 const jwt = require("jsonwebtoken");
 const config = require("config");
-
-const location = new mongoose.Schema({
-  type: {
-    type: String,
-    enum: ["Point"]
-    // required: true
-  },
-  coordinates: {
-    type: [Number]
-    // required: true
-  }
-});
-
-const intervention = new mongoose.Schema({
-  _id: {
-    type: mongoose.Schema.Types.ObjectId
-    // required: true
-  },
-  counterparty: {
-    type: String
-    // required: true
-  },
-  date: {
-    type: Date
-    //   required: true
-  },
-  totalPrice: {
-    type: Number
-    //   required: true
-  }
-});
+const location = require("./location");
 
 const clientSchema = new mongoose.Schema({
   phone: {
@@ -70,7 +40,27 @@ const clientSchema = new mongoose.Schema({
     // required: true
   },
   interventions: {
-    type: [intervention]
+    type: [
+      {
+        int_id: {
+          type: mongoose.Schema.Types.ObjectId,
+          // ref: "Intervention",
+          required: true
+        },
+        counterparty: {
+          type: String,
+          required: true
+        },
+        date: {
+          type: Date,
+          required: true
+        },
+        totalPrice: {
+          type: Number,
+          required: true
+        }
+      }
+    ]
   }
 });
 
