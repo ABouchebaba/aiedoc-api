@@ -1,6 +1,11 @@
 const { Client } = require("../models/client");
 const _ = require("lodash");
 
+module.exports._read = async (req, res) => {
+  const client = await Client.find();
+  return res.send(client);
+};
+
 /// TODO: Add relevant attributes
 module.exports._create = async (req, res) => {
   let client = await Client.findOne({ phone: req.body.phone });
@@ -23,7 +28,14 @@ module.exports._create = async (req, res) => {
 };
 
 module.exports._read_id = async (req, res) => {
-  const client = await Client.findById(req.user._id);
+  const client = await Client.findById(req.params.id);
+  if (!client) return res.status(404).send("Client id not found");
+
+  return res.send(client);
+};
+
+module.exports._interventions = async (req, res) => {
+  const client = await Client.findById(req.params.id, "interventions");
   if (!client) return res.status(404).send("Client id not found");
 
   return res.send(client);

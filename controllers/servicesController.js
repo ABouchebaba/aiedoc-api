@@ -28,8 +28,9 @@ module.exports._read_id = async (req, res) => {
 // };
 
 module.exports._update = async (req, res) => {
-  const service = await Service.update(req.params.id, req.body);
-
+  const service = await Service.findByIdAndUpdate(req.params.id, req.body, {
+    new: true
+  });
   if (!service) return res.status(404).send("Service not found");
 
   res.send(service);

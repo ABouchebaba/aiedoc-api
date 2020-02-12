@@ -7,10 +7,16 @@ const router = express.Router();
 const {
   _create,
   _read_id,
+  _interventions,
+  _read,
   _verifyPhone
 } = require("../controllers/clientController");
 
-router.get("/me", auth, _read_id);
+router.get("/", auth, _read);
+
+router.get("/:id", auth, _read_id);
+
+router.get("/:id/interventions", auth, _interventions);
 
 // Register route
 router.post("/register", validateBody(validate), _create);
