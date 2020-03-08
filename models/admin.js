@@ -6,48 +6,53 @@ const bcrypt = require("bcrypt");
 
 const roles = ["admin", "admin_1", "admin_2"];
 
-const adminSchema = new mongoose.Schema({
-  username: { type: String, minlength: 2, maxlength: 50, unique: true },
-  firstname: { type: String, minlength: 2, maxlength: 50 },
-  lastname: { type: String, minlength: 2, maxlength: 50 },
-  birthdate: Date,
-  picture: String,
-  email: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  password: {
-    type: String,
-    required: true,
-    minlength: 8,
-    validate: {
-      validator: function(v) {
-        const up = v.match(/.*[A-Z]+.*/);
-        const low = v.match(/.*[a-z]+.*/);
-        const num = v.match(/.*[0-9]+.*/);
-        return up && low && num;
-      },
-      message:
-        "Password must contain an uppercase letter, a lowercase letter and a number"
-    }
-  },
-  roles: {
-    type: [
-      {
-        type: String,
-        enum: roles
+const adminSchema = new mongoose.Schema(
+  {
+    username: { type: String, minlength: 2, maxlength: 50, unique: true },
+    firstname: { type: String, minlength: 2, maxlength: 50 },
+    lastname: { type: String, minlength: 2, maxlength: 50 },
+    birthdate: Date,
+    picture: String,
+    email: {
+      type: String,
+      required: true,
+      unique: true
+    },
+    password: {
+      type: String,
+      required: true,
+      minlength: 8,
+      validate: {
+        validator: function(v) {
+          const up = v.match(/.*[A-Z]+.*/);
+          const low = v.match(/.*[a-z]+.*/);
+          const num = v.match(/.*[0-9]+.*/);
+          return up && low && num;
+        },
+        message:
+          "Password must contain an uppercase letter, a lowercase letter and a number"
       }
-    ],
-    required: true,
-    validate: {
-      validator: function(r) {
-        return r && r.length > 0;
-      },
-      message: "At least 1 user role must be provided"
+    },
+    roles: {
+      type: [
+        {
+          type: String,
+          enum: roles
+        }
+      ],
+      required: true,
+      validate: {
+        validator: function(r) {
+          return r && r.length > 0;
+        },
+        message: "At least 1 user role must be provided"
+      }
     }
+  },
+  {
+    timestamps: true
   }
-});
+);
 
 adminSchema.methods.generateAuthToken = function() {
   return jwt.sign(

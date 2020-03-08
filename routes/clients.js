@@ -25,4 +25,6 @@ router.post("/register", validateBody(validate), _create);
 // add body validation middleware
 router.post("/verifyPhone", validateBody(validatePhone), _verifyPhone);
 
+//TODO: Add put to update client infos
+
 module.exports = router;

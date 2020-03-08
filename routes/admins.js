@@ -13,8 +13,6 @@ const {
   _authenticate
 } = require("../controllers/adminsController");
 
-router.post("/auth", validateBody(validateLogin), _authenticate);
-
 router.get("/", auth, isAdmin, _read);
 
 router.get("/:id", auth, isAdmin, validateObjectId, _read_id);
@@ -22,5 +20,7 @@ router.get("/:id", auth, isAdmin, validateObjectId, _read_id);
 // create admin route
 // verify creator's role
 router.post("/", auth, isAdmin, validateBody(validate), _create);
+
+router.post("/auth", validateBody(validateLogin), _authenticate);
 
 module.exports = router;

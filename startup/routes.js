@@ -10,10 +10,11 @@ const services = require("../routes/services");
 const clients = require("../routes/clients");
 const serviceProviders = require("../routes/serviceProviders");
 const admins = require("../routes/admins");
+const interventions = require("../routes/interventions");
 
-const courses = require("../routes/courses");
-const users = require("../routes/users");
-const auth = require("../routes/auth");
+// const courses = require("../routes/courses");
+// const users = require("../routes/users");
+// const auth = require("../routes/auth");
 
 module.exports = function(app) {
   app.use(express.json());
@@ -26,10 +27,11 @@ module.exports = function(app) {
   app.use("/api/clients", clients);
   app.use("/api/serviceProviders", serviceProviders);
   app.use("/api/admins", admins);
+  app.use("/api/interventions", interventions);
 
-  app.use("/api/courses", courses);
-  app.use("/api/users", users);
-  app.use("/api/auth", auth);
+  // app.use("/api/courses", courses);
+  // app.use("/api/users", users);
+  // app.use("/api/auth", auth);
 
   app.use(error);
 };

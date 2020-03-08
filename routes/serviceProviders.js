@@ -23,6 +23,10 @@ router.get("/", auth, _read);
 
 router.get("/:id", auth, validateObjectId, _read_id);
 
+router.get("/:id/interventions", auth, validateObjectId, _interventions);
+
+router.get("/:id/payments", auth, validateObjectId, _payments);
+
 // Register route
 router.post("/register", validateBody(validate), _create);
 
@@ -33,9 +37,5 @@ router.post("/verifyPhone", validateBody(validatePhone), _verifyPhone);
 router.put("/:id/validate", auth, isAdmin, validateObjectId, _validate);
 
 router.put("/:id/ban", auth, isAdmin, validateObjectId, _ban);
-
-router.get("/:id/interventions", auth, validateObjectId, _interventions);
-
-router.get("/:id/payments", auth, validateObjectId, _payments);
 
 module.exports = router;

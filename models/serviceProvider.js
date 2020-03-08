@@ -96,12 +96,12 @@ const spSchema = new mongoose.Schema(
     },
     interventions: [
       {
-        int_id: {
+        intervention_id: {
           type: mongoose.Schema.Types.ObjectId,
-          // ref: "Intervention",
+          ref: "Intervention",
           required: true
         },
-        counterparty: {
+        client_name: {
           type: String,
           required: true
         },

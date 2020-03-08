@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.send("Welcome to nodejs REST API");
+  res.send("Welcome to Aiedoc API");
 });
 
 module.exports = router;

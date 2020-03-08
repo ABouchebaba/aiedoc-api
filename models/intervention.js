@@ -1,22 +1,118 @@
 const mongoose = require("mongoose");
+const Joi = require("joi");
+const _ = require("lodash");
 
-const intervention = new mongoose.Schema({
-  _id: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true
+const interventionStates = [
+  "pending",
+  "accepted",
+  "refused",
+  "onGoing",
+  "finished"
+];
+const interventionTypes = ["Regular", "Emergency"];
+
+const interventionSchema = new mongoose.Schema(
+  {
+    client_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Client",
+      required: true
+    },
+    sp_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "ServiceProvider",
+      required: true
+    },
+    services: [
+      {
+        type: String,
+        required: true
+      }
+    ],
+    totalPrice: {
+      type: Number,
+      default: 0,
+      required: true
+    },
+    client_comment: {
+      type: String,
+      max: 255
+    },
+    sp_comment: {
+      type: String,
+      max: 255
+    },
+    client_rating: {
+      type: Number,
+      max: 5,
+      min: 0
+    },
+    sp_rating: {
+      type: Number,
+      max: 5,
+      min: 0
+    },
+    state: {
+      type: String,
+      enum: interventionStates,
+      default: interventionStates[0]
+    },
+    type: {
+      type: String,
+      enum: interventionTypes,
+      default: interventionTypes[0]
+    },
+    refusedBy: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "ServiceProvider"
+      }
+    ]
   },
-  counterparty: {
-    type: String,
-    required: true
-  },
-  date: {
-    type: Date,
-    required: true
-  },
-  totalPrice: {
-    type: Number,
-    required: true
+  {
+    timestamps: true
   }
-});
+);
 
-exports.intervention = intervention;
+/** Returns an intervention's summary :
+ * _id, name = sp_name or client_name, createdAt, totalPrice
+ * */
+interventionSchema.methods.getSummary = function(type, name) {
+  const summary = _.pick(this, ["_id", "createdAt", "totalPrice"]);
+  summary["intervention_id"] = summary["_id"];
+  summary["date"] = summary["createdAt"];
+  ["_id", "createdAt"].map(k => _.unset(summary, k));
+  summary[type] = name;
+  return summary;
+};
+
+const Intervention = mongoose.model("Intervention", interventionSchema);
+
+function validateIntervention(intervention) {
+  const schema = {
+    client_id: Joi.objectId().required(),
+    sp_id: Joi.objectId().required(),
+    client_name: Joi.string().required(),
+    sp_name: Joi.string().required(),
+    services: Joi.array()
+      .items(Joi.string())
+      .required(),
+    totalPrice: Joi.number().min(0),
+    client_comment: Joi.string().max(255),
+    sp_comment: Joi.string().max(255),
+    client_rating: Joi.number()
+      .min(0)
+      .max(5),
+    sp_rating: Joi.number()
+      .min(0)
+      .max(5),
+    state: Joi.string().valid(interventionStates),
+    type: Joi.string().valid(interventionTypes),
+    refusedBy: Joi.array().items(Joi.objectId())
+  };
+
+  return Joi.validate(intervention, schema);
+}
+
+exports.Intervention = Intervention;
+exports.validate = validateIntervention;
