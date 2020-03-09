@@ -1,4 +1,5 @@
 const auth = require("../middlewares/auth");
+const role = require("../middlewares/role");
 const validateBody = require("../middlewares/validateBody");
 const { validate, validatePhone } = require("../models/client");
 const express = require("express");
@@ -12,11 +13,25 @@ const {
   _verifyPhone
 } = require("../controllers/clientController");
 
-router.get("/", auth, _read);
+let roles = {
+  GET_ALL: ["admin", "admin_1", "admin_2"],
+  GET_ONE: ["admin", "admin_1", "admin_2"],
+  GET_ONE_INTERVENTIONS: ["admin", "admin_1", "admin_2"]
+};
 
-router.get("/:id", auth, _read_id);
+// GET_ALL
+router.get("/", auth, role(roles.GET_ALL), _read);
 
-router.get("/:id/interventions", auth, _interventions);
+// GET_ONE
+router.get("/:id", auth, role(roles.GET_ONE), _read_id);
+
+// GET_ONE_INTERVENTIONS
+router.get(
+  "/:id/interventions",
+  auth,
+  role(roles.GET_ONE_INTERVENTIONS),
+  _interventions
+);
 
 // Register route
 router.post("/register", validateBody(validate), _create);

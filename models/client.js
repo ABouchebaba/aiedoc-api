@@ -70,7 +70,10 @@ const clientSchema = new mongoose.Schema(
 );
 
 clientSchema.methods.generateAuthToken = function() {
-  return jwt.sign({ _id: this._id }, config.get("jwtPrivateKey"));
+  return jwt.sign(
+    { _id: this._id, roles: ["client"] },
+    config.get("jwtPrivateKey")
+  );
 };
 
 clientSchema.statics.create = async function(userInfo) {

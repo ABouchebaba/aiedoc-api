@@ -1,5 +1,5 @@
 const auth = require("../middlewares/auth");
-const isAdmin = require("../middlewares/isAdmin");
+const role = require("../middlewares/role");
 const validateBody = require("../middlewares/validateBody");
 const validateObjectId = require("../middlewares/validateObjectId");
 const { validate, validateLogin } = require("../models/admin");
@@ -13,13 +13,20 @@ const {
   _authenticate
 } = require("../controllers/adminsController");
 
-router.get("/", auth, isAdmin, _read);
+let roles = {
+  GET_ALL: ["admin", "admin_1", "admin_2"],
+  GET_ONE: ["admin", "admin_1", "admin_2"],
+  CREATE: ["admin", "admin_1", "admin_2"]
+};
 
-router.get("/:id", auth, isAdmin, validateObjectId, _read_id);
+// GET_ALL
+router.get("/", auth, role(roles.GET_ALL), _read);
 
-// create admin route
-// verify creator's role
-router.post("/", auth, isAdmin, validateBody(validate), _create);
+// GET_ONE
+router.get("/:id", auth, role(roles.GET_ONE), validateObjectId, _read_id);
+
+// CREATE
+router.post("/", auth, role(roles.CREATE), validateBody(validate), _create);
 
 router.post("/auth", validateBody(validateLogin), _authenticate);
 

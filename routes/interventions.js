@@ -1,5 +1,5 @@
 const auth = require("../middlewares/auth");
-const isAdmin = require("../middlewares/isAdmin");
+const role = require("../middlewares/role");
 const validateObjectId = require("../middlewares/validateObjectId");
 const validateBody = require("../middlewares/validateBody");
 const { validate } = require("../models/intervention");
@@ -12,12 +12,19 @@ const {
   _read
 } = require("../controllers/interventionsController");
 
-router.get("/", auth, isAdmin, _read);
+let roles = {
+  GET_ALL: ["admin", "admin_1", "admin_2"],
+  CREATE: ["client"]
+};
 
+// GET_ALL
+router.get("/", auth, role(roles.GET_ALL), _read);
+
+// All authenticated users have access to this route ==> might need some change !!!
 router.get("/:id", auth, validateObjectId, _read_id);
 
-// Maybe add isClient middleware OR JUST IMPLEMENT SOME ROLE MANAGEMENT !!!!!
-router.post("/", auth, validateBody(validate), _create);
+// CREATE
+router.post("/", auth, role(roles.CREATE), validateBody(validate), _create);
 
 // router.put("/:id/validate", auth, isAdmin, validateObjectId, _validate);
 

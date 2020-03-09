@@ -132,7 +132,10 @@ const spSchema = new mongoose.Schema(
 );
 
 spSchema.methods.generateAuthToken = function() {
-  return jwt.sign({ _id: this._id }, config.get("jwtPrivateKey"));
+  return jwt.sign(
+    { _id: this._id, roles: ["service_provider"] },
+    config.get("jwtPrivateKey")
+  );
 };
 
 const ServiceProvider = mongoose.model("ServiceProvider", spSchema);
