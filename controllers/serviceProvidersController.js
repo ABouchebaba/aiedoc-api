@@ -1,4 +1,5 @@
 const { ServiceProvider } = require("../models/serviceProvider");
+const { Payment } = require("../models/payment");
 const _ = require("lodash");
 
 /// TODO: Add relevant attributes
@@ -90,5 +91,24 @@ module.exports._payments = async (req, res) => {
   const sp = await ServiceProvider.findById(req.params.id, "payments");
   if (!sp) return res.status(404).send("Service provider id not found");
 
-  return res.send(sp);
+  return res.send(sp.payments);
+};
+
+module.exports._add_payment = async (req, res) => {
+  const payment = await Payment.create(req.body);
+
+  const sp_payment = {
+    amount: payment.amount,
+    date: payment.createdAt
+  };
+
+  const sp = await ServiceProvider.findByIdAndUpdate(
+    payment.sp_id,
+    {
+      $push: { payments: sp_payment }
+    },
+    { new: true }
+  );
+
+  return res.send(sp.payments);
 };

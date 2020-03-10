@@ -1,8 +1,10 @@
 const auth = require("../middlewares/auth");
 const role = require("../middlewares/role");
+const paramsToBody = require("../middlewares/paramsToBody");
 const validateObjectId = require("../middlewares/validateObjectId");
 const validateBody = require("../middlewares/validateBody");
 const { validate, validatePhone } = require("../models/serviceProvider");
+const validatePayment = require("../models/payment")["validate"];
 const express = require("express");
 const router = express.Router();
 
@@ -14,7 +16,8 @@ const {
   _validate,
   _ban,
   _interventions,
-  _payments
+  _payments,
+  _add_payment
 } = require("../controllers/serviceProvidersController");
 
 let roles = {
@@ -23,7 +26,8 @@ let roles = {
   GET_ONE_INTERVENTIONS: ["admin", "admin_1", "admin_2"],
   GET_ONE_PAYMENTS: ["admin", "admin_1", "admin_2"],
   VALIDATE: ["admin", "admin_1", "admin_2"],
-  BAN: ["admin", "admin_1", "admin_2"]
+  BAN: ["admin", "admin_1", "admin_2"],
+  POST_ONE_PAYMENT: ["admin", "admin_1", "admin_2"]
 };
 
 // Register route
@@ -57,6 +61,17 @@ router.get(
   role(roles.GET_ONE_PAYMENTS),
   validateObjectId,
   _payments
+);
+
+// POST_ONE_PAYMENT
+router.post(
+  "/:id/payments",
+  auth,
+  role(roles.POST_ONE_PAYMENT),
+  validateObjectId,
+  paramsToBody({ id: "sp_id" }),
+  validateBody(validatePayment),
+  _add_payment
 );
 
 // VALIDATE
