@@ -11,6 +11,9 @@ const clients = require("../routes/clients");
 const serviceProviders = require("../routes/serviceProviders");
 const admins = require("../routes/admins");
 const interventions = require("../routes/interventions");
+const categories = require("../routes/categories");
+const products = require("../routes/products");
+const payments = require("../routes/payments");
 
 // const courses = require("../routes/courses");
 // const users = require("../routes/users");
@@ -28,6 +31,9 @@ module.exports = function(app) {
   app.use("/api/serviceProviders", serviceProviders);
   app.use("/api/admins", admins);
   app.use("/api/interventions", interventions);
+  app.use("/api/categories", categories);
+  app.use("/api/products", products);
+  app.use("/api/payments", payments);
 
   // app.use("/api/courses", courses);
   // app.use("/api/users", users);

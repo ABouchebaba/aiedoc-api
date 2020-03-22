@@ -1374,3 +1374,65 @@
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-10T16:52:25.568Z"}
 {"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-10T16:55:27.468Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-10T16:55:27.491Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-11T18:53:54.445Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-11T18:53:54.467Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-11T18:57:42.416Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-11T18:57:42.440Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-11T18:57:52.273Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-11T18:57:52.296Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-11T18:59:48.003Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-11T18:59:48.033Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-11T18:59:53.902Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-11T18:59:53.930Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-11T19:07:15.269Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-11T19:07:15.292Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-12T08:53:57.390Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-12T08:53:57.413Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:27:10.206Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:27:59.214Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:27:59.236Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:28:12.511Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:28:12.534Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:33:57.036Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:33:57.060Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:36:26.490Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:36:26.512Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:38:24.025Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:38:24.049Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:38:45.994Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:38:46.018Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:41:11.983Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:41:12.007Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:41:33.650Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:41:33.672Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:43:09.281Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:43:09.303Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:47:29.584Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:47:29.609Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:47:46.832Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:47:46.853Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:48:55.166Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:48:55.188Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:52:59.743Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:52:59.765Z"}
+{"message":"Cateogry is not defined","stack":"ReferenceError: Cateogry is not defined\n    at module.exports._read (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\categoriesController.js:10:22)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at auth (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\middlewares\\auth.js:12:5)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at Route.dispatch (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:281:22\n    at Function.process_params (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at Function.handle (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:174:3)\n    at router (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\index.js:47:12)","level":"error","timestamp":"2020-03-14T14:55:15.048Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T14:56:11.611Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T14:56:11.634Z"}
+{"message":"Joi.ObjectId is not a function","stack":"TypeError: Joi.ObjectId is not a function\n    at validateProduct (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\models\\product.js:51:19)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\middlewares\\validateBody.js:3:23\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\middlewares\\role.js:15:5\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at auth (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\middlewares\\auth.js:12:5)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at Route.dispatch (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)","level":"error","timestamp":"2020-03-14T15:14:54.127Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T15:15:58.207Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T15:15:58.231Z"}
+{"message":"Joi.objectId(...).require is not a function","stack":"TypeError: Joi.objectId(...).require is not a function\n    at validateProduct (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\models\\product.js:51:30)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\middlewares\\validateBody.js:3:23\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\middlewares\\role.js:15:5\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at auth (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\middlewares\\auth.js:12:5)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:137:13)\n    at Route.dispatch (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\route.js:112:3)\n    at newFn (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\router\\layer.js:95:5)","level":"error","timestamp":"2020-03-14T15:16:01.240Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T15:17:27.410Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T15:17:27.432Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T15:17:46.254Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T15:17:46.282Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-14T16:17:35.818Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-14T16:17:35.841Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-22T18:58:10.855Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-22T18:58:10.877Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-22T18:58:41.873Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-22T18:58:41.896Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-22T19:01:33.629Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-22T19:01:33.650Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-03-22T19:02:29.202Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-03-22T19:02:29.227Z"}
