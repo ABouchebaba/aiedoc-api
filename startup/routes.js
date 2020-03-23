@@ -7,6 +7,7 @@ const error = require("../middlewares/error");
 
 const home = require("../routes/home");
 const services = require("../routes/services");
+const serviceTypes = require("../routes/serviceTypes");
 const clients = require("../routes/clients");
 const serviceProviders = require("../routes/serviceProviders");
 const admins = require("../routes/admins");
@@ -27,6 +28,7 @@ module.exports = function(app) {
 
   app.use("/", home);
   app.use("/api/services", services);
+  app.use("/api/serviceTypes", serviceTypes);
   app.use("/api/clients", clients);
   app.use("/api/serviceProviders", serviceProviders);
   app.use("/api/admins", admins);
