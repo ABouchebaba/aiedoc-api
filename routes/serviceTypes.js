@@ -2,7 +2,7 @@ const auth = require("../middlewares/auth");
 const role = require("../middlewares/role");
 const validateBody = require("../middlewares/validateBody");
 const validateObjectId = require("../middlewares/validateObjectId");
-const { validate } = require("../models/serviceType");
+const { validate, validateService } = require("../models/serviceType");
 
 const express = require("express");
 const router = express.Router();
@@ -11,6 +11,8 @@ const {
   _create,
   _read,
   _read_id,
+  _addService,
+  _deleteService,
   _update,
   _delete
 } = require("../controllers/serviceTypesController");
@@ -33,6 +35,20 @@ router.get("/:id", validateObjectId, _read_id);
  */
 // CREATE
 router.post("/", [auth, role(roles.CREATE), validateBody(validate)], _create);
+
+//Add service to type
+router.post(
+  "/:id",
+  [auth, role(roles.CREATE), validateObjectId, validateBody(validateService)],
+  _addService
+);
+
+//delete service from type
+router.delete(
+  "/:id/services/:sid",
+  [auth, role(roles.DELETE), validateObjectId],
+  _deleteService
+);
 
 /*
  * The user needs

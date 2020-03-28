@@ -1,5 +1,4 @@
 const { ServiceType } = require("../models/serviceType");
-const { Service } = require("../models/service");
 const _ = require("lodash");
 
 module.exports._create = async (req, res) => {
@@ -15,7 +14,29 @@ module.exports._read = async (req, res) => {
 module.exports._read_id = async (req, res) => {
   const serviceType = await ServiceType.findById(req.params.id);
 
-  if (!serviceType) return res.status(404).send("Service Type not found");
+  if (!serviceType) return res.status(404).send("Service not found");
+
+  res.send(serviceType);
+};
+
+module.exports._addService = async (req, res) => {
+  const serviceType = await ServiceType.findByIdAndUpdate(
+    req.params.id,
+    { $push: { services: req.body } },
+    { new: true }
+  );
+  if (!serviceType) return res.status(404).send("Service not found");
+
+  res.send(serviceType);
+};
+
+module.exports._deleteService = async (req, res) => {
+  const serviceType = await ServiceType.findByIdAndUpdate(
+    req.params.id,
+    { $pull: { services: { _id: req.params.sid } } },
+    { new: true }
+  );
+  if (!serviceType) return res.status(404).send("Service not found");
 
   res.send(serviceType);
 };
@@ -36,9 +57,7 @@ module.exports._update = async (req, res) => {
       new: true
     }
   );
-  if (!serviceType) return res.status(404).send("Service type not found");
-
-  //   Service.updateMany({type: })
+  if (!serviceType) return res.status(404).send("Service not found");
 
   res.send(serviceType);
 };
@@ -46,7 +65,7 @@ module.exports._update = async (req, res) => {
 module.exports._delete = async (req, res) => {
   const serviceType = await ServiceType.findByIdAndRemove(req.params.id);
 
-  if (!serviceType) return res.status(404).send("Service type not found");
+  if (!serviceType) return res.status(404).send("Service not found");
 
   res.send(serviceType);
 };
