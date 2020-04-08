@@ -104,7 +104,7 @@ function validateClient(client) {
 
 function validatePhone(phone) {
   const schema = {
-    phone: Joi.string().length(10).required(),
+    phone: Joi.string().required(),
   };
 
   return Joi.validate(phone, schema);
