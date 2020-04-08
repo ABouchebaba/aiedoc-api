@@ -10,34 +10,34 @@ const clientSchema = new mongoose.Schema(
       type: String,
       unique: true,
       validate: {
-        validator: function(v) {
+        validator: function (v) {
           return /\d{10}/.test(v);
         },
-        message: props => `${props.value} is not a valid phone number!`
+        message: (props) => `${props.value} is not a valid phone number!`,
       },
-      required: [true, "User phone number required"]
+      required: [true, "User phone number required"],
     },
     firstname: {
       type: String,
       minlength: 2,
       maxlength: 50,
-      required: true
+      required: true,
     },
     lastname: {
       type: String,
       minlength: 2,
       maxlength: 50,
-      required: true
+      required: true,
     },
     birthdate: { type: Date, required: true },
     picture: String,
     email: {
       type: String,
       required: true,
-      unique: true
+      unique: true,
     },
     location: {
-      type: location
+      type: location,
       // required: true
     },
     interventions: {
@@ -46,37 +46,37 @@ const clientSchema = new mongoose.Schema(
           intervention_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Intervention",
-            required: true
+            required: true,
           },
           sp_name: {
             type: String,
-            required: true
+            required: true,
           },
           date: {
             type: Date,
-            required: true
+            required: true,
           },
           totalPrice: {
             type: Number,
-            required: true
-          }
-        }
-      ]
-    }
+            required: true,
+          },
+        },
+      ],
+    },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
-clientSchema.methods.generateAuthToken = function() {
+clientSchema.methods.generateAuthToken = function () {
   return jwt.sign(
     { _id: this._id, roles: ["client"] },
     config.get("jwtPrivateKey")
   );
 };
 
-clientSchema.statics.create = async function(userInfo) {
+clientSchema.statics.create = async function (userInfo) {
   client = await Client.findOne({ phone: userInfo.phone });
   if (client) return client;
 
@@ -89,21 +89,13 @@ const Client = mongoose.model("Client", clientSchema);
 function validateClient(client) {
   const schema = {
     phone: Joi.string()
-      .length(10)
+      // .length(10)
       .required(),
-    firstname: Joi.string()
-      .min(2)
-      .max(50)
-      .required(),
-    lastname: Joi.string()
-      .min(2)
-      .max(50)
-      .required(),
+    firstname: Joi.string().min(2).max(50).required(),
+    lastname: Joi.string().min(2).max(50).required(),
     birthdate: Joi.date().required(),
     picture: Joi.string(),
-    email: Joi.string()
-      .email()
-      .required()
+    email: Joi.string().email().required(),
     //   .required()
   };
 
@@ -112,9 +104,7 @@ function validateClient(client) {
 
 function validatePhone(phone) {
   const schema = {
-    phone: Joi.string()
-      .length(10)
-      .required()
+    phone: Joi.string().length(10).required(),
   };
 
   return Joi.validate(phone, schema);
