@@ -12,22 +12,24 @@ const {
   _create,
   _read_id,
   _read,
+  _read_available,
   _verifyPhone,
   _validate,
   _ban,
   _interventions,
   _payments,
-  _add_payment
+  _add_payment,
 } = require("../controllers/serviceProvidersController");
 
 let roles = {
   GET_ALL: ["admin", "admin_1", "admin_2"],
+  GET_AVAILABLE: ["admin", "admin_1", "admin_2", "client"],
   GET_ONE: ["admin", "admin_1", "admin_2"],
   GET_ONE_INTERVENTIONS: ["admin", "admin_1", "admin_2"],
   GET_ONE_PAYMENTS: ["admin", "admin_1", "admin_2"],
   VALIDATE: ["admin", "admin_1", "admin_2"],
   BAN: ["admin", "admin_1", "admin_2"],
-  POST_ONE_PAYMENT: ["admin", "admin_1", "admin_2"]
+  POST_ONE_PAYMENT: ["admin", "admin_1", "admin_2"],
 };
 
 // Register route
@@ -39,6 +41,9 @@ router.post("/verifyPhone", validateBody(validatePhone), _verifyPhone);
 
 // GET_ALL
 router.get("/", auth, role(roles.GET_ALL), _read);
+
+// GET_AVAILABLE
+router.get("/available", auth, role(roles.GET_AVAILABLE), _read_available);
 
 // router.get("/me", auth, _read_id);
 

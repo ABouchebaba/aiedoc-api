@@ -5,7 +5,7 @@ const _ = require("lodash");
  * to test role authorization of user
  */
 
-module.exports = function(roles) {
+module.exports = function (roles) {
   return (req, res, next) => {
     const role_intersect = _.intersection(roles, req.user.roles);
 

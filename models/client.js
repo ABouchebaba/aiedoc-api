@@ -38,7 +38,6 @@ const clientSchema = new mongoose.Schema(
     },
     location: {
       type: location,
-      // required: true
     },
     interventions: {
       type: [

@@ -21,7 +21,7 @@ module.exports._create = async (req, res) => {
       "experience",
       "diplomas",
       "services",
-      "description"
+      "description",
     ])
   );
 
@@ -42,6 +42,16 @@ module.exports._read_id = async (req, res) => {
   return res.send(sp);
 };
 
+module.exports._read_available = async (req, res) => {
+  const sp = await ServiceProvider.find({
+    state: "ready",
+    status: "validated",
+  });
+  if (!sp) return res.status(404).send("No available service providers");
+
+  return res.send(sp);
+};
+
 module.exports._verifyPhone = async (req, res) => {
   const sp = await ServiceProvider.findOne({ phone: req.body.phone });
   if (sp) {
@@ -58,7 +68,7 @@ module.exports._validate = async (req, res) => {
   const sp = await ServiceProvider.findByIdAndUpdate(
     req.params.id,
     {
-      status: "validated"
+      status: "validated",
     },
     { new: true }
   );
@@ -71,7 +81,7 @@ module.exports._ban = async (req, res) => {
   const sp = await ServiceProvider.findByIdAndUpdate(
     req.params.id,
     {
-      status: "banned"
+      status: "banned",
     },
     { new: true }
   );
@@ -99,13 +109,13 @@ module.exports._add_payment = async (req, res) => {
 
   const sp_payment = {
     amount: payment.amount,
-    date: payment.createdAt
+    date: payment.createdAt,
   };
 
   const sp = await ServiceProvider.findByIdAndUpdate(
     payment.sp_id,
     {
-      $push: { payments: sp_payment }
+      $push: { payments: sp_payment },
     },
     { new: true }
   );
