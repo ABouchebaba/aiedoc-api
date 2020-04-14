@@ -3,8 +3,7 @@ const Joi = require("joi");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const bcrypt = require("bcrypt");
-
-const roles = ["admin", "admin_1", "admin_2"];
+const { ADMINS } = require("../constants/roles");
 
 const adminSchema = new mongoose.Schema(
   {
@@ -16,52 +15,52 @@ const adminSchema = new mongoose.Schema(
     email: {
       type: String,
       required: true,
-      unique: true
+      unique: true,
     },
     password: {
       type: String,
       required: true,
       minlength: 8,
       validate: {
-        validator: function(v) {
+        validator: function (v) {
           const up = v.match(/.*[A-Z]+.*/);
           const low = v.match(/.*[a-z]+.*/);
           const num = v.match(/.*[0-9]+.*/);
           return up && low && num;
         },
         message:
-          "Password must contain an uppercase letter, a lowercase letter and a number"
-      }
+          "Password must contain an uppercase letter, a lowercase letter and a number",
+      },
     },
     roles: {
       type: [
         {
           type: String,
-          enum: roles
-        }
+          enum: ADMINS,
+        },
       ],
       required: true,
       validate: {
-        validator: function(r) {
+        validator: function (r) {
           return r && r.length > 0;
         },
-        message: "At least 1 user role must be provided"
-      }
-    }
+        message: "At least 1 user role must be provided",
+      },
+    },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
-adminSchema.methods.generateAuthToken = function() {
+adminSchema.methods.generateAuthToken = function () {
   return jwt.sign(
     { _id: this._id, roles: this.roles },
     config.get("jwtPrivateKey")
   );
 };
 
-adminSchema.statics.create = async function(adminInfo) {
+adminSchema.statics.create = async function (adminInfo) {
   admin = new Admin(adminInfo);
   const salt = await bcrypt.genSalt(10);
   admin.password = await bcrypt.hash(admin.password, salt);
@@ -73,30 +72,17 @@ const Admin = mongoose.model("Admin", adminSchema);
 
 function validateAdmin(admin) {
   const schema = {
-    username: Joi.string()
-      .min(2)
-      .max(50)
-      .required(),
-    firstname: Joi.string()
-      .min(2)
-      .max(50)
-      .required(),
-    lastname: Joi.string()
-      .min(2)
-      .max(50)
-      .required(),
+    username: Joi.string().min(2).max(50).required(),
+    firstname: Joi.string().min(2).max(50).required(),
+    lastname: Joi.string().min(2).max(50).required(),
     birthdate: Joi.date(),
     picture: Joi.string(),
-    email: Joi.string()
-      .email()
-      .required(),
+    email: Joi.string().email().required(),
     roles: Joi.array()
       .min(1)
-      .items(Joi.valid(...roles))
+      .items(Joi.valid(...ADMINS))
       .required(),
-    password: Joi.string()
-      .min(8)
-      .required()
+    password: Joi.string().min(8).required(),
   };
 
   return Joi.validate(admin, schema);
@@ -104,12 +90,8 @@ function validateAdmin(admin) {
 
 function validateLogin(loginInfo) {
   const schema = {
-    email: Joi.string()
-      .email()
-      .required(),
-    password: Joi.string()
-      .min(8)
-      .required()
+    email: Joi.string().email().required(),
+    password: Joi.string().min(8).required(),
   };
 
   return Joi.validate(loginInfo, schema);

@@ -5,18 +5,19 @@ const validateObjectId = require("../middlewares/validateObjectId");
 const { validate, validateLogin } = require("../models/admin");
 const express = require("express");
 const router = express.Router();
+const { ADMINS } = require("../constants/roles");
 
 const {
   _create,
   _read,
   _read_id,
-  _authenticate
+  _authenticate,
 } = require("../controllers/adminsController");
 
 let roles = {
-  GET_ALL: ["admin", "admin_1", "admin_2"],
-  GET_ONE: ["admin", "admin_1", "admin_2"],
-  CREATE: ["admin", "admin_1", "admin_2"]
+  GET_ALL: ADMINS,
+  GET_ONE: ADMINS,
+  CREATE: ADMINS,
 };
 
 // GET_ALL

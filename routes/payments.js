@@ -3,14 +3,14 @@ const role = require("../middlewares/role");
 const validateBody = require("../middlewares/validateBody");
 const validateObjectId = require("../middlewares/validateObjectId");
 const { validate } = require("../models/payment");
-
+const { ADMINS } = require("../constants/roles");
 const express = require("express");
 const router = express.Router();
 
 const { _read } = require("../controllers/paymentsController");
 
 let roles = {
-  READ: ["admin", "admin_1", "admin_2"]
+  READ: ADMINS,
 };
 
 // user need to admin and authenticated

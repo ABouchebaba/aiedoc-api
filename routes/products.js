@@ -6,19 +6,20 @@ const { validate } = require("../models/product");
 
 const express = require("express");
 const router = express.Router();
+const { ADMINS } = require("../constants/roles");
 
 const {
   _create,
   _read,
   _read_id,
   _update,
-  _delete
+  _delete,
 } = require("../controllers/productsController");
 
 let roles = {
-  CREATE: ["admin", "admin_1", "admin_2"],
-  UPDATE: ["admin", "admin_1", "admin_2"],
-  DELETE: ["admin", "admin_1", "admin_2"]
+  CREATE: ADMINS,
+  UPDATE: ADMINS,
+  DELETE: ADMINS,
 };
 
 router.get("/", auth, _read);
@@ -46,7 +47,7 @@ const put_middlewares = [
   auth,
   role(roles.UPDATE),
   validateObjectId,
-  validateBody(validate)
+  validateBody(validate),
 ];
 router.put("/:id", put_middlewares, _update);
 

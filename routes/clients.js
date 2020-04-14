@@ -4,19 +4,20 @@ const validateBody = require("../middlewares/validateBody");
 const { validate, validatePhone } = require("../models/client");
 const express = require("express");
 const router = express.Router();
+const { ADMINS } = require("../constants/roles");
 
 const {
   _create,
   _read_id,
   _interventions,
   _read,
-  _verifyPhone
+  _verifyPhone,
 } = require("../controllers/clientController");
 
 let roles = {
-  GET_ALL: ["admin", "admin_1", "admin_2"],
-  GET_ONE: ["admin", "admin_1", "admin_2"],
-  GET_ONE_INTERVENTIONS: ["admin", "admin_1", "admin_2"]
+  GET_ALL: ADMINS,
+  GET_ONE: ADMINS,
+  GET_ONE_INTERVENTIONS: ADMINS,
 };
 
 // GET_ALL

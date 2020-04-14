@@ -3,11 +3,14 @@ const Joi = require("joi");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const location = require("./location");
-
-const wilayas = ["Alger", "Annaba", "Constantine", "Oran", "Tizi Ouzou"];
-const spStates = ["notReady", "ready", "emergencyReady"];
-const spStatuses = ["not validated", "validated", "banned"];
-const types = ["Licence", "Master", "Doctorat", "Technicien"];
+const {
+  WILAYAS,
+  STATES,
+  NOT_READY,
+  STATUSES,
+  NOT_VALIDATED,
+  DIPLOMAS,
+} = require("../constants/serviceProvider");
 
 const spSchema = new mongoose.Schema(
   {
@@ -35,7 +38,7 @@ const spSchema = new mongoose.Schema(
       required: true,
     },
     birthdate: { type: Date, required: true },
-    wilaya: { type: String, enum: wilayas, required: true },
+    wilaya: { type: String, enum: WILAYAS, required: true },
     commune: { type: String, required: true },
     adress: { type: String, required: true },
     experience: {
@@ -56,7 +59,7 @@ const spSchema = new mongoose.Schema(
         {
           type: {
             type: String,
-            enum: types,
+            enum: DIPLOMAS,
           },
           description: {
             type: String,
@@ -75,13 +78,13 @@ const spSchema = new mongoose.Schema(
     },
     state: {
       type: String,
-      enum: spStates,
-      default: spStates[0],
+      enum: STATES,
+      default: NOT_READY,
     },
     status: {
       type: String,
-      enum: spStatuses,
-      default: spStatuses[0],
+      enum: STATUSES,
+      default: NOT_VALIDATED,
     },
     services: [String],
     picture: String,
@@ -148,7 +151,7 @@ function validateSP(sp) {
     picture: Joi.string(),
     email: Joi.string().email().required(),
     wilaya: Joi.string()
-      .valid(...wilayas)
+      .valid(...WILAYAS)
       .required(),
     commune: Joi.string().required(),
     adress: Joi.string().required(),

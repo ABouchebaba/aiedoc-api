@@ -3,6 +3,7 @@ const role = require("../middlewares/role");
 const validateBody = require("../middlewares/validateBody");
 const validateObjectId = require("../middlewares/validateObjectId");
 const { validate } = require("../models/category");
+const { ADMINS } = require("../constants/roles");
 
 const express = require("express");
 const router = express.Router();
@@ -11,13 +12,13 @@ const {
   _create,
   _read,
   _update,
-  _delete
+  _delete,
 } = require("../controllers/categoriesController");
 
 let roles = {
-  CREATE: ["admin", "admin_1", "admin_2"],
-  UPDATE: ["admin", "admin_1", "admin_2"],
-  DELETE: ["admin", "admin_1", "admin_2"]
+  CREATE: ADMINS,
+  UPDATE: ADMINS,
+  DELETE: ADMINS,
 };
 
 router.get("/", auth, _read);
@@ -45,7 +46,7 @@ const put_middlewares = [
   auth,
   role(roles.UPDATE),
   validateObjectId,
-  validateBody(validate)
+  validateBody(validate),
 ];
 router.put("/:id", put_middlewares, _update);
 

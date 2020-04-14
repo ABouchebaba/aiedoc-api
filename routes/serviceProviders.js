@@ -7,6 +7,7 @@ const { validate, validatePhone } = require("../models/serviceProvider");
 const validatePayment = require("../models/payment")["validate"];
 const express = require("express");
 const router = express.Router();
+const { ADMINS } = require("../constants/roles");
 
 const {
   _create,
@@ -22,14 +23,14 @@ const {
 } = require("../controllers/serviceProvidersController");
 
 let roles = {
-  GET_ALL: ["admin", "admin_1", "admin_2"],
-  GET_AVAILABLE: ["admin", "admin_1", "admin_2", "client"],
-  GET_ONE: ["admin", "admin_1", "admin_2"],
-  GET_ONE_INTERVENTIONS: ["admin", "admin_1", "admin_2"],
-  GET_ONE_PAYMENTS: ["admin", "admin_1", "admin_2"],
-  VALIDATE: ["admin", "admin_1", "admin_2"],
-  BAN: ["admin", "admin_1", "admin_2"],
-  POST_ONE_PAYMENT: ["admin", "admin_1", "admin_2"],
+  GET_ALL: ADMINS,
+  GET_AVAILABLE: ADMINS,
+  GET_ONE: ADMINS,
+  GET_ONE_INTERVENTIONS: ADMINS,
+  GET_ONE_PAYMENTS: ADMINS,
+  VALIDATE: ADMINS,
+  BAN: ADMINS,
+  POST_ONE_PAYMENT: ADMINS,
 };
 
 // Register route

@@ -5,16 +5,16 @@ const validateBody = require("../middlewares/validateBody");
 const { validate } = require("../models/intervention");
 const express = require("express");
 const router = express.Router();
-
+const { ADMINS, CLIENT } = require("../constants/roles");
 const {
   _create,
   _read_id,
-  _read
+  _read,
 } = require("../controllers/interventionsController");
 
 let roles = {
-  GET_ALL: ["admin", "admin_1", "admin_2"],
-  CREATE: ["client"]
+  GET_ALL: ADMINS,
+  CREATE: [CLIENT],
 };
 
 // GET_ALL
