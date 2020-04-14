@@ -19,7 +19,7 @@ const spSchema = new mongoose.Schema(
       unique: true,
       validate: {
         validator: function (v) {
-          return /\d{10}/.test(v);
+          return /\+\d{12}/.test(v);
         },
         message: (props) => `${props.value} is not a valid phone number!`,
       },
@@ -144,7 +144,9 @@ const ServiceProvider = mongoose.model("ServiceProvider", spSchema);
 
 function validateSP(sp) {
   const schema = {
-    phone: Joi.string().length(10).required(),
+    phone: Joi.string()
+      .regex(/\+\d{12}/)
+      .required(),
     firstname: Joi.string().min(2).max(50).required(),
     lastname: Joi.string().min(2).max(50).required(),
     birthdate: Joi.date().required(),

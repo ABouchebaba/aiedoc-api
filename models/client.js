@@ -9,12 +9,12 @@ const clientSchema = new mongoose.Schema(
     phone: {
       type: String,
       unique: true,
-      // validate: {
-      //   validator: function (v) {
-      //     return /\d{10}/.test(v);
-      //   },
-      //   message: (props) => `${props.value} is not a valid phone number!`,
-      // },
+      validate: {
+        validator: function (v) {
+          return /\+\d{12}/.test(v);
+        },
+        message: (props) => `${props.value} is not a valid phone number!`,
+      },
       required: [true, "User phone number required"],
     },
     firstname: {
@@ -88,7 +88,7 @@ const Client = mongoose.model("Client", clientSchema);
 function validateClient(client) {
   const schema = {
     phone: Joi.string()
-      // .length(10)
+      .regex(/\+\d{12}/)
       .required(),
     firstname: Joi.string().min(2).max(50).required(),
     lastname: Joi.string().min(2).max(50).required(),
@@ -103,7 +103,9 @@ function validateClient(client) {
 
 function validatePhone(phone) {
   const schema = {
-    phone: Joi.string().required(),
+    phone: Joi.string()
+      .regex(/\+\d{12}/)
+      .required(),
   };
 
   return Joi.validate(phone, schema);
