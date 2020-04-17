@@ -1519,3 +1519,31 @@
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-14T18:43:04.533Z"}
 {"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-14T18:44:26.083Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-14T18:44:26.105Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-14T18:51:52.651Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-14T18:51:52.673Z"}
+{"message":"E11000 duplicate key error collection: aiedoc.serviceproviders index: email_1 dup key: { : \"moustache2@esi.dz\" }","stack":"MongoError: E11000 duplicate key error collection: aiedoc.serviceproviders index: email_1 dup key: { : \"moustache2@esi.dz\" }\n    at Function.create (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\error.js:43:12)\n    at toError (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\utils.js:149:22)\n    at coll.s.topology.insert (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\operations\\collection_ops.js:859:39)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\connection\\pool.js:397:18\n    at process._tickCallback (internal/process/next_tick.js:61:11)","driver":true,"name":"MongoError","index":0,"code":11000,"errmsg":"E11000 duplicate key error collection: aiedoc.serviceproviders index: email_1 dup key: { : \"moustache2@esi.dz\" }","level":"error","timestamp":"2020-04-14T18:52:02.234Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-14T18:57:33.731Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-14T18:57:33.755Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-14T18:57:50.827Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-14T18:57:50.851Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-14T19:04:35.467Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-14T19:04:35.489Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-17T18:14:22.424Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-17T18:14:22.446Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-17T18:21:02.804Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-17T18:21:02.825Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-17T18:21:32.393Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-17T18:21:32.414Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-17T18:21:57.832Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-17T18:21:57.853Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-17T18:24:32.669Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-17T18:24:32.692Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-17T18:57:47.374Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-17T18:57:47.398Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-17T19:04:45.513Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-17T19:04:45.540Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-17T19:06:22.919Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-17T19:06:22.940Z"}
+{"message":"Unknown modifier: $dec","stack":"MongoError: Unknown modifier: $dec\n    at Connection.<anonymous> (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\connection\\pool.js:443:61)\n    at Connection.emit (events.js:198:13)\n    at processMessage (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\connection\\connection.js:364:10)\n    at Socket.<anonymous> (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\connection\\connection.js:533:15)\n    at Socket.emit (events.js:198:13)\n    at addChunk (_stream_readable.js:288:12)\n    at readableAddChunk (_stream_readable.js:269:11)\n    at Socket.Readable.push (_stream_readable.js:224:10)\n    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)","ok":0,"errmsg":"Unknown modifier: $dec","code":9,"codeName":"FailedToParse","name":"MongoError","level":"error","timestamp":"2020-04-17T19:09:45.555Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-17T19:10:21.413Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-17T19:10:21.437Z"}

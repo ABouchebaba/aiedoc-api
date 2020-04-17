@@ -1,16 +1,14 @@
 const admin = "admin";
-const admin_1 = "admin_1";
-const admin_2 = "admin_2";
+const moderateur = "moderateur";
 
 const client = "client";
 const sp = "sp";
 
 exports.ADMIN = admin;
-exports.ADMIN_1 = admin_1;
-exports.ADMIN_2 = admin_2;
+exports.MODERATEUR = moderateur;
 
 exports.CLIENT = client;
 exports.SP = sp;
 
-exports.ALL = [client, sp, admin, admin_1, admin_2];
-exports.ADMINS = [admin, admin_1, admin_2];
+exports.ALL = [client, sp, admin, moderateur];
+exports.ADMINS = [admin, moderateur];

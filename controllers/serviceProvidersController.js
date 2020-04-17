@@ -116,6 +116,8 @@ module.exports._add_payment = async (req, res) => {
     payment.sp_id,
     {
       $push: { payments: sp_payment },
+      $inc: { amountToPay: -payment.amount },
+      balance: 0,
     },
     { new: true }
   );

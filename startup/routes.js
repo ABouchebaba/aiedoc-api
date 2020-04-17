@@ -15,11 +15,7 @@ const categories = require("../routes/categories");
 const products = require("../routes/products");
 const payments = require("../routes/payments");
 
-// const courses = require("../routes/courses");
-// const users = require("../routes/users");
-// const auth = require("../routes/auth");
-
-module.exports = function(app) {
+module.exports = function (app) {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
   app.use(express.static("public"));
@@ -34,10 +30,6 @@ module.exports = function(app) {
   app.use("/api/categories", categories);
   app.use("/api/products", products);
   app.use("/api/payments", payments);
-
-  // app.use("/api/courses", courses);
-  // app.use("/api/users", users);
-  // app.use("/api/auth", auth);
 
   app.use(error);
 };

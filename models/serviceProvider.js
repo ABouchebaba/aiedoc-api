@@ -40,7 +40,6 @@ const spSchema = new mongoose.Schema(
     birthdate: { type: Date, required: true },
     wilaya: { type: String, enum: WILAYAS, required: true },
     commune: { type: String, required: true },
-    adress: { type: String, required: true },
     experience: {
       type: [
         {
@@ -74,6 +73,16 @@ const spSchema = new mongoose.Schema(
     },
     balance: {
       type: Number,
+      default: 0,
+    },
+    amountToPay: {
+      type: Number,
+      default: 0,
+    },
+    PercentToPay: {
+      type: Number,
+      min: 0,
+      max: 100,
       default: 0,
     },
     state: {
@@ -156,7 +165,6 @@ function validateSP(sp) {
       .valid(...WILAYAS)
       .required(),
     commune: Joi.string().required(),
-    adress: Joi.string().required(),
     experience: Joi.array().required(),
     diplomas: Joi.array().required(),
     services: Joi.array(),

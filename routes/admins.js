@@ -5,7 +5,7 @@ const validateObjectId = require("../middlewares/validateObjectId");
 const { validate, validateLogin } = require("../models/admin");
 const express = require("express");
 const router = express.Router();
-const { ADMINS } = require("../constants/roles");
+const { ADMIN } = require("../constants/roles");
 
 const {
   _create,
@@ -15,9 +15,9 @@ const {
 } = require("../controllers/adminsController");
 
 let roles = {
-  GET_ALL: ADMINS,
-  GET_ONE: ADMINS,
-  CREATE: ADMINS,
+  GET_ALL: ADMIN,
+  GET_ONE: ADMIN,
+  CREATE: ADMIN,
 };
 
 // GET_ALL
