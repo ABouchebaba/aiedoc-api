@@ -14,6 +14,7 @@ const interventions = require("../routes/interventions");
 const categories = require("../routes/categories");
 const products = require("../routes/products");
 const payments = require("../routes/payments");
+const commands = require("../routes/commands");
 
 module.exports = function (app) {
   app.use(express.json());
@@ -30,6 +31,7 @@ module.exports = function (app) {
   app.use("/api/categories", categories);
   app.use("/api/products", products);
   app.use("/api/payments", payments);
+  app.use("/api/commands", commands);
 
   app.use(error);
 };

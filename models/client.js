@@ -62,6 +62,13 @@ const clientSchema = new mongoose.Schema(
         },
       ],
     },
+    commands: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Command",
+        required: true,
+      },
+    ],
   },
   {
     timestamps: true,
