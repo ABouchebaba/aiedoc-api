@@ -40,19 +40,14 @@ const spSchema = new mongoose.Schema(
     birthdate: { type: Date, required: true },
     wilaya: { type: String, enum: WILAYAS, required: true },
     commune: { type: String, required: true },
-    experience: {
-      type: [
-        {
-          jobTitle: {
-            type: String,
-            maxlength: 255,
-          },
-          from: Date,
-          to: Date,
-        },
-      ],
-      required: true,
-    },
+    jobTitle: { type: String, maxlength: 255, required: true },
+    description: { type: String, maxlength: 255 },
+    balance: { type: Number, default: 0 },
+    amountToPay: { type: Number, default: 0 },
+    location: { type: location },
+    rating: { type: Number, min: 0, max: 5 },
+    services: [String],
+    picture: String,
     diplomas: {
       type: [
         {
@@ -71,14 +66,6 @@ const spSchema = new mongoose.Schema(
       ],
       required: true,
     },
-    balance: {
-      type: Number,
-      default: 0,
-    },
-    amountToPay: {
-      type: Number,
-      default: 0,
-    },
     PercentToPay: {
       type: Number,
       min: 0,
@@ -95,12 +82,6 @@ const spSchema = new mongoose.Schema(
       enum: STATUSES,
       default: NOT_VALIDATED,
     },
-    services: [String],
-    picture: String,
-    description: {
-      type: String,
-      maxlength: 255,
-    },
     email: {
       type: String,
       required: true,
@@ -112,15 +93,13 @@ const spSchema = new mongoose.Schema(
         ref: "Intervention",
       },
     ],
-    location: {
-      type: location,
-    },
-    payments: [
+    commands: [
       {
-        date: Date,
-        amount: Number,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Command",
       },
     ],
+    payments: [{ date: Date, amount: Number }],
   },
   {
     timestamps: true,
@@ -143,14 +122,15 @@ function validateSP(sp) {
       .required(),
     firstname: Joi.string().min(2).max(50).required(),
     lastname: Joi.string().min(2).max(50).required(),
+    jobTitle: Joi.string().max(255).required(),
+    rating: Joi.number().min(0).max(5),
     birthdate: Joi.date().required(),
     picture: Joi.string(),
-    email: Joi.string().email().required(),
+    email: Joi.string().email(),
     wilaya: Joi.string()
       .valid(...WILAYAS)
       .required(),
     commune: Joi.string().required(),
-    experience: Joi.array().required(),
     diplomas: Joi.array().required(),
     services: Joi.array(),
     description: Joi.string().max(255),

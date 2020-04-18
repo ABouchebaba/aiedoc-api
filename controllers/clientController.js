@@ -18,7 +18,7 @@ module.exports._create = async (req, res) => {
       "firstname",
       "lastname",
       "picture",
-      "birthdate"
+      "birthdate",
     ])
   );
 
@@ -35,10 +35,21 @@ module.exports._read_id = async (req, res) => {
 };
 
 module.exports._interventions = async (req, res) => {
-  const client = await Client.findById(req.params.id, "interventions");
+  const client = await Client.findById(req.params.id)
+    .populate("interventions")
+    .select("interventions");
   if (!client) return res.status(404).send("Client id not found");
 
-  return res.send(client);
+  return res.send(client.interventions);
+};
+
+module.exports._commands = async (req, res) => {
+  const client = await Client.findById(req.params.id)
+    .populate("commands")
+    .select("commands");
+  if (!client) return res.status(404).send("Client id not found");
+
+  return res.send(client.commands);
 };
 
 module.exports._verifyPhone = async (req, res) => {

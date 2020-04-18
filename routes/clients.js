@@ -4,12 +4,13 @@ const validateBody = require("../middlewares/validateBody");
 const { validate, validatePhone } = require("../models/client");
 const express = require("express");
 const router = express.Router();
-const { ADMINS } = require("../constants/roles");
+const { ADMINS, CLIENT } = require("../constants/roles");
 
 const {
   _create,
   _read_id,
   _interventions,
+  _commands,
   _read,
   _verifyPhone,
 } = require("../controllers/clientController");
@@ -17,7 +18,8 @@ const {
 let roles = {
   GET_ALL: ADMINS,
   GET_ONE: ADMINS,
-  GET_ONE_INTERVENTIONS: ADMINS,
+  GET_ONE_INTERVENTIONS: [...ADMINS, CLIENT],
+  GET_ONE_COMMANDS: [...ADMINS, CLIENT],
 };
 
 // GET_ALL
@@ -33,6 +35,9 @@ router.get(
   role(roles.GET_ONE_INTERVENTIONS),
   _interventions
 );
+
+// GET_ONE_COMMANDS
+router.get("/:id/commands", auth, role(roles.GET_ONE_COMMANDS), _commands);
 
 // Register route
 router.post("/register", validateBody(validate), _create);

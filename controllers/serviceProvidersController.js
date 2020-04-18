@@ -11,6 +11,7 @@ module.exports._create = async (req, res) => {
     _.pick(req.body, [
       "email",
       "phone",
+      "jobTitle",
       "firstname",
       "lastname",
       "picture",
@@ -18,7 +19,6 @@ module.exports._create = async (req, res) => {
       "wilaya",
       "commune",
       "adress",
-      "experience",
       "diplomas",
       "services",
       "description",
@@ -91,10 +91,22 @@ module.exports._ban = async (req, res) => {
 };
 
 module.exports._interventions = async (req, res) => {
-  const sp = await ServiceProvider.findById(req.params.id, "interventions");
-  if (!sp) return res.status(404).send("Service provider id not found");
+  const sp = await ServiceProvider.findById(req.params.id)
+    .populate("interventions")
+    .select("interventions");
 
-  return res.send(sp);
+  if (!sp) return res.status(404).send("Service Provider id not found");
+
+  return res.send(sp.interventions);
+};
+
+module.exports._commands = async (req, res) => {
+  const sp = await ServiceProvider.findById(req.params.id)
+    .populate("commands")
+    .select("commands");
+  if (!sp) return res.status(404).send("Service Provider id not found");
+
+  return res.send(sp.commands);
 };
 
 module.exports._payments = async (req, res) => {

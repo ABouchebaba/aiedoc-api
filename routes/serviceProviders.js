@@ -7,7 +7,7 @@ const { validate, validatePhone } = require("../models/serviceProvider");
 const validatePayment = require("../models/payment")["validate"];
 const express = require("express");
 const router = express.Router();
-const { ADMINS, CLIENT } = require("../constants/roles");
+const { ADMINS, CLIENT, SP } = require("../constants/roles");
 
 const {
   _create,
@@ -18,6 +18,7 @@ const {
   _validate,
   _ban,
   _interventions,
+  _commands,
   _payments,
   _add_payment,
 } = require("../controllers/serviceProvidersController");
@@ -26,7 +27,8 @@ let roles = {
   GET_ALL: ADMINS,
   GET_AVAILABLE: [CLIENT],
   GET_ONE: ADMINS,
-  GET_ONE_INTERVENTIONS: ADMINS,
+  GET_ONE_INTERVENTIONS: [...ADMINS, SP],
+  GET_ONE_COMMANDS: [...ADMINS, SP],
   GET_ONE_PAYMENTS: ADMINS,
   VALIDATE: ADMINS,
   BAN: ADMINS,
@@ -58,6 +60,15 @@ router.get(
   role(roles.GET_ONE_INTERVENTIONS),
   validateObjectId,
   _interventions
+);
+
+// GET_ONE_INTERVENTIONS
+router.get(
+  "/:id/commands",
+  auth,
+  role(roles.GET_ONE_COMMANDS),
+  validateObjectId,
+  _commands
 );
 
 // GET_ONE_PAYMENTS

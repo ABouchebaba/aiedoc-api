@@ -1601,3 +1601,46 @@
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T18:29:29.697Z"}
 {"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T18:34:29.518Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T18:34:29.539Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:19:27.422Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:19:27.447Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:19:30.696Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:19:30.721Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:20:40.830Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:20:40.851Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:21:50.528Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:21:50.552Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:24:07.622Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:24:07.646Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:24:44.355Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:24:44.376Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:25:01.547Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:25:01.571Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:25:15.878Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:25:15.899Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:25:26.499Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:25:26.524Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:28:07.401Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:28:07.422Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:31:50.257Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:31:50.279Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:34:23.461Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:34:23.482Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:37:57.273Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:37:57.296Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:40:16.857Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:40:16.878Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:44:08.802Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:44:08.825Z"}
+{"message":"ServiceProvider validation failed: jobTitle: Path `jobTitle` is required.","errors":{"jobTitle":{"message":"Path `jobTitle` is required.","name":"ValidatorError","properties":{"message":"Path `jobTitle` is required.","type":"required","path":"jobTitle"},"kind":"required","path":"jobTitle"}},"_message":"ServiceProvider validation failed","stack":"ValidationError: ServiceProvider validation failed: jobTitle: Path `jobTitle` is required.\n    at new ValidationError (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\error\\validation.js:30:11)\n    at model.Document.invalidate (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\document.js:2317:32)\n    at p.doValidate.skipSchemaValidators (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\document.js:2166:17)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\schematype.js:1037:9\n    at process._tickCallback (internal/process/next_tick.js:61:11)","name":"ValidationError","level":"error","timestamp":"2020-04-18T21:47:58.330Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:48:14.368Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:48:14.391Z"}
+{"message":"ServiceProvider validation failed: jobTitle: Path `jobTitle` is required.","errors":{"jobTitle":{"message":"Path `jobTitle` is required.","name":"ValidatorError","properties":{"message":"Path `jobTitle` is required.","type":"required","path":"jobTitle"},"kind":"required","path":"jobTitle"}},"_message":"ServiceProvider validation failed","stack":"ValidationError: ServiceProvider validation failed: jobTitle: Path `jobTitle` is required.\n    at new ValidationError (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\error\\validation.js:30:11)\n    at model.Document.invalidate (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\document.js:2317:32)\n    at p.doValidate.skipSchemaValidators (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\document.js:2166:17)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\schematype.js:1037:9\n    at process._tickCallback (internal/process/next_tick.js:61:11)","name":"ValidationError","level":"error","timestamp":"2020-04-18T21:48:39.352Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:49:29.401Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:49:29.424Z"}
+{"message":"E11000 duplicate key error collection: aiedoc.serviceproviders index: email_1 dup key: { : \"moustache3@esi.dz\" }","stack":"MongoError: E11000 duplicate key error collection: aiedoc.serviceproviders index: email_1 dup key: { : \"moustache3@esi.dz\" }\n    at Function.create (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\error.js:43:12)\n    at toError (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\utils.js:149:22)\n    at coll.s.topology.insert (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\operations\\collection_ops.js:859:39)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\connection\\pool.js:397:18\n    at process._tickCallback (internal/process/next_tick.js:61:11)","driver":true,"name":"MongoError","index":0,"code":11000,"errmsg":"E11000 duplicate key error collection: aiedoc.serviceproviders index: email_1 dup key: { : \"moustache3@esi.dz\" }","level":"error","timestamp":"2020-04-18T21:49:32.923Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:49:56.041Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:49:56.064Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:50:22.429Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:50:22.451Z"}
+{"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-18T21:52:58.424Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-18T21:52:58.446Z"}
