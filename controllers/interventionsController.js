@@ -5,21 +5,13 @@ const { ServiceProvider } = require("../models/serviceProvider");
 module.exports._create = async (req, res) => {
   const intervention = await Intervention.create(req.body);
 
-  const client_summary = intervention.getSummary("sp_name", req.body.sp_name);
-  const sp_summary = intervention.getSummary(
-    "client_name",
-    req.body.client_name
-  );
-
   const res1 = await Client.findByIdAndUpdate(intervention.client_id, {
-    $push: { interventions: client_summary }
+    $push: { interventions: intervention._id },
   });
 
   const res2 = await ServiceProvider.findByIdAndUpdate(intervention.sp_id, {
-    $push: { interventions: sp_summary }
+    $push: { interventions: intervention._id },
   });
-
-  // console.log(res1, res2);
 
   res.send(intervention);
 };

@@ -71,18 +71,6 @@ const interventionSchema = new mongoose.Schema(
   }
 );
 
-/** Returns an intervention's summary :
- * _id, name = sp_name or client_name, createdAt, totalPrice
- * */
-interventionSchema.methods.getSummary = function (type, name) {
-  const summary = _.pick(this, ["_id", "createdAt", "totalPrice"]);
-  summary["intervention_id"] = summary["_id"];
-  summary["date"] = summary["createdAt"];
-  ["_id", "createdAt"].map((k) => _.unset(summary, k));
-  summary[type] = name;
-  return summary;
-};
-
 const Intervention = mongoose.model("Intervention", interventionSchema);
 
 function validateIntervention(intervention) {

@@ -39,34 +39,16 @@ const clientSchema = new mongoose.Schema(
     location: {
       type: location,
     },
-    interventions: {
-      type: [
-        {
-          intervention_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Intervention",
-            required: true,
-          },
-          sp_name: {
-            type: String,
-            required: true,
-          },
-          date: {
-            type: Date,
-            required: true,
-          },
-          totalPrice: {
-            type: Number,
-            required: true,
-          },
-        },
-      ],
-    },
+    interventions: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Intervention",
+      },
+    ],
     commands: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Command",
-        required: true,
       },
     ],
   },

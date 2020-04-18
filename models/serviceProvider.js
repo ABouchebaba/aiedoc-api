@@ -108,23 +108,8 @@ const spSchema = new mongoose.Schema(
     },
     interventions: [
       {
-        intervention_id: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Intervention",
-          required: true,
-        },
-        client_name: {
-          type: String,
-          required: true,
-        },
-        date: {
-          type: Date,
-          required: true,
-        },
-        totalPrice: {
-          type: Number,
-          required: true,
-        },
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Intervention",
       },
     ],
     location: {
