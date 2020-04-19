@@ -1,6 +1,8 @@
 const winston = require("winston");
 const express = require("express");
 const cors = require("cors");
+const http = require("http");
+const socketIo = require("socket.io");
 const app = express();
 
 app.use(cors());
@@ -18,9 +20,25 @@ require("./startup/prod")(app);
 //   debug("Morgan enabled...");
 // }
 
+const server = http.createServer(app);
+const io = socketIo(server);
+
+// exploit io ...
+io.on("connection", (socket) => {
+  console.log("A user connected");
+
+  socket.emit("message", "Backend received you");
+
+  socket.on("disconnect", () => {
+    console.log("A user disconnected");
+  });
+});
+
 const port = process.env.PORT || 4002;
-const server = app.listen(port, () =>
-  winston.info(`Listening on port ${port}...`)
-);
+server.listen(port, () => console.log(`Server running on port ${port}`));
+
+// const server = app.listen(port, () =>
+//   winston.info(`Listening on port ${port}...`)
+// );
 
 module.exports = server;

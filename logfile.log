@@ -1648,3 +1648,12 @@
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-19T13:20:19.474Z"}
 {"level":"info","message":"Listening on port 4002...","timestamp":"2020-04-19T13:24:34.621Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-19T13:24:34.646Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-19T15:32:19.725Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-19T15:33:59.740Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-19T15:35:00.614Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-19T15:45:46.058Z"}
+{"level":"info","message":"A user has logged in","timestamp":"2020-04-19T15:50:23.331Z"}
+{"level":"info","message":"A user has logged in","timestamp":"2020-04-19T15:57:17.918Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-19T15:57:30.916Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-19T15:58:20.761Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-19T15:59:48.713Z"}
