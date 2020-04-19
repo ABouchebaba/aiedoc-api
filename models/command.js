@@ -35,13 +35,11 @@ let commandSchema = new mongoose.Schema(
           type: String,
           required: true,
         },
-        quantity: {
+        qty: {
           type: Number,
           min: 1,
         },
-        options: {
-          type: Object,
-        },
+        option: String,
       },
     ],
   },
@@ -62,8 +60,8 @@ function validateCommand(command) {
         Joi.object({
           product_id: Joi.objectId().required(),
           product_name: Joi.string().required(),
-          quantity: Joi.number().min(1).required(),
-          options: Joi.object().required(),
+          qty: Joi.number().min(1).required(),
+          option: Joi.string().required(),
         })
       )
       .required(),
