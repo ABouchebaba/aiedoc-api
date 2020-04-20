@@ -141,7 +141,9 @@ function validateSP(sp) {
 
 function validatePhone(phone) {
   const schema = {
-    phone: Joi.string().length(10).required(),
+    phone: Joi.string()
+      .regex(/\+\d{12}/)
+      .required(),
   };
 
   return Joi.validate(phone, schema);

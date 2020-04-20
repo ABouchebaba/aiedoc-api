@@ -82,9 +82,8 @@ function validateClient(client) {
     firstname: Joi.string().min(2).max(50).required(),
     lastname: Joi.string().min(2).max(50).required(),
     birthdate: Joi.date().required(),
-    picture: Joi.string(),
     email: Joi.string().email().required(),
-    //   .required()
+    picture: Joi.string(),
   };
 
   return Joi.validate(client, schema);
