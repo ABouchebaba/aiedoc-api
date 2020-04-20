@@ -16,6 +16,7 @@ const {
   _read_available,
   _verifyPhone,
   _validate,
+  _set_state,
   _ban,
   _interventions,
   _commands,
@@ -31,6 +32,7 @@ let roles = {
   GET_ONE_COMMANDS: [...ADMINS, SP],
   GET_ONE_PAYMENTS: ADMINS,
   VALIDATE: ADMINS,
+  PUT_STATE: [SP],
   BAN: ADMINS,
   POST_ONE_PAYMENT: ADMINS,
 };
@@ -98,6 +100,14 @@ router.put(
   role(roles.VALIDATE),
   validateObjectId,
   _validate
+);
+
+router.put(
+  "/:id/state",
+  auth,
+  role(roles.PUT_STATE),
+  validateObjectId,
+  _set_state
 );
 
 // BAN

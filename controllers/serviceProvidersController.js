@@ -77,6 +77,19 @@ module.exports._validate = async (req, res) => {
   return res.send(sp);
 };
 
+module.exports._set_state = async (req, res) => {
+  const sp = await ServiceProvider.findByIdAndUpdate(
+    req.params.id,
+    {
+      state: req.body.state,
+    },
+    { new: true }
+  );
+  if (!sp) return res.status(404).send("Service provider id not found");
+
+  return res.send(sp);
+};
+
 module.exports._ban = async (req, res) => {
   const sp = await ServiceProvider.findByIdAndUpdate(
     req.params.id,

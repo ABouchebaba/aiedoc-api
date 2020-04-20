@@ -108,7 +108,7 @@ const spSchema = new mongoose.Schema(
 
 spSchema.methods.generateAuthToken = function () {
   return jwt.sign(
-    { _id: this._id, roles: ["service_provider"] },
+    { _id: this._id, roles: ["sp"] },
     config.get("jwtPrivateKey")
   );
 };
