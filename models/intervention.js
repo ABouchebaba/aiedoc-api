@@ -77,8 +77,8 @@ function validateIntervention(intervention) {
   const schema = {
     client_id: Joi.objectId().required(),
     sp_id: Joi.objectId().required(),
-    client_name: Joi.string().required(),
-    sp_name: Joi.string().required(),
+    // client_name: Joi.string().required(),
+    // sp_name: Joi.string().required(),
     services: Joi.array().items(Joi.string()).required(),
     totalPrice: Joi.number().min(0),
     client_comment: Joi.string().max(255),

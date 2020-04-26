@@ -21,18 +21,13 @@ require("./startup/prod")(app);
 // }
 
 const server = http.createServer(app);
-const io = socketIo(server);
-
-// exploit io ...
-io.on("connection", (socket) => {
-  console.log("A user connected");
-
-  socket.emit("message", "Backend received you");
-
-  socket.on("disconnect", () => {
-    console.log("A user disconnected");
-  });
+const io = socketIo(server, {
+  pingInterval: 10000,
+  pingTimeout: 10000,
 });
+
+// handle client-sp communications in here...
+require("./startup/sockets")(io);
 
 const port = process.env.PORT || 4002;
 server.listen(port, () => console.log(`Server running on port ${port}`));
