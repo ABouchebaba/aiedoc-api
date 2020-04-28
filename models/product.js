@@ -36,6 +36,7 @@ let productSchema = new mongoose.Schema({
       option: String,
     },
   ],
+  images: [String],
 });
 
 const Product = mongoose.model("Product", productSchema);
@@ -53,6 +54,7 @@ function validateProduct(product) {
         option: Joi.string().required(),
       })
     ),
+    images: Joi.array().items(Joi.string()),
   };
 
   return Joi.validate(product, schema);

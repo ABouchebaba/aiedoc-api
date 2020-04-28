@@ -1,8 +1,57 @@
 const { Product } = require("../models/product");
+const { save } = require("./fileController");
+const fs = require("fs");
 const _ = require("lodash");
 
 module.exports._create = async (req, res) => {
   const product = await Product.create(req.body);
+
+  const images = await save(req.files, `images/products`);
+
+  product.images = images;
+  product.save();
+
+  res.send(product);
+};
+
+module.exports._add_image = async (req, res) => {
+  const images = await save(req.files, `images/products`);
+
+  const product = await Product.findByIdAndUpdate(
+    req.params.id,
+    {
+      $push: { images: { $each: images } },
+    },
+    { new: true }
+  );
+
+  res.send(product);
+};
+
+/// TODO: complete this function
+module.exports._remove_images = async (req, res) => {
+  const product = await Product.findByIdAndUpdate(
+    req.params.id,
+    {
+      $pull: { images: { $in: req.body.links } },
+    },
+    { new: true }
+  );
+
+  if (!product) {
+    return res.status(404).send("Product not found");
+  }
+
+  req.body.links.map((link) => {
+    fs.unlink(`./public/${link}`, (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Removed link ...");
+      }
+    });
+  });
+
   res.send(product);
 };
 
@@ -29,7 +78,7 @@ module.exports._read_id = async (req, res) => {
 
 module.exports._update = async (req, res) => {
   const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
-    new: true
+    new: true,
   });
   if (!product) return res.status(404).send("Product not found");
 

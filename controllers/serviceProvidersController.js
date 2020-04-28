@@ -25,6 +25,11 @@ module.exports._create = async (req, res) => {
     ])
   );
 
+  // const diplomas = await save(req.files, `files/diplomas`);
+
+  // sp.diplomas = diplomas;
+  // sp.save();
+
   const token = sp.generateAuthToken();
 
   return res.header("x-auth-token", token).send(sp);

@@ -14,12 +14,16 @@ const {
   _read_id,
   _update,
   _delete,
+  _add_image,
+  _remove_images,
 } = require("../controllers/productsController");
 
 let roles = {
   CREATE: ADMINS,
   UPDATE: ADMINS,
   DELETE: ADMINS,
+  ADD_IMAGES: ADMINS,
+  REMOVE_IMAGES: ADMINS,
 };
 
 router.get("/", auth, _read);
@@ -34,6 +38,8 @@ router.get("/:id", auth, validateObjectId, _read_id);
  */
 // CREATE
 router.post("/", [auth, role(roles.CREATE), validateBody(validate)], _create);
+
+router.post("/:id/images", [auth, role(roles.ADD_IMAGES)], _add_image);
 
 /*
  * The user needs
@@ -59,5 +65,12 @@ router.put("/:id", put_middlewares, _update);
  */
 // DELETE
 router.delete("/:id", [auth, role(roles.DELETE), validateObjectId], _delete);
+
+// deleting product images
+router.delete(
+  "/:id/images",
+  [auth, role(roles.REMOVE_IMAGES), validateObjectId],
+  _remove_images
+);
 
 module.exports = router;
