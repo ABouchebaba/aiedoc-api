@@ -5,6 +5,9 @@ const _ = require("lodash");
 
 /// TODO: Add relevant attributes
 module.exports._create = async (req, res) => {
+  let sp = await ServiceProvider.findOne({ phone: req.body.phone });
+  if (sp) return res.status(400).send("Service provider already registered");
+
   // 1st .files comes from express upload module
   // 2nd .files comes from body key
   const files = Object.values(req.files.files);
@@ -22,40 +25,26 @@ module.exports._create = async (req, res) => {
     ];
   }
 
-  // console.log(diplomas)
-  res.send(diplomas);
+  req.body.diplomas = diplomas;
 
-  // let sp = await ServiceProvider.findOne({ phone: req.body.phone });
-  // if (sp) return res.status(400).send("Service provider already registered");
+  sp = await ServiceProvider.create(
+    _.pick(req.body, [
+      "email",
+      "phone",
+      "jobTitle",
+      "firstname",
+      "lastname",
+      "birthdate",
+      "wilaya",
+      "commune",
+      "sex",
+      "diplomas",
+    ])
+  );
 
-  // sp = await ServiceProvider.create(
-  //   _.pick(req.body, [
-  //     "email",
-  //     "phone",
-  //     "jobTitle",
-  //     "firstname",
-  //     "lastname",
-  //     "picture",
-  //     "birthdate",
-  //     "wilaya",
-  //     "commune",
-  //     "adress",
-  //     "diplomas",
-  //     "services",
-  //     "description",
-  //   ])
-  // );
+  const token = sp.generateAuthToken();
 
-  // console.log(req.files, req.body.types);
-
-  // const diplomas = await save(req.files, `files/diplomas`);
-
-  // sp.diplomas = diplomas;
-  // sp.save();
-
-  // const token = sp.generateAuthToken();
-
-  // return res.header("x-auth-token", token).send(sp);
+  return res.header("x-auth-token", token).send(sp);
 };
 
 module.exports._read = async (req, res) => {
@@ -176,4 +165,20 @@ module.exports._add_payment = async (req, res) => {
   );
 
   return res.send(sp.payments);
+};
+
+module.exports._set_services = async (req, res) => {
+  const sp = await ServiceProvider.findByIdAndUpdate(
+    req.params.id,
+    {
+      services: req.body.services,
+    },
+    { new: true }
+  );
+
+  if (!sp) {
+    return res.status(404).send("Service Provider not found");
+  }
+
+  res.send(sp);
 };

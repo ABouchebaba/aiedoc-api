@@ -22,6 +22,7 @@ const {
   _commands,
   _payments,
   _add_payment,
+  _set_services,
 } = require("../controllers/serviceProvidersController");
 
 let roles = {
@@ -35,6 +36,7 @@ let roles = {
   PUT_STATE: [SP],
   BAN: ADMINS,
   POST_ONE_PAYMENT: ADMINS,
+  PUT_ONE_SERVICES: [SP],
 };
 
 // Register route
@@ -108,6 +110,14 @@ router.put(
   role(roles.PUT_STATE),
   validateObjectId,
   _set_state
+);
+
+router.put(
+  "/:id/services",
+  auth,
+  role(roles.PUT_ONE_SERVICES),
+  validateObjectId,
+  _set_services
 );
 
 // BAN
