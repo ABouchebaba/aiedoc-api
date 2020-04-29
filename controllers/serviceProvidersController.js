@@ -1,38 +1,61 @@
 const { ServiceProvider } = require("../models/serviceProvider");
 const { Payment } = require("../models/payment");
+const { saveOne } = require("./fileController");
 const _ = require("lodash");
 
 /// TODO: Add relevant attributes
 module.exports._create = async (req, res) => {
-  let sp = await ServiceProvider.findOne({ phone: req.body.phone });
-  if (sp) return res.status(400).send("Service provider already registered");
+  // 1st .files comes from express upload module
+  // 2nd .files comes from body key
+  const files = Object.values(req.files.files);
+  let diplomas = [];
 
-  sp = await ServiceProvider.create(
-    _.pick(req.body, [
-      "email",
-      "phone",
-      "jobTitle",
-      "firstname",
-      "lastname",
-      "picture",
-      "birthdate",
-      "wilaya",
-      "commune",
-      "adress",
-      "diplomas",
-      "services",
-      "description",
-    ])
-  );
+  for (let i = 0; i < files.length; i++) {
+    const dip = await saveOne(files[i], "files/diplomas");
+    diplomas = [
+      ...diplomas,
+      {
+        type: req.body.types[i],
+        description: req.body.descriptions[i],
+        file: dip,
+      },
+    ];
+  }
+
+  // console.log(diplomas)
+  res.send(diplomas);
+
+  // let sp = await ServiceProvider.findOne({ phone: req.body.phone });
+  // if (sp) return res.status(400).send("Service provider already registered");
+
+  // sp = await ServiceProvider.create(
+  //   _.pick(req.body, [
+  //     "email",
+  //     "phone",
+  //     "jobTitle",
+  //     "firstname",
+  //     "lastname",
+  //     "picture",
+  //     "birthdate",
+  //     "wilaya",
+  //     "commune",
+  //     "adress",
+  //     "diplomas",
+  //     "services",
+  //     "description",
+  //   ])
+  // );
+
+  // console.log(req.files, req.body.types);
 
   // const diplomas = await save(req.files, `files/diplomas`);
 
   // sp.diplomas = diplomas;
   // sp.save();
 
-  const token = sp.generateAuthToken();
+  // const token = sp.generateAuthToken();
 
-  return res.header("x-auth-token", token).send(sp);
+  // return res.header("x-auth-token", token).send(sp);
 };
 
 module.exports._read = async (req, res) => {

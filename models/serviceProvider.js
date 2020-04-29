@@ -37,6 +37,11 @@ const spSchema = new mongoose.Schema(
       maxlength: 50,
       required: true,
     },
+    gender: {
+      type: String,
+      required: true,
+      enum: ["male", "female"],
+    },
     birthdate: { type: Date, required: true },
     wilaya: { type: String, enum: WILAYAS, required: true },
     commune: { type: String, required: true },
@@ -122,6 +127,7 @@ function validateSP(sp) {
       .required(),
     firstname: Joi.string().min(2).max(50).required(),
     lastname: Joi.string().min(2).max(50).required(),
+    gender: Joi.string().valid("male", "female").required(),
     jobTitle: Joi.string().max(255).required(),
     rating: Joi.number().min(0).max(5),
     birthdate: Joi.date().required(),
@@ -131,7 +137,10 @@ function validateSP(sp) {
       .valid(...WILAYAS)
       .required(),
     commune: Joi.string().required(),
-    diplomas: Joi.array().required(),
+    // diplomas: Joi.array().required(),
+    types: Joi.array().items(Joi.string().valid(DIPLOMAS)),
+    descriptions: Joi.array().items(Joi.string().max(255)),
+    files: Joi.array().items(Joi.object()),
     services: Joi.array(),
     description: Joi.string().max(255),
   };

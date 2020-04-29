@@ -7,9 +7,10 @@ module.exports.save = async function (files, basepath, prefix = "") {
   );
 };
 
-const saveOne = async function (item, basepath, prefix) {
+const saveOne = async function (item, basepath, prefix = "") {
   return await saveAsync(item, basepath, prefix);
 };
+module.exports.saveOne = saveOne;
 
 const saveAsync = async function (item, basepath, prefix) {
   return new Promise(function (resolve, reject) {

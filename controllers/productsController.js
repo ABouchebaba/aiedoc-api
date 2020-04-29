@@ -15,9 +15,13 @@ module.exports._create = async (req, res) => {
 };
 
 module.exports._add_image = async (req, res) => {
+  let product = await Product.findById(req.params.id);
+  if (!product) {
+    return res.status(404).send("Product not found");
+  }
   const images = await save(req.files, `images/products`);
 
-  const product = await Product.findByIdAndUpdate(
+  product = await Product.findByIdAndUpdate(
     req.params.id,
     {
       $push: { images: { $each: images } },
@@ -28,7 +32,6 @@ module.exports._add_image = async (req, res) => {
   res.send(product);
 };
 
-/// TODO: complete this function
 module.exports._remove_images = async (req, res) => {
   const product = await Product.findByIdAndUpdate(
     req.params.id,
