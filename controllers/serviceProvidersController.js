@@ -1,7 +1,8 @@
 const { ServiceProvider } = require("../models/serviceProvider");
 const { Payment } = require("../models/payment");
-const { saveOne } = require("./fileController");
+const { saveOne, saveAs } = require("./fileController");
 const _ = require("lodash");
+const fs = require("fs");
 
 /// TODO: Add relevant attributes
 module.exports._create = async (req, res) => {
@@ -105,6 +106,38 @@ module.exports._set_state = async (req, res) => {
   if (!sp) return res.status(404).send("Service provider id not found");
 
   return res.send(sp.state);
+};
+
+module.exports._set_profile_picture = async (req, res) => {
+  const sp = await ServiceProvider.findById(req.params.id);
+
+  if (!sp) {
+    // wrong sp id
+    return res.status(404).send("Service provider not found");
+  }
+  if (!req.files) {
+    // no profile picture provided
+    return res.status(400).send("Please provide a profile picture");
+  }
+  const picture = Object.values(req.files)[0];
+
+  // sp good, picture good
+  // save picture
+  try {
+    // delete existing picture if exists
+    // probably should add an appropriate callback
+    if (sp.picture) fs.unlink("public/" + sp.picture, () => {});
+    // save provided picture
+    const link = await saveOne(picture, "images/profiles/sp");
+    // save goes well
+    sp.picture = link;
+    sp.save();
+  } catch (e) {
+    // error while saving/deleting picture
+    return res.status(500).send(e.message);
+  }
+
+  return res.send(sp.picture);
 };
 
 module.exports._ban = async (req, res) => {

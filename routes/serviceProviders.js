@@ -23,6 +23,7 @@ const {
   _payments,
   _add_payment,
   _set_services,
+  _set_profile_picture,
 } = require("../controllers/serviceProvidersController");
 
 let roles = {
@@ -37,6 +38,7 @@ let roles = {
   BAN: ADMINS,
   POST_ONE_PAYMENT: ADMINS,
   PUT_ONE_SERVICES: [SP],
+  PUT_ONE_PICTURE: [SP],
 };
 
 // Register route
@@ -118,6 +120,14 @@ router.put(
   role(roles.PUT_ONE_SERVICES),
   validateObjectId,
   _set_services
+);
+
+router.put(
+  "/:id/picture",
+  auth,
+  role(roles.PUT_ONE_PICTURE),
+  validateObjectId,
+  _set_profile_picture
 );
 
 // BAN

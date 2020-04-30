@@ -12,6 +12,18 @@ const saveOne = async function (item, basepath, prefix = "") {
 };
 module.exports.saveOne = saveOne;
 
+module.exports.saveAs = function (item, basepath, name) {
+  const ext = item.name.split(".").pop();
+  const filename = name + "." + ext;
+
+  return new Promise(function (resolve, reject) {
+    item
+      .mv(`public/${basepath}/${filename}`)
+      .then(() => resolve(`${basepath}/${filename}`))
+      .catch((err) => reject(err));
+  });
+};
+
 const saveAsync = async function (item, basepath, prefix) {
   return new Promise(function (resolve, reject) {
     const filename = `${uuidv4()}___${item.name}`;

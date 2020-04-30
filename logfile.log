@@ -1792,3 +1792,25 @@
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-29T10:35:31.590Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-29T10:47:17.132Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-29T10:49:33.361Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T16:59:12.928Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:00:27.346Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:00:56.160Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:03:02.792Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:04:15.336Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:08:43.395Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:10:03.522Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:11:34.030Z"}
+{"message":"Cannot read property 'length' of undefined","stack":"TypeError: Cannot read property 'length' of undefined\n    at module.exports._set_profile_picture (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\serviceProvidersController.js:117:17)\n    at process._tickCallback (internal/process/next_tick.js:68:7)","level":"error","timestamp":"2020-04-30T17:11:37.679Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:12:27.027Z"}
+{"message":"Cannot convert undefined or null to object","stack":"TypeError: Cannot convert undefined or null to object\n    at Function.values (<anonymous>)\n    at module.exports._set_profile_picture (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\serviceProvidersController.js:117:26)\n    at process._tickCallback (internal/process/next_tick.js:68:7)","level":"error","timestamp":"2020-04-30T17:12:30.613Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:12:47.068Z"}
+{"message":"Cannot convert undefined or null to object","stack":"TypeError: Cannot convert undefined or null to object\n    at Function.values (<anonymous>)\n    at module.exports._set_profile_picture (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\serviceProvidersController.js:117:26)\n    at process._tickCallback (internal/process/next_tick.js:68:7)","level":"error","timestamp":"2020-04-30T17:12:49.067Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:13:11.481Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:30:41.690Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:34:51.532Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:39:12.683Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:40:13.839Z"}
+{"message":"Cannot convert undefined or null to object","stack":"TypeError: Cannot convert undefined or null to object\n    at Function.values (<anonymous>)\n    at module.exports._set_profile_picture (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\serviceProvidersController.js:118:26)\n    at process._tickCallback (internal/process/next_tick.js:68:7)","level":"error","timestamp":"2020-04-30T17:40:16.431Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:41:12.165Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:42:25.381Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-04-30T17:42:47.338Z"}
