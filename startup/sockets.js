@@ -1,4 +1,6 @@
 const { Intervention } = require("../models/intervention");
+const { Client } = require("../models/client");
+const { ServiceProvider } = require("../models/serviceProvider");
 const {
   ACCEPTED,
   REFUSED,
@@ -13,7 +15,17 @@ module.exports = function (io) {
     console.log("A user connected");
 
     socket.on("init", async (int) => {
+      // save intervention to db
       const intervention = await Intervention.create(int);
+      // add intervention to sp & client
+      // awaiting for these 2 requests will
+      // slow response time down
+      Client.findByIdAndUpdate(intervention.client_id, {
+        $push: { interventions: intervention._id },
+      });
+      ServiceProvider.findByIdAndUpdate(intervention.sp_id, {
+        $push: { interventions: intervention._id },
+      });
       socket.join(intervention._id);
       //Notify Sp
       socket.emit("wait", intervention);
