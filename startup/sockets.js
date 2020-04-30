@@ -20,10 +20,11 @@ module.exports = function (io) {
       // add intervention to sp & client
       // awaiting for these 2 requests will
       // slow response time down
-      Client.findByIdAndUpdate(intervention.client_id, {
+      console.log(intervention.client_id);
+      await Client.findByIdAndUpdate(intervention.client_id, {
         $push: { interventions: intervention._id },
       });
-      ServiceProvider.findByIdAndUpdate(intervention.sp_id, {
+      await ServiceProvider.findByIdAndUpdate(intervention.sp_id, {
         $push: { interventions: intervention._id },
       });
       socket.join(intervention._id);
