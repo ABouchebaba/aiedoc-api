@@ -11,6 +11,7 @@ const {
   NOT_VALIDATED,
   DIPLOMAS,
 } = require("../constants/serviceProvider");
+const axios = require("axios");
 
 const spSchema = new mongoose.Schema(
   {
