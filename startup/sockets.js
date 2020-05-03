@@ -8,6 +8,7 @@ const {
   CANCELED,
   VALIDATED,
 } = require("../constants/intervention");
+const axios = require("axios");
 
 module.exports = function (io) {
   // exploit io ...
@@ -17,10 +18,28 @@ module.exports = function (io) {
     socket.on("init", async (int) => {
       // save intervention to db
       const intervention = await Intervention.create(int);
+
+      //Notify sp
+      // put app id in env or config file
+      // get sp push token from DB
+      // put the hole thing in a separate file
+      axios
+        .post("https://onesignal.com/api/v1/notifications", {
+          app_id: "aac6ed8b-9b71-4cd7-95c4-dc0931101a87",
+          include_player_ids: ["95bff5c7-8926-4391-8d98-7622aa667760"],
+          data: intervention,
+        })
+        .then((res) => {
+          console.log("sp notified !!!!!!");
+        })
+        .catch((err) => {
+          console.log("An error occured while notifying sp");
+        });
+
       // add intervention to sp & client
       // awaiting for these 2 requests will
       // slow response time down
-      console.log(intervention.client_id);
+      // console.log(intervention.client_id);
       await Client.findByIdAndUpdate(intervention.client_id, {
         $push: { interventions: intervention._id },
       });

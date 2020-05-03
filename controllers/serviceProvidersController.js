@@ -6,6 +6,9 @@ const fs = require("fs");
 
 /// TODO: Add relevant attributes
 module.exports._create = async (req, res) => {
+  console.log(req.files);
+  return;
+
   let sp = await ServiceProvider.findOne({ phone: req.body.phone });
   if (sp) return res.status(400).send("Service provider already registered");
 
