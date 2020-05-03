@@ -33,7 +33,9 @@ module.exports = function (io) {
           console.log("sp notified !!!!!!");
         })
         .catch((err) => {
-          console.log("An error occured while notifying sp " + err.message);
+          console.log(
+            "An error occured while notifying sp " + err.response.data
+          );
         });
 
       // add intervention to sp & client
