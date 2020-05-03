@@ -104,6 +104,7 @@ const spSchema = new mongoose.Schema(
       },
     ],
     payments: [{ date: Date, amount: Number }],
+    pushToken: String,
   },
   {
     timestamps: true,
@@ -115,6 +116,25 @@ spSchema.methods.generateAuthToken = function () {
     { _id: this._id, roles: ["sp"] },
     config.get("jwtPrivateKey")
   );
+};
+
+spSchema.methods.notify = function (intervention) {
+  // put app id in env or config file
+  // get sp push token from DB
+  // put the hole thing in a separate file
+  axios
+    .post("https://onesignal.com/api/v1/notifications", {
+      app_id: "aac6ed8b-9b71-4cd7-95c4-dc0931101a87",
+      include_player_ids: [this.pushToken],
+      data: intervention,
+      contents: { en: "Vous avez reçu une demande d'intervention." },
+    })
+    .then((res) => {
+      console.log("sp notified !!!!!!");
+    })
+    .catch((err) => {
+      console.log("An error occured while notifying sp " + err.response.data);
+    });
 };
 
 const ServiceProvider = mongoose.model("ServiceProvider", spSchema);
@@ -135,6 +155,7 @@ function validateSP(sp) {
     wilaya: Joi.string()
       .valid(...WILAYAS)
       .required(),
+    pushToken: Joi.string(),
     commune: Joi.string().required(),
     types: Joi.array().items(Joi.string().valid(DIPLOMAS)),
     descriptions: Joi.array().items(Joi.string().max(255)),
