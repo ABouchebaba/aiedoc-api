@@ -28,6 +28,7 @@ module.exports = function (io) {
           app_id: "aac6ed8b-9b71-4cd7-95c4-dc0931101a87",
           include_player_ids: ["95bff5c7-8926-4391-8d98-7622aa667760"],
           data: intervention,
+          contents: { en: "English Message" },
         })
         .then((res) => {
           console.log("sp notified !!!!!!");
