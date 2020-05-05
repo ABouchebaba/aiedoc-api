@@ -121,8 +121,6 @@ spSchema.methods.generateAuthToken = function () {
 
 spSchema.methods.notify = function (intervention) {
   // put app id in env or config file
-  // get sp push token from DB
-  // put the hole thing in a separate file
   axios
     .post("https://onesignal.com/api/v1/notifications", {
       app_id: "aac6ed8b-9b71-4cd7-95c4-dc0931101a87",

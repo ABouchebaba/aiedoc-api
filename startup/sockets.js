@@ -130,7 +130,7 @@ module.exports = function (io) {
       }
 
       socket.to(int_id).emit("validated", intervention);
-      socket.emit("goReview");
+      socket.emit("goReview", intervention);
       console.log("Intervention validated by Sp");
     });
 
