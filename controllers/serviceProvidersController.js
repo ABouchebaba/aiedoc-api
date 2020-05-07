@@ -99,10 +99,15 @@ module.exports._validate = async (req, res) => {
 };
 
 module.exports._set_state = async (req, res) => {
+  const { state, longitude, latitude } = req.body;
   const sp = await ServiceProvider.findByIdAndUpdate(
     req.params.id,
     {
-      state: req.body.state,
+      state,
+      location: {
+        type: "Point",
+        coordinates: [longitude, latitude],
+      },
     },
     { new: true }
   );
