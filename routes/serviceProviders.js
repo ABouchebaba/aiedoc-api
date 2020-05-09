@@ -8,6 +8,8 @@ const validatePayment = require("../models/payment")["validate"];
 const express = require("express");
 const router = express.Router();
 const { ADMINS, CLIENT, SP } = require("../constants/roles");
+const upload = require("multer")();
+const { docStorage } = require("../controllers/storageController");
 
 const {
   _create,
@@ -42,7 +44,12 @@ let roles = {
 };
 
 // Register route
-router.post("/register", validateBody(validate), _create);
+router.post(
+  "/register",
+  docStorage.array("docs"),
+  // validateBody(validate),
+  _create
+);
 
 // Verify if user is already registered via phone number
 // add body validation middleware

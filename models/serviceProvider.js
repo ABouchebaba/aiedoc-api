@@ -58,7 +58,7 @@ const spSchema = new mongoose.Schema(
         {
           type: {
             type: String,
-            enum: DIPLOMAS,
+            // enum: DIPLOMAS,
           },
           description: {
             type: String,
@@ -156,9 +156,10 @@ function validateSP(sp) {
       .required(),
     pushToken: Joi.string(),
     commune: Joi.string().required(),
-    types: Joi.array().items(Joi.string().valid(DIPLOMAS)),
-    descriptions: Joi.array().items(Joi.string().max(255)),
-    files: Joi.array().items(Joi.object()),
+    // diplomas: Joi.array(),
+    types: Joi.array(), //.items(Joi.string().valid(DIPLOMAS)),
+    descriptions: Joi.array(), //.items(Joi.string().max(255)),
+    docs: Joi.array(), //.items(Joi.object()),
     services: Joi.array().items(Joi.string()),
   };
 

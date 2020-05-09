@@ -1,7 +1,7 @@
 // const morgan = require("morgan");
 // const debug = require("debug")("app:startup"); // need to set the DEBUG env variable to  app:startup
 const express = require("express");
-const fileUpload = require("express-fileupload");
+// const fileUpload = require("express-fileupload");
 
 const error = require("../middlewares/error");
 
@@ -20,7 +20,7 @@ module.exports = function (app) {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
   app.use(express.static("public"));
-  app.use(fileUpload());
+  // app.use(fileUpload());
 
   app.use("/", home);
   app.use("/api/serviceTypes", serviceTypes);

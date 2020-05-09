@@ -3,34 +3,38 @@ const { Payment } = require("../models/payment");
 const { saveOne, saveAs } = require("./fileController");
 const _ = require("lodash");
 const fs = require("fs");
+const { promisify } = require("util");
+
+const unlinkAsync = promisify(fs.unlink);
 
 /// TODO: Add relevant attributes
 module.exports._create = async (req, res) => {
-  console.log(req.files);
-  return;
-
   let sp = await ServiceProvider.findOne({ phone: req.body.phone });
-  if (sp) return res.status(400).send("Service provider already registered");
+  if (sp) {
+    // remove files ...
+    req.files.map(async (f) => await unlinkAsync(f.path));
+    return res.status(400).send("Service provider already registered");
+  }
 
-  // 1st .files comes from express upload module
-  // 2nd .files comes from body key
-  const files = Object.values(req.files.files);
   let diplomas = [];
+  if (req.files.length == 1) {
+    req.body.types = [req.body.types];
+    req.body.descriptions = [req.body.descriptions];
+  }
 
-  for (let i = 0; i < files.length; i++) {
-    const dip = await saveOne(files[i], "files/diplomas");
+  for (let i = 0; i < req.files.length; i++) {
     diplomas = [
       ...diplomas,
       {
         type: req.body.types[i],
         description: req.body.descriptions[i],
-        file: dip,
+        file: req.files[i].path.slice(req.files[i].path.indexOf("\\") + 1),
       },
     ];
   }
 
   req.body.diplomas = diplomas;
-
+  req.body.services = JSON.parse(req.body.services);
   sp = await ServiceProvider.create(
     _.pick(req.body, [
       "email",
@@ -42,6 +46,7 @@ module.exports._create = async (req, res) => {
       "wilaya",
       "commune",
       "sex",
+      "services",
       "diplomas",
     ])
   );
