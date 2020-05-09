@@ -28,7 +28,7 @@ module.exports._create = async (req, res) => {
       {
         type: req.body.types[i],
         description: req.body.descriptions[i],
-        file: req.files[i].path.slice(req.files[i].path.indexOf("\\") + 1),
+        file: req.files[i].path.slice(req.files[i].path.indexOf("/") + 1),
       },
     ];
   }
