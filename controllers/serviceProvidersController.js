@@ -17,10 +17,8 @@ module.exports._create = async (req, res) => {
   }
 
   let diplomas = [];
-  if (req.files.length == 1) {
-    req.body.types = [req.body.types];
-    req.body.descriptions = [req.body.descriptions];
-  }
+  req.body.types = JSON.parse(req.body.types);
+  req.body.descriptions = JSON.parse(req.body.descriptions);
 
   for (let i = 0; i < req.files.length; i++) {
     diplomas = [
