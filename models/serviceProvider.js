@@ -132,7 +132,7 @@ spSchema.methods.notify = function (intervention) {
       console.log("sp notified !!!!!!");
     })
     .catch((err) => {
-      console.log("An error occured while notifying sp " + err.response.data);
+      console.log("An error occured while notifying sp " + err.message);
     });
 };
 
