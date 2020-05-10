@@ -7,6 +7,7 @@ const { validate } = require("../models/product");
 const express = require("express");
 const router = express.Router();
 const { ADMINS } = require("../constants/roles");
+const { productStorage } = require("../controllers/storageController");
 
 const {
   _create,
@@ -37,7 +38,16 @@ router.get("/:id", auth, validateObjectId, _read_id);
  * 3. to have a valid request body
  */
 // CREATE
-router.post("/", [auth, role(roles.CREATE), validateBody(validate)], _create);
+router.post(
+  "/",
+  [
+    auth,
+    role(roles.CREATE),
+    // validateBody(validate),
+    productStorage.array("images"),
+  ],
+  _create
+);
 
 router.post("/:id/images", [auth, role(roles.ADD_IMAGES)], _add_image);
 

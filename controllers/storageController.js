@@ -11,3 +11,14 @@ var docStorage = multer.diskStorage({
 });
 
 module.exports.docStorage = multer({ storage: docStorage });
+
+var productStorage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "public/images/products/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, uuidv4() + file.originalname); //Appending .jpg
+  },
+});
+
+module.exports.productStorage = multer({ storage: productStorage });

@@ -4,13 +4,11 @@ const fs = require("fs");
 const _ = require("lodash");
 
 module.exports._create = async (req, res) => {
+  let images = req.files.map((f) => {
+    f.path.slice(f.path.indexOf("/") + 1);
+  });
+  req.body.images = images;
   const product = await Product.create(req.body);
-
-  const images = await save(req.files, `images/products`);
-
-  product.images = images;
-  product.save();
-
   res.send(product);
 };
 

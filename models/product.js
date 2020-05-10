@@ -54,7 +54,7 @@ function validateProduct(product) {
         option: Joi.string().required(),
       })
     ),
-    images: Joi.array().items(Joi.string()),
+    images: Joi.array(), //.items(Joi.string()),
   };
 
   return Joi.validate(product, schema);
