@@ -105,7 +105,7 @@ const spSchema = new mongoose.Schema(
       },
     ],
     payments: [{ date: Date, amount: Number }],
-    pushToken: String,
+    pushNotificationId: String,
   },
   {
     timestamps: true,
@@ -124,7 +124,7 @@ spSchema.methods.notify = function (intervention) {
   axios
     .post("https://onesignal.com/api/v1/notifications", {
       app_id: "aac6ed8b-9b71-4cd7-95c4-dc0931101a87",
-      include_player_ids: [this.pushToken],
+      include_player_ids: [this.pushNotificationId],
       data: intervention,
       contents: { en: "Vous avez reçu une demande d'intervention." },
     })
@@ -154,7 +154,7 @@ function validateSP(sp) {
     wilaya: Joi.string()
       .valid(...WILAYAS)
       .required(),
-    pushToken: Joi.string(),
+    pushNotificationId: Joi.string(),
     commune: Joi.string().required(),
     // diplomas: Joi.array(),
     types: Joi.array(), //.items(Joi.string().valid(DIPLOMAS)),

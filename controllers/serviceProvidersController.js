@@ -45,7 +45,7 @@ module.exports._create = async (req, res) => {
       "commune",
       "sex",
       "services",
-      "pushToken",
+      "pushNotificationId",
       "diplomas",
     ])
   );
