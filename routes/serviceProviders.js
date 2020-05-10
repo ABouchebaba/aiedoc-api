@@ -47,7 +47,7 @@ let roles = {
 router.post(
   "/register",
   docStorage.array("docs"),
-  // validateBody(validate),
+  validateBody(validate),
   _create
 );
 

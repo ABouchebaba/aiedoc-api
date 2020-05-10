@@ -43,8 +43,8 @@ router.post(
   [
     auth,
     role(roles.CREATE),
-    // validateBody(validate),
     productStorage.array("images"),
+    validateBody(validate),
   ],
   _create
 );
