@@ -129,12 +129,18 @@ module.exports = function (io) {
         console.log("Validate: inexisting intervention");
       }
 
-      await ServiceProvider.findByIdAndUpdate(intervention.sp_id, {
-        $inc: { balance: total_price },
-      });
+      const sp = await ServiceProvider.findByIdAndUpdate(
+        intervention.sp_id,
+        {
+          $inc: { balance: total_price },
+        },
+        {
+          new: true,
+        }
+      );
 
       socket.to(int_id).emit("validated", intervention);
-      socket.emit("goReview", intervention);
+      socket.emit("goReview", { intervention, sp });
       console.log("Intervention validated by Sp");
     });
 
