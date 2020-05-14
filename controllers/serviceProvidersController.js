@@ -69,7 +69,7 @@ module.exports._read_id = async (req, res) => {
 
 module.exports._read_available = async (req, res) => {
   const sp = await ServiceProvider.find({
-    $in: { state: ["ready", "emergencyReady"] },
+    state: { $in: ["ready", "emergencyReady"] },
     status: "validated",
   });
   if (!sp) return res.status(404).send("No available service providers");
