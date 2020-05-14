@@ -117,7 +117,7 @@ module.exports._set_state = async (req, res) => {
   );
   if (!sp) return res.status(404).send("Service provider id not found");
 
-  return res.send(sp.state.coordinates);
+  return res.send(sp.state);
 };
 
 module.exports._set_profile_picture = async (req, res) => {
