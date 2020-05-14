@@ -75,7 +75,7 @@ const spSchema = new mongoose.Schema(
       type: Number,
       min: 0,
       max: 100,
-      default: 0,
+      default: 20,
     },
     state: {
       type: String,
