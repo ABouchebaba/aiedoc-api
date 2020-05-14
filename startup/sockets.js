@@ -54,6 +54,7 @@ module.exports = function (io) {
         console.log("CANCEL: inexisting intervention");
       }
       socket.emit("canceled", intervention);
+      socket.to(int_id).emit("canceled", int_id);
       console.log("Intervention canceled by client");
     });
 
