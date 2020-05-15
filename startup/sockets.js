@@ -59,7 +59,16 @@ module.exports = function (io) {
     });
 
     socket.on("refuse", async (int_id) => {
-      const intervention = await Intervention.findByIdAndUpdate(
+      let intervention = await Intervention.findById(int_id);
+
+      if (intervention.state === CANCELED) {
+        // user canceled the intervention
+        socket.emit("canceled");
+        console.log("REFUSING : Intervention canceled by client");
+        return;
+      }
+
+      intervention = await Intervention.findByIdAndUpdate(
         int_id,
         { state: REFUSED },
         { new: true }
@@ -87,7 +96,16 @@ module.exports = function (io) {
     });
 
     socket.on("accept", async (int_id) => {
-      const intervention = await Intervention.findByIdAndUpdate(
+      let intervention = await Intervention.findById(int_id);
+
+      if (intervention.state === CANCELED) {
+        // user canceled the intervention
+        socket.emit("canceled");
+        console.log("ACCEPTING : Intervention canceled");
+        return;
+      }
+
+      intervention = await Intervention.findByIdAndUpdate(
         int_id,
         { state: ACCEPTED },
         { new: true }
@@ -103,7 +121,15 @@ module.exports = function (io) {
     });
 
     socket.on("finish", async (int_id) => {
-      const intervention = await Intervention.findByIdAndUpdate(
+      let intervention = await Intervention.findById(int_id);
+
+      if (intervention.state === CANCELED) {
+        // user canceled the intervention
+        socket.emit("canceled");
+        console.log("FINISHING : Intervention canceled by client");
+        return;
+      }
+      intervention = await Intervention.findByIdAndUpdate(
         int_id,
         { state: FINISHED },
         { new: true }
