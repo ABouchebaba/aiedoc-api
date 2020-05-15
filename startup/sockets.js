@@ -8,7 +8,6 @@ const {
   CANCELED,
   VALIDATED,
 } = require("../constants/intervention");
-const axios = require("axios");
 
 module.exports = function (io) {
   // exploit io ...
@@ -111,12 +110,16 @@ module.exports = function (io) {
         { new: true }
       );
       if (!intervention) {
-        // Handle Error
         console.log("Accept: inexisting intervention");
+        return;
       }
+      const client = await Client.findById(
+        intervention.client_id,
+        "phone firstname lastname birthdate"
+      );
       socket.join(int_id);
       socket.to(int_id).emit("accepted", intervention);
-      socket.emit("goWait", intervention);
+      socket.emit("goWait", { intervention, client });
       console.log("Intervention accepted by sp");
     });
 
