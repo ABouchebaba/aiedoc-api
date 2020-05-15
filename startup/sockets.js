@@ -19,9 +19,6 @@ module.exports = function (io) {
       const intervention = await Intervention.create(int);
 
       // add intervention to sp & client
-      // awaiting for these 2 requests will
-      // slow response time down
-      // console.log(intervention.client_id);
       const client = await Client.findByIdAndUpdate(
         intervention.client_id,
         {
