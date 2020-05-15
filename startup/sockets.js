@@ -22,9 +22,14 @@ module.exports = function (io) {
       // awaiting for these 2 requests will
       // slow response time down
       // console.log(intervention.client_id);
-      await Client.findByIdAndUpdate(intervention.client_id, {
-        $push: { interventions: intervention._id },
-      });
+      const client = await Client.findByIdAndUpdate(
+        intervention.client_id,
+        {
+          $push: { interventions: intervention._id },
+        },
+        { new: true }
+      ).select("phone firstname lastname birthdate");
+
       const sp = await ServiceProvider.findByIdAndUpdate(
         intervention.sp_id,
         {
@@ -34,7 +39,7 @@ module.exports = function (io) {
       );
 
       //Notify sp
-      sp.notify(intervention);
+      sp.notify({ intervention, client });
 
       socket.join(intervention._id);
       //Notify Sp
@@ -113,13 +118,10 @@ module.exports = function (io) {
         console.log("Accept: inexisting intervention");
         return;
       }
-      const client = await Client.findById(
-        intervention.client_id,
-        "phone firstname lastname birthdate"
-      );
+
       socket.join(int_id);
       socket.to(int_id).emit("accepted", intervention);
-      socket.emit("goWait", { intervention, client });
+      socket.emit("goWait", intervention);
       console.log("Intervention accepted by sp");
     });
 
