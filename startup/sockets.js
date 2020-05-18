@@ -54,10 +54,8 @@ module.exports = function (io) {
       console.log(lon, lat);
       const dist = getDistance({ lat, lon }, location);
       console.log("dist", dist);
-      // to send distance to sp
-      client.distance = dist;
       //Notify sp
-      sp.notify({ intervention, client });
+      sp.notify({ intervention, client, distance: dist });
 
       socket.join(intervention._id);
       //Notify Sp
