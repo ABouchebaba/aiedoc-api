@@ -29,7 +29,7 @@ module.exports._read = async (req, res) => {
 
 module.exports._update = async (req, res) => {
   const category = await Category.findByIdAndUpdate(req.params.id, req.body, {
-    new: true
+    new: true,
   });
   if (!category) return res.status(404).send("Category not found");
 

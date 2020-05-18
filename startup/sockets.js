@@ -8,13 +8,28 @@ const {
   CANCELED,
   VALIDATED,
 } = require("../constants/intervention");
+const { getDistance } = require("geolib");
 
 module.exports = function (io) {
   // exploit io ...
   io.on("connection", (socket) => {
     console.log("A user connected");
+    let nb = Object.keys(io.sockets.sockets).length;
+    console.log(nb);
 
-    socket.on("init", async (int) => {
+    socket.on("destroy", () => {
+      socket.disconnect();
+    });
+
+    socket.on("disconnect", (reason) => {
+      console.log("A user disconnected : " + reason);
+
+      if (reason === "ping timeout") {
+        // socket.connect();
+      }
+    });
+
+    socket.on("init", async ({ int, location }) => {
       // save intervention to db
       const intervention = await Intervention.create(int);
 
@@ -35,6 +50,12 @@ module.exports = function (io) {
         { new: true }
       );
 
+      const [lon, lat] = sp.location.coordinates;
+      console.log(lon, lat);
+      const dist = getDistance({ lat, lon }, location);
+      console.log("dist", dist);
+      // to send distance to sp
+      client.distance = dist;
       //Notify sp
       sp.notify({ intervention, client });
 
@@ -211,13 +232,6 @@ module.exports = function (io) {
       socket.join(int_id);
       socket.emit("resync", intervention);
       console.log("Resync : " + intervention._id);
-    });
-
-    socket.on("disconnect", (reason) => {
-      console.log("A user disconnected : " + reason);
-      if (reason === "ping timeout") {
-        // socket.connect();
-      }
     });
   });
 };
