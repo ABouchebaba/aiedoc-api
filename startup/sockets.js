@@ -52,10 +52,10 @@ module.exports = function (io) {
 
       const [lon, lat] = sp.location.coordinates;
       console.log(lon, lat);
-      const dist = getDistance({ lat, lon }, location);
-      console.log("dist", dist);
+      const distance = getDistance({ lat, lon }, location);
+      console.log("dist", distance);
       //Notify sp
-      sp.notify({ intervention, client, distance: dist });
+      sp.notify({ intervention, client, distance });
 
       socket.join(intervention._id);
       //Notify Sp
