@@ -4,7 +4,7 @@ const { PENDING, COMMAND_STATUSES } = require("../constants/command");
 
 let commandSchema = new mongoose.Schema(
   {
-    user_id: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       refPath: "user_type",
       required: true,
@@ -52,7 +52,7 @@ const Command = mongoose.model("Command", commandSchema);
 
 function validateCommand(command) {
   const schema = {
-    user_id: Joi.objectId().required(),
+    user: Joi.objectId().required(),
     user_type: Joi.string().required(),
     address: Joi.string().required(),
     total_price: Joi.number().min(0).required(),

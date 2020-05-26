@@ -7,7 +7,7 @@ module.exports._create = async (req, res) => {
   const command = await Command.create(req.body);
   let User = command.user_type === "Client" ? Client : ServiceProvider;
 
-  await User.findByIdAndUpdate(command.user_id, {
+  await User.findByIdAndUpdate(command.user, {
     $push: { commands: command._id },
   });
   res.send(command);
@@ -21,7 +21,7 @@ module.exports._read = async (req, res) => {
 module.exports._read_id = async (req, res) => {
   const command = await Command.findById(req.params.id)
     .populate("products.product", "-options")
-    .populate("user_id", "firstname lastname phone");
+    .populate("user", "firstname lastname phone");
 
   if (!command) return res.status(404).send("Command not found");
 
