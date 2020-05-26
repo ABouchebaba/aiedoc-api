@@ -19,7 +19,9 @@ module.exports._read = async (req, res) => {
 };
 
 module.exports._read_id = async (req, res) => {
-  const command = await Command.findById(req.params.id);
+  const command = await (await Command.findById(req.params.id))
+    .populate("products.product_id")
+    .populate("user_id");
 
   if (!command) return res.status(404).send("Command not found");
 
