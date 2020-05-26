@@ -14,6 +14,10 @@ let commandSchema = new mongoose.Schema(
       required: true,
       enum: ["Client", "ServiceProvider"],
     },
+    address: {
+      type: String,
+      required: true,
+    },
     status: {
       type: String,
       enum: COMMAND_STATUSES,
@@ -26,13 +30,9 @@ let commandSchema = new mongoose.Schema(
     },
     products: [
       {
-        product_id: {
+        product: {
           type: mongoose.Schema.Types.ObjectId,
           ref: "Product",
-          required: true,
-        },
-        product_name: {
-          type: String,
           required: true,
         },
         qty: {
@@ -54,12 +54,12 @@ function validateCommand(command) {
   const schema = {
     user_id: Joi.objectId().required(),
     user_type: Joi.string().required(),
+    address: Joi.string().required(),
     total_price: Joi.number().min(0).required(),
     products: Joi.array()
       .items(
         Joi.object({
-          product_id: Joi.objectId().required(),
-          product_name: Joi.string().required(),
+          product: Joi.objectId().required(),
           qty: Joi.number().min(1).required(),
           option: Joi.string().required(),
         })
