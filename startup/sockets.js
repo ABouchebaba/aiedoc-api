@@ -30,8 +30,16 @@ module.exports = function (io) {
     });
 
     socket.on("init", async ({ int, location }) => {
+      //TODO:  refactor client location
+      const client_location = {
+        type: "Point",
+        coordinates: [location.longitude, location.latitude],
+      };
       // save intervention to db
-      const intervention = await Intervention.create({ ...int, location });
+      const intervention = await Intervention.create({
+        ...int,
+        location: client_location,
+      });
 
       // add intervention to sp & client
       const client = await Client.findByIdAndUpdate(
