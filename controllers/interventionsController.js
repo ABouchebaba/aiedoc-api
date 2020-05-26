@@ -17,12 +17,16 @@ module.exports._create = async (req, res) => {
 };
 
 module.exports._read = async (req, res) => {
-  const interventions = await Intervention.find(); //.sort("name");
+  const interventions = await Intervention.find()
+    .populate("client_id", "firstname lastname phone")
+    .populate("sp_id", "firstname lastname phone"); //.sort("name");
   res.send(interventions);
 };
 
 module.exports._read_id = async (req, res) => {
-  const intervention = await Intervention.findById(req.params.id);
+  const intervention = await Intervention.findById(req.params.id)
+    .populate("client_id", "firstname lastname phone")
+    .populate("sp_id", "firstname lastname phone");
 
   if (!intervention) return res.status(404).send("Intervention not found");
 
