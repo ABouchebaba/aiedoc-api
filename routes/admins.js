@@ -15,9 +15,9 @@ const {
 } = require("../controllers/adminsController");
 
 let roles = {
-  GET_ALL: ADMIN,
-  GET_ONE: ADMIN,
-  CREATE: ADMIN,
+  GET_ALL: [ADMIN],
+  GET_ONE: [ADMIN],
+  CREATE: [ADMIN],
 };
 
 // GET_ALL

@@ -15,7 +15,9 @@ module.exports._read_id = async (req, res) => {
 };
 
 module.exports._create = async (req, res) => {
-  let admin = await Admin.findOne({ email: req.body.email });
+  let admin = await Admin.findOne({
+    $or: [{ email: req.body.email }, { username: req.body.username }],
+  });
   if (admin) return res.status(400).send("Admin already registered");
 
   admin = await Admin.create(
@@ -27,7 +29,7 @@ module.exports._create = async (req, res) => {
       "birthdate",
       "picture",
       "password",
-      "roles"
+      "roles",
     ])
   );
 
@@ -56,7 +58,7 @@ module.exports._authenticate = async (req, res) => {
         "email",
         "birthdate",
         "picture",
-        "roles"
+        "roles",
       ])
     );
 };
