@@ -12,12 +12,14 @@ const {
   _read,
   _read_id,
   _authenticate,
+  _delete,
 } = require("../controllers/adminsController");
 
 let roles = {
   GET_ALL: [ADMIN],
   GET_ONE: [ADMIN],
   CREATE: [ADMIN],
+  DELETE: [ADMIN],
 };
 
 // GET_ALL
@@ -30,5 +32,7 @@ router.get("/:id", auth, role(roles.GET_ONE), validateObjectId, _read_id);
 router.post("/", auth, role(roles.CREATE), validateBody(validate), _create);
 
 router.post("/auth", validateBody(validateLogin), _authenticate);
+
+router.delete("/:id", auth, role(roles.DELETE), validateObjectId, _delete);
 
 module.exports = router;

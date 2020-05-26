@@ -62,3 +62,10 @@ module.exports._authenticate = async (req, res) => {
       ])
     );
 };
+
+module.exports._delete = async (req, res) => {
+  const admin = await Admin.findByIdAndDelete(req.params.id);
+  if (!admin) return res.status(404).send("Admin id not found");
+
+  return res.send(admin);
+};
