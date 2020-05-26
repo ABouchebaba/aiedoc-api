@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
 const _ = require("lodash");
+const location = require("./location");
 const {
   INTERVENTION_STATES,
   PENDING,
@@ -26,6 +27,7 @@ const interventionSchema = new mongoose.Schema(
         required: true,
       },
     ],
+    location: { type: location },
     totalPrice: {
       type: Number,
       default: 0,

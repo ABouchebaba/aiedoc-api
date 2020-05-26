@@ -31,7 +31,7 @@ module.exports = function (io) {
 
     socket.on("init", async ({ int, location }) => {
       // save intervention to db
-      const intervention = await Intervention.create(int);
+      const intervention = await Intervention.create({ ...int, location });
 
       // add intervention to sp & client
       const client = await Client.findByIdAndUpdate(
