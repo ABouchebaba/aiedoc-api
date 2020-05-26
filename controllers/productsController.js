@@ -55,12 +55,12 @@ module.exports._remove_images = async (req, res) => {
 };
 
 module.exports._read = async (req, res) => {
-  const products = await Product.find(); //.sort("name");
+  const products = await Product.find().populate("category"); //.sort("name");
   res.send(products);
 };
 
 module.exports._read_id = async (req, res) => {
-  const product = await Product.findById(req.params.id);
+  const product = await Product.findById(req.params.id).populate("category");
 
   if (!product) return res.status(404).send("Product not found");
 
