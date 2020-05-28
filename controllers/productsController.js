@@ -6,8 +6,15 @@ const _ = require("lodash");
 module.exports._create = async (req, res) => {
   let images = req.files.map((f) => f.path.slice(f.path.indexOf("/") + 1));
   req.body.images = images;
+
+  try {
+    req.body.options = JSON.parse(req.body.options);
+  } catch (e) {
+    return res.status(400).send("Unexpected Options format");
+  }
+
   const product = await Product.create(req.body);
-  res.send(product);
+  return res.send(product);
 };
 
 module.exports._add_image = async (req, res) => {

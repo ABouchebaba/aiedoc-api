@@ -59,19 +59,20 @@ function validateProduct(product) {
   const schema = {
     name: Joi.string().max(100).required(),
     ref: Joi.string().max(100).required(),
-    description: Joi.string(),
+    description: Joi.string().required(),
     brand: Joi.string().required(),
     category: Joi.objectId().required(),
     price: Joi.number().min(0).required(),
     priceHT: Joi.number().min(0).required(),
     discount: Joi.number().min(0).max(100),
-    options: Joi.array().items(
-      Joi.object({
-        qty: Joi.number().min(0).required(),
-        option: Joi.string().required(),
-      })
-    ),
-    images: Joi.array(), //.items(Joi.string()),
+    options: Joi.string(),
+    //array().items(
+    // Joi.object({
+    //   qty: Joi.number().min(0).required(),
+    //   option: Joi.string().required(),
+    // })
+    // ),
+    images: Joi.array(),
   };
 
   return Joi.validate(product, schema);
