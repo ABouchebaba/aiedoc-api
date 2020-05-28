@@ -1,7 +1,9 @@
 const { Product } = require("../models/product");
 const { save } = require("./fileController");
 const fs = require("fs");
-const _ = require("lodash");
+const { promisify } = require("util");
+
+const unlinkAsync = promisify(fs.unlink);
 
 module.exports._create = async (req, res) => {
   let images = req.files.map((f) => f.path.slice(f.path.indexOf("/") + 1));
@@ -18,11 +20,11 @@ module.exports._create = async (req, res) => {
 };
 
 module.exports._add_image = async (req, res) => {
-  let product = await Product.findById(req.params.id);
-  if (!product) {
-    return res.status(404).send("Product not found");
+  if (!req.files) {
+    return res.status(400).send("No image found");
   }
-  const images = await save(req.files, `images/products`);
+
+  let images = req.files.map((f) => f.path.slice(f.path.indexOf("/") + 1));
 
   product = await Product.findByIdAndUpdate(
     req.params.id,
@@ -31,6 +33,11 @@ module.exports._add_image = async (req, res) => {
     },
     { new: true }
   );
+  if (!product) {
+    //remove added images
+    await Promise.all(req.files.map(async (f) => await unlinkAsync(f.path)));
+    return res.status(404).send("Product not found");
+  }
 
   res.send(product);
 };
@@ -48,15 +55,9 @@ module.exports._remove_images = async (req, res) => {
     return res.status(404).send("Product not found");
   }
 
-  req.body.links.map((link) => {
-    fs.unlink(`./public/${link}`, (err) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("Removed link ...");
-      }
-    });
-  });
+  await Promise.all(
+    req.body.links.map(async (l) => await unlinkAsync("public/" + l))
+  );
 
   res.send(product);
 };

@@ -66,13 +66,27 @@ function validateProduct(product) {
     priceHT: Joi.number().min(0).required(),
     discount: Joi.number().min(0).max(100),
     options: Joi.string(),
-    //array().items(
-    // Joi.object({
-    //   qty: Joi.number().min(0).required(),
-    //   option: Joi.string().required(),
-    // })
-    // ),
     images: Joi.array(),
+  };
+
+  return Joi.validate(product, schema);
+}
+function validateProductUpdate(product) {
+  const schema = {
+    name: Joi.string().max(100),
+    ref: Joi.string().max(100),
+    description: Joi.string(),
+    brand: Joi.string(),
+    category: Joi.objectId(),
+    price: Joi.number().min(0),
+    priceHT: Joi.number().min(0),
+    discount: Joi.number().min(0).max(100),
+    options: Joi.array().items(
+      Joi.object({
+        qty: Joi.number().min(0),
+        option: Joi.string(),
+      })
+    ),
   };
 
   return Joi.validate(product, schema);
@@ -80,3 +94,4 @@ function validateProduct(product) {
 
 exports.Product = Product;
 exports.validate = validateProduct;
+exports.validateUpdate = validateProductUpdate;

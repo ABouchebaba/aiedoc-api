@@ -2,7 +2,7 @@ const auth = require("../middlewares/auth");
 const role = require("../middlewares/role");
 const validateBody = require("../middlewares/validateBody");
 const validateObjectId = require("../middlewares/validateObjectId");
-const { validate } = require("../models/product");
+const { validate, validateUpdate } = require("../models/product");
 
 const express = require("express");
 const router = express.Router();
@@ -49,7 +49,11 @@ router.post(
   _create
 );
 
-router.post("/:id/images", [auth, role(roles.ADD_IMAGES)], _add_image);
+router.post(
+  "/:id/images",
+  [auth, role(roles.ADD_IMAGES), productStorage.array("images")],
+  _add_image
+);
 
 /*
  * The user needs
@@ -63,7 +67,7 @@ const put_middlewares = [
   auth,
   role(roles.UPDATE),
   validateObjectId,
-  validateBody(validate),
+  validateBody(validateUpdate),
 ];
 router.put("/:id", put_middlewares, _update);
 
