@@ -18,7 +18,7 @@ const {
 let roles = {
   READ_ALL: ADMINS,
   CREATE: [CLIENT, SP],
-  //   UPDATE_STATUS: ALL,
+  UPDATE_STATUS: ADMINS,
 };
 
 router.get("/", [auth, role(roles.READ_ALL)], _read);
@@ -44,11 +44,11 @@ router.post("/", [auth, role(roles.CREATE), validateBody(validate)], _create);
 // UPDATE
 const put_middlewares = [
   auth,
-  //   role(roles.UPDATE_STATUS),
   validateObjectId,
-  validateBody(validate),
+  role(roles.UPDATE_STATUS),
+  validateBody(validateStatus),
 ];
-router.put("/:id", put_middlewares, _update_status);
+router.put("/:id/status", ...put_middlewares, _update_status);
 
 /*
  * The user needs
