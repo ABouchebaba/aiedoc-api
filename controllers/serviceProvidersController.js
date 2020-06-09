@@ -3,6 +3,7 @@ const { Payment } = require("../models/payment");
 const { saveOne, saveAs } = require("./fileController");
 const _ = require("lodash");
 const fs = require("fs");
+const path = require("path");
 const { promisify } = require("util");
 
 const unlinkAsync = promisify(fs.unlink);
@@ -12,7 +13,7 @@ module.exports._create = async (req, res) => {
   let sp = await ServiceProvider.findOne({ phone: req.body.phone });
   if (sp) {
     // remove files ...
-    req.files.map(async (f) => await unlinkAsync(f.path));
+    req.files.map(async (f) => await unlinkAsync(path.join("public", f.path)));
     return res.status(400).send("Service provider already registered");
   }
 
@@ -21,12 +22,13 @@ module.exports._create = async (req, res) => {
   req.body.descriptions = JSON.parse(req.body.descriptions);
 
   for (let i = 0; i < req.files.length; i++) {
+    const filepath = req.files[i].path;
     diplomas = [
       ...diplomas,
       {
         type: req.body.types[i],
         description: req.body.descriptions[i],
-        file: req.files[i].path.slice(req.files[i].path.indexOf("/") + 1),
+        file: filepath.slice(filepath.indexOf(path.sep) + 1),
       },
     ];
   }

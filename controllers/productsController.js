@@ -1,12 +1,12 @@
 const { Product } = require("../models/product");
-const { save } = require("./fileController");
 const fs = require("fs");
+const path = require("path");
 const { promisify } = require("util");
 
 const unlinkAsync = promisify(fs.unlink);
 
 module.exports._create = async (req, res) => {
-  let images = req.files.map((f) => f.path.slice(f.path.indexOf("/") + 1));
+  let images = req.files.map((f) => f.path.slice(f.path.indexOf(path.sep) + 1));
   req.body.images = images;
 
   try {
@@ -24,7 +24,9 @@ module.exports._add_image = async (req, res) => {
     return res.status(400).send("No image found");
   }
 
-  let images = req.files.map((f) => f.path.slice(f.path.indexOf("/") + 1));
+  // remove "public" from image paths => to be accessible from api link
+  // ex : https://aiedoc.herokuapp.com/image-path
+  let images = req.files.map((f) => f.path.slice(f.path.indexOf(path.sep) + 1));
 
   product = await Product.findByIdAndUpdate(
     req.params.id,
@@ -56,7 +58,7 @@ module.exports._remove_images = async (req, res) => {
   }
 
   await Promise.all(
-    req.body.links.map(async (l) => await unlinkAsync("public/" + l))
+    req.body.links.map(async (l) => await unlinkAsync(path.join("public", l)))
   );
 
   res.send(product);

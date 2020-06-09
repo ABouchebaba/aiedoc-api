@@ -15,6 +15,7 @@ const categories = require("../routes/categories");
 const products = require("../routes/products");
 const payments = require("../routes/payments");
 const commands = require("../routes/commands");
+const stats = require("../routes/stats");
 
 module.exports = function (app) {
   app.use(express.json());
@@ -32,6 +33,7 @@ module.exports = function (app) {
   app.use("/api/products", products);
   app.use("/api/payments", payments);
   app.use("/api/commands", commands);
+  app.use("/api/stats", stats);
 
   app.use(error);
 };
