@@ -22,7 +22,7 @@ module.exports = function (app) {
   app.use(express.static("public"));
   // app.use(fileUpload());
 
-  app.use("/", home);
+  app.use("/api", home);
   app.use("/api/serviceTypes", serviceTypes);
   app.use("/api/clients", clients);
   app.use("/api/serviceProviders", serviceProviders);
