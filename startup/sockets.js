@@ -65,7 +65,7 @@ module.exports = function (io) {
       const distance = getDistance({ lat, lon }, location);
       console.log("dist", distance);
       //Notify sp
-      sp.notify({ intervention: [], client, distance });
+      sp.notify({ intervention, client, distance });
 
       socket.join(intervention._id);
       socket.emit("wait", intervention);
