@@ -35,11 +35,13 @@ module.exports = function (io) {
         type: "Point",
         coordinates: [location.longitude, location.latitude],
       };
+      console.log("int : ", int);
       // save intervention to db
       const intervention = await Intervention.create({
         ...int,
         location: client_location,
       });
+      console.log("intervention : ", intervention);
 
       // add intervention to sp & client
       const client = await Client.findByIdAndUpdate(
@@ -66,7 +68,6 @@ module.exports = function (io) {
       sp.notify({ intervention, client, distance });
 
       socket.join(intervention._id);
-      //Notify Sp
       socket.emit("wait", intervention);
       console.log("Intervention initialized");
     });
