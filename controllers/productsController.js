@@ -57,9 +57,12 @@ module.exports._remove_images = async (req, res) => {
     return res.status(404).send("Product not found");
   }
 
-  await Promise.all(
-    req.body.links.map(async (l) => await unlinkAsync(path.join("public", l)))
-  );
+  // removing images : no await => no blocking
+  req.body.links.map((l) => {
+    fs.exists(path.join("public", l), (exists) => {
+      if (exists) unlinkAsync(path.join("public", l));
+    });
+  });
 
   res.send(product);
 };
