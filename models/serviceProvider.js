@@ -171,6 +171,7 @@ function validatePhone(phone) {
     phone: Joi.string()
       .regex(/\+\d{12}/)
       .required(),
+    pushNotificationId: Joi.string().required(),
   };
 
   return Joi.validate(phone, schema);

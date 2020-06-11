@@ -80,7 +80,13 @@ module.exports._read_available = async (req, res) => {
 };
 
 module.exports._verifyPhone = async (req, res) => {
-  const sp = await ServiceProvider.findOne({ phone: req.body.phone });
+  const sp = await ServiceProvider.findOneAndUpdate(
+    { phone: req.body.phone },
+    {
+      pushNotificationId: req.body.pushNotificationId,
+    },
+    { new: true }
+  );
   if (sp) {
     const token = sp.generateAuthToken();
     return res.header("x-auth-token", token).send(sp);
