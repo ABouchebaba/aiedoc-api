@@ -13,7 +13,7 @@ module.exports._create = async (req, res) => {
   let sp = await ServiceProvider.findOne({ phone: req.body.phone });
   if (sp) {
     // remove files ...
-    req.files.map(async (f) => await unlinkAsync(path.join("public", f.path)));
+    req.files.map(async (f) => await unlinkAsync(f.path));
     return res.status(400).send("Service provider already registered");
   }
 
