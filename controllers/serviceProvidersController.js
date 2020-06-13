@@ -184,9 +184,12 @@ module.exports._interventions = async (req, res) => {
 };
 
 module.exports._commands = async (req, res) => {
-  const sp = await ServiceProvider.findById(req.params.id)
-    .populate("commands")
-    .select("commands");
+  const sp = await ServiceProvider.findById(req.params.id).populate({
+    path: "commands",
+    populate: { path: "products.product", select: "name" },
+    // select: "commands",
+  });
+  // .select("commands");
   if (!sp) return res.status(404).send("Service Provider id not found");
 
   return res.send(sp.commands);
