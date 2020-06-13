@@ -186,7 +186,7 @@ module.exports._interventions = async (req, res) => {
 module.exports._commands = async (req, res) => {
   const sp = await ServiceProvider.findById(req.params.id).populate({
     path: "commands",
-    populate: { path: "products.product", select: "name" },
+    populate: { path: "products.product", select: "name price" },
     // select: "commands",
   });
   // .select("commands");
