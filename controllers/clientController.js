@@ -44,9 +44,11 @@ module.exports._interventions = async (req, res) => {
 };
 
 module.exports._commands = async (req, res) => {
-  const client = await Client.findById(req.params.id)
-    .populate("commands")
-    .select("commands");
+  const client = await Client.findById(req.params.id).populate({
+    path: "commands",
+    populate: { path: "products.product", select: "name" },
+    // select: "commands",
+  });
   if (!client) return res.status(404).send("Client id not found");
 
   return res.send(client.commands);
