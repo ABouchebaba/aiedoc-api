@@ -8,6 +8,7 @@ const {
   CANCELED,
   VALIDATED,
 } = require("../constants/intervention");
+const { EMERGENCY_READY, VALIDATED } = require("../constants/serviceProvider");
 const { getDistance } = require("geolib");
 
 module.exports = function (io) {
@@ -27,6 +28,23 @@ module.exports = function (io) {
       if (reason === "ping timeout") {
         // socket.connect();
       }
+    });
+
+    socket.on("initEmergency", async ({ int, location }) => {
+      const sp = await ServiceProvider.find({
+        state: EMERGENCY_READY,
+        status: VALIDATED,
+        location: {
+          $near: {
+            $geometry: {
+              type: "Point",
+              coordinates: location,
+            },
+          },
+        },
+      });
+
+      console.log(sp);
     });
 
     socket.on("init", async ({ int, location }) => {

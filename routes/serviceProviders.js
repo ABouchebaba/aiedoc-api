@@ -26,6 +26,7 @@ const {
   _add_payment,
   _set_services,
   _set_profile_picture,
+  _closestEmergencyReady,
 } = require("../controllers/serviceProvidersController");
 
 let roles = {
@@ -54,6 +55,8 @@ router.post(
 // Verify if user is already registered via phone number
 // add body validation middleware
 router.post("/verifyPhone", validateBody(validatePhone), _verifyPhone);
+
+router.post("/closest", _closestEmergencyReady);
 
 // GET_ALL
 router.get("/", auth, role(roles.GET_ALL), _read);

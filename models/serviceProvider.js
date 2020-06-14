@@ -49,7 +49,7 @@ const spSchema = new mongoose.Schema(
     jobTitle: { type: String, maxlength: 255, required: true },
     balance: { type: Number, default: 0 },
     amountToPay: { type: Number, default: 0 },
-    location: { type: location },
+    location: { type: location, index: "2dsphere" },
     rating: { type: Number, min: 0, max: 5 },
     services: [String],
     picture: String,
@@ -86,6 +86,10 @@ const spSchema = new mongoose.Schema(
       type: String,
       enum: STATUSES,
       default: NOT_VALIDATED,
+    },
+    busy: {
+      type: Boolean,
+      default: false,
     },
     email: {
       type: String,

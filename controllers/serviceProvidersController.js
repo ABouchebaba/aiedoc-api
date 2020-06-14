@@ -5,6 +5,7 @@ const _ = require("lodash");
 const fs = require("fs");
 const path = require("path");
 const { promisify } = require("util");
+const { EMERGENCY_READY, VALIDATED } = require("../constants/serviceProvider");
 
 const unlinkAsync = promisify(fs.unlink);
 
@@ -236,4 +237,21 @@ module.exports._set_services = async (req, res) => {
   }
 
   res.send(sp);
+};
+
+module.exports._closestEmergencyReady = async (req, res) => {
+  const sp = await ServiceProvider.find({
+    state: EMERGENCY_READY,
+    status: VALIDATED,
+    location: {
+      $near: {
+        $geometry: {
+          type: "Point",
+          coordinates: req.location,
+        },
+      },
+    },
+  });
+
+  return res.send(sp);
 };
