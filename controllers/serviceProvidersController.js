@@ -243,6 +243,7 @@ module.exports._closestEmergencyReady = async (req, res) => {
   const sp = await ServiceProvider.find({
     state: EMERGENCY_READY,
     status: VALIDATED,
+    services: { $in: req.body.services },
     location: {
       $near: {
         $geometry: {
