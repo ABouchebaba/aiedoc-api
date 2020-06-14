@@ -8,7 +8,10 @@ const {
   CANCELED,
   VALIDATED,
 } = require("../constants/intervention");
-const { EMERGENCY_READY, VALIDATED } = require("../constants/serviceProvider");
+const {
+  EMERGENCY_READY,
+  VALIDATED: SP_VALIDATED,
+} = require("../constants/serviceProvider");
 const { getDistance } = require("geolib");
 
 module.exports = function (io) {
@@ -33,7 +36,7 @@ module.exports = function (io) {
     socket.on("initEmergency", async ({ int, location }) => {
       const sp = await ServiceProvider.find({
         state: EMERGENCY_READY,
-        status: VALIDATED,
+        status: SP_VALIDATED,
         location: {
           $near: {
             $geometry: {
