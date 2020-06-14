@@ -247,7 +247,7 @@ module.exports._closestEmergencyReady = async (req, res) => {
       $near: {
         $geometry: {
           type: "Point",
-          coordinates: req.location,
+          coordinates: req.body.location,
         },
       },
     },
