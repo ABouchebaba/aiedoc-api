@@ -84,6 +84,7 @@ module.exports = function (io) {
         intervention.sp_id,
         {
           $push: { interventions: intervention._id },
+          busy: true,
         },
         { new: true }
       );
@@ -135,6 +136,7 @@ module.exports = function (io) {
         intervention.sp_id,
         {
           $push: { interventions: intervention._id },
+          busy: true,
         },
         { new: true }
       );
@@ -161,6 +163,9 @@ module.exports = function (io) {
         // Handle Error
         console.log("CANCEL: inexisting intervention");
       }
+      await ServiceProvider.findByIdAndUpdate(intervention.sp_id, {
+        busy: false,
+      });
       socket.emit("canceled", intervention);
       socket.to(int_id).emit("canceled", int_id);
       console.log("Intervention canceled by client");
@@ -185,6 +190,9 @@ module.exports = function (io) {
         // Handle Error
         console.log("Remove : inexisting intervention");
       }
+      await ServiceProvider.findByIdAndUpdate(intervention.sp_id, {
+        busy: false,
+      });
       socket.join(int_id);
       socket.to(int_id).emit("refused", int_id);
       socket.emit("refused", int_id);
@@ -306,6 +314,9 @@ module.exports = function (io) {
         console.log("Sp Review: inexisting intervention");
       }
 
+      await ServiceProvider.findByIdAndUpdate(intervention.sp_id, {
+        busy: false,
+      });
       socket.emit("goHome");
       console.log("Intervention reviewed by Sp");
     });
