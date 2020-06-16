@@ -35,8 +35,6 @@ module.exports = function (io) {
     });
 
     socket.on("initEmergency", async ({ int, location }) => {
-      console.log("-------!!!!!!!!!!!! Emergency !!!!!!!!!!!!!!!!!!!!!!");
-
       const client_location = {
         type: "Point",
         coordinates: [location.longitude, location.latitude],
@@ -105,6 +103,12 @@ module.exports = function (io) {
     });
 
     socket.on("init", async ({ int, location }) => {
+      let sp = await ServiceProvider.findById(int.sp_id);
+      if (sp.busy) {
+        socket.emit("SpBusy");
+        return;
+      }
+
       //TODO:  refactor client location
       const client_location = {
         type: "Point",
