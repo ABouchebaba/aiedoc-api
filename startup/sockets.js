@@ -42,19 +42,17 @@ module.exports = function (io) {
         coordinates: [location.longitude, location.latitude],
       };
 
-      let sp = (
-        await ServiceProvider.find({
-          state: EMERGENCY_READY,
-          status: VALIDATED,
-          busy: false,
-          services: { $in: int.services },
-          location: {
-            $near: {
-              $geometry: client_location,
-            },
+      let sp = await ServiceProvider.find({
+        state: EMERGENCY_READY,
+        status: VALIDATED,
+        busy: false,
+        services: { $in: int.services },
+        location: {
+          $near: {
+            $geometry: client_location,
           },
-        }).limit(1)
-      )[0];
+        },
+      });
 
       console.log("SP ::: ", sp);
       return;
