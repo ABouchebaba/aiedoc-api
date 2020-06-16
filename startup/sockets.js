@@ -35,6 +35,8 @@ module.exports = function (io) {
     });
 
     socket.on("initEmergency", async ({ int, location }) => {
+      console.log("-------!!!!!!!!!!!! Emergency !!!!!!!!!!!!!!!!!!!!!!");
+
       const client_location = {
         type: "Point",
         coordinates: [location.longitude, location.latitude],
