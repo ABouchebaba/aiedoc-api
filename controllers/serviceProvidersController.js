@@ -252,7 +252,7 @@ module.exports._closestEmergencyReady = async (req, res) => {
         },
       },
     },
-  });
+  }).limit(1);
 
   return res.send(sp);
 };

@@ -7,6 +7,7 @@ const {
   FINISHED,
   CANCELED,
   VALIDATED,
+  EMERGENCY,
 } = require("../constants/intervention");
 const {
   EMERGENCY_READY,
@@ -34,18 +35,62 @@ module.exports = function (io) {
     });
 
     socket.on("initEmergency", async ({ int, location }) => {
-      const sp = await ServiceProvider.find({
-        state: EMERGENCY_READY,
-        status: SP_VALIDATED,
-        location: {
-          $near: {
-            $geometry: {
-              type: "Point",
-              coordinates: location,
+      const client_location = {
+        type: "Point",
+        coordinates: [location.longitude, location.latitude],
+      };
+
+      let sp = (
+        await ServiceProvider.find({
+          state: EMERGENCY_READY,
+          status: VALIDATED,
+          busy: false,
+          services: { $in: int.services },
+          location: {
+            $near: {
+              $geometry: client_location,
             },
           },
-        },
+        }).limit(1)
+      )[0];
+
+      console.log("int : ", int);
+      // save intervention to db
+      const intervention = await Intervention.create({
+        ...int,
+        sp_id: sp._id,
+        type: EMERGENCY,
+        location: client_location,
       });
+      console.log("intervention : ", intervention);
+
+      // add intervention to sp & client
+      const client = await Client.findByIdAndUpdate(
+        intervention.client_id,
+        {
+          $push: { interventions: intervention._id },
+        },
+        { new: true }
+      ).select("phone firstname lastname birthdate");
+
+      sp = await ServiceProvider.findByIdAndUpdate(
+        intervention.sp_id,
+        {
+          $push: { interventions: intervention._id },
+        },
+        { new: true }
+      );
+
+      const [lon, lat] = sp.location.coordinates;
+      console.log(lon, lat);
+      const distance = getDistance({ lat, lon }, location);
+      console.log("dist", distance);
+      //Notify sp
+      sp.notify({ intervention, client, distance });
+
+      socket.join(intervention._id);
+      socket.emit("wait", intervention);
+      console.log("Intervention initialized");
 
       console.log(sp);
     });
