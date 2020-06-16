@@ -131,7 +131,7 @@ module.exports = function (io) {
         { new: true }
       ).select("phone firstname lastname birthdate");
 
-      const sp = await ServiceProvider.findByIdAndUpdate(
+      sp = await ServiceProvider.findByIdAndUpdate(
         intervention.sp_id,
         {
           $push: { interventions: intervention._id },
