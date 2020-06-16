@@ -56,6 +56,9 @@ module.exports = function (io) {
         }).limit(1)
       )[0];
 
+      console.log("SP ::: ", sp);
+      return;
+
       console.log("int : ", int);
       // save intervention to db
       const intervention = await Intervention.create({
