@@ -54,6 +54,12 @@ module.exports = function (io) {
         },
       });
 
+      if (sps.length === 0) {
+        socket.emit("NoSpAvailable");
+
+        return;
+      }
+
       let sp = sps[0];
       console.log("SP ::: ", sp);
 
