@@ -42,7 +42,7 @@ module.exports = function (io) {
         coordinates: [location.longitude, location.latitude],
       };
 
-      let sp = await ServiceProvider.find({
+      let sps = await ServiceProvider.find({
         state: EMERGENCY_READY,
         status: VALIDATED,
         busy: false,
@@ -54,8 +54,8 @@ module.exports = function (io) {
         },
       });
 
+      let sp = sps[0];
       console.log("SP ::: ", sp);
-      return;
 
       console.log("int : ", int);
       // save intervention to db
