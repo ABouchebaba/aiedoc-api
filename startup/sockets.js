@@ -54,7 +54,6 @@ module.exports = function (io) {
 
       if (sps.length === 0) {
         socket.emit("NoSpAvailable");
-
         return;
       }
 
@@ -97,7 +96,7 @@ module.exports = function (io) {
       sp.notify({ intervention, client, distance });
 
       socket.join(intervention._id);
-      socket.emit("wait", intervention);
+      socket.emit("wait", { intervention, sp });
       console.log("Intervention initialized");
 
       console.log(sp);
@@ -149,7 +148,7 @@ module.exports = function (io) {
       sp.notify({ intervention, client, distance });
 
       socket.join(intervention._id);
-      socket.emit("wait", intervention);
+      socket.emit("wait", { intervention, sp });
       console.log("Intervention initialized");
     });
 
