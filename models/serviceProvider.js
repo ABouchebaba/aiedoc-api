@@ -153,17 +153,23 @@ function validateSP(sp) {
     jobTitle: Joi.string().max(255).required(),
     rating: Joi.number().min(0).max(5),
     birthdate: Joi.date().required(),
-    picture: Joi.string(),
+    picture: Joi.string().required(),
     email: Joi.string().email(),
     wilaya: Joi.string()
       .valid(...WILAYAS)
       .required(),
     pushNotificationId: Joi.string(),
     commune: Joi.string().required(),
-    // diplomas: Joi.array(),
-    types: Joi.array(), //.items(Joi.string().valid(DIPLOMAS)),
-    descriptions: Joi.array(), //.items(Joi.string().max(255)),
-    docs: Joi.array(), //.items(Joi.object()),
+    diplomas: Joi.array().items(
+      Joi.object({
+        type: Joi.string().required(),
+        description: Joi.string().required(),
+        file: Joi.any().required(),
+      })
+    ),
+    // types: Joi.array(), //.items(Joi.string().valid(DIPLOMAS)),
+    // descriptions: Joi.array(), //.items(Joi.string().max(255)),
+    // docs: Joi.array(), //.items(Joi.object()),
     services: Joi.array().items(Joi.string()),
   };
 

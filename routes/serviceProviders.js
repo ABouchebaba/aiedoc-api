@@ -8,8 +8,10 @@ const validatePayment = require("../models/payment")["validate"];
 const express = require("express");
 const router = express.Router();
 const { ADMINS, CLIENT, SP } = require("../constants/roles");
-const upload = require("multer")();
 const { docStorage } = require("../controllers/storageController");
+const { picture, docs } = require("../middlewares/spFiles");
+const { parseJson } = require("../middlewares/parseJson");
+const { multerErrorHandler } = require("../middlewares/multerErrorHandler");
 
 const {
   _create,
@@ -47,7 +49,12 @@ let roles = {
 // Register route
 router.post(
   "/register",
-  docStorage.array("docs"),
+  multerErrorHandler(
+    docStorage.fields([{ name: "docs" }, { name: "picture", maxCount: 1 }])
+  ),
+  parseJson("types", "descriptions", "services"),
+  picture,
+  docs,
   validateBody(validate),
   _create
 );

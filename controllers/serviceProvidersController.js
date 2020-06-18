@@ -5,37 +5,22 @@ const _ = require("lodash");
 const fs = require("fs");
 const path = require("path");
 const { promisify } = require("util");
+const { deleteFiles } = require("../middlewares/spFiles");
+
 const { EMERGENCY_READY, VALIDATED } = require("../constants/serviceProvider");
 
 const unlinkAsync = promisify(fs.unlink);
 
-/// TODO: Add relevant attributes
+/// TODO: Implement validation !!!
+/// ex :  case no picture || no docs
 module.exports._create = async (req, res) => {
   let sp = await ServiceProvider.findOne({ phone: req.body.phone });
   if (sp) {
     // remove files ...
-    req.files.map(async (f) => await unlinkAsync(f.path));
+    deleteFiles(req.files);
     return res.status(400).send("Service provider already registered");
   }
 
-  let diplomas = [];
-  req.body.types = JSON.parse(req.body.types);
-  req.body.descriptions = JSON.parse(req.body.descriptions);
-
-  for (let i = 0; i < req.files.length; i++) {
-    const filepath = req.files[i].path;
-    diplomas = [
-      ...diplomas,
-      {
-        type: req.body.types[i],
-        description: req.body.descriptions[i],
-        file: filepath.slice(filepath.indexOf(path.sep) + 1),
-      },
-    ];
-  }
-
-  req.body.diplomas = diplomas;
-  req.body.services = JSON.parse(req.body.services);
   sp = await ServiceProvider.create(
     _.pick(req.body, [
       "email",
@@ -50,6 +35,7 @@ module.exports._create = async (req, res) => {
       "services",
       "pushNotificationId",
       "diplomas",
+      "picture",
     ])
   );
 
