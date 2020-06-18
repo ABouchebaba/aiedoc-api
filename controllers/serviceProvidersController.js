@@ -121,31 +121,22 @@ module.exports._set_profile_picture = async (req, res) => {
 
   if (!sp) {
     // wrong sp id
+    deleteFiles(req.files);
     return res.status(404).send("Service provider not found");
   }
-  if (!req.files) {
-    // no profile picture provided
-    return res.status(400).send("Please provide a profile picture");
-  }
-  const picture = Object.values(req.files)[0];
 
   // sp good, picture good
-  // save picture
   try {
-    // delete existing picture if exists
-    // probably should add an appropriate callback
-    if (sp.picture) fs.unlink("public/" + sp.picture, () => {});
-    // save provided picture
-    const link = await saveOne(picture, "images/profiles/sp");
-    // save goes well
-    sp.picture = link;
-    sp.save();
+    // delete existing picture from file system if exists
+    if (sp.picture) await unlinkAsync(path.join("public", sp.picture));
+
+    sp.picture = req.body.picture;
+    await sp.save();
+    return res.send(sp.picture);
   } catch (e) {
-    // error while saving/deleting picture
+    // error while deleting picture or saving sp
     return res.status(500).send(e.message);
   }
-
-  return res.send(sp.picture);
 };
 
 module.exports._ban = async (req, res) => {

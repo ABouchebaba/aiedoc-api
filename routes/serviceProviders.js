@@ -59,6 +59,16 @@ router.post(
   _create
 );
 
+router.put(
+  "/:id/picture",
+  auth,
+  role(roles.PUT_ONE_PICTURE),
+  validateObjectId,
+  multerErrorHandler(docStorage.fields([{ name: "picture", maxCount: 1 }])),
+  picture,
+  _set_profile_picture
+);
+
 // Verify if user is already registered via phone number
 // add body validation middleware
 router.post("/verifyPhone", validateBody(validatePhone), _verifyPhone);
@@ -137,14 +147,6 @@ router.put(
   role(roles.PUT_ONE_SERVICES),
   validateObjectId,
   _set_services
-);
-
-router.put(
-  "/:id/picture",
-  auth,
-  role(roles.PUT_ONE_PICTURE),
-  validateObjectId,
-  _set_profile_picture
 );
 
 // BAN
