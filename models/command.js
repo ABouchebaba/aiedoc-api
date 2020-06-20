@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
-const { PENDING, COMMAND_STATUSES } = require("../constants/command");
+const {
+  PENDING,
+  COMMAND_STATUSES,
+  COMMAND_TYPES,
+} = require("../constants/command");
 
 let commandSchema = new mongoose.Schema(
   {
@@ -28,6 +32,11 @@ let commandSchema = new mongoose.Schema(
       required: true,
       min: 0,
     },
+    type: {
+      type: String,
+      enum: COMMAND_TYPES,
+      required: true,
+    },
     products: [
       {
         product: {
@@ -38,8 +47,17 @@ let commandSchema = new mongoose.Schema(
         qty: {
           type: Number,
           min: 1,
+          default: 1,
         },
         option: String,
+        from: {
+          type: Date,
+          default: null,
+        },
+        to: {
+          type: Date,
+          default: null,
+        },
       },
     ],
   },
@@ -62,9 +80,12 @@ function validateCommand(command) {
           product: Joi.objectId().required(),
           qty: Joi.number().min(1).required(),
           option: Joi.string().required(),
+          from: Joi.date(),
+          to: Joi.date(),
         })
       )
       .required(),
+    type: Joi.string().valid(COMMAND_TYPES).required(),
   };
 
   return Joi.validate(command, schema);

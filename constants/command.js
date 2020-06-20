@@ -17,3 +17,9 @@ exports.COMMAND_STATUSES = [
   // DELIVERING,
   COMPLETED,
 ];
+
+const RENT = "rent";
+const BUY = "buy";
+const BOTH = "both";
+
+exports.COMMAND_TYPES = [RENT, BUY, BOTH];
