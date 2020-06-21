@@ -14,7 +14,10 @@ module.exports._create = async (req, res) => {
 };
 
 module.exports._read = async (req, res) => {
-  const commands = await Command.find(); //.sort("name");
+  const commands = await Command.find().populate(
+    "products.product",
+    "name price"
+  ); //.sort("name");
   res.send(commands);
 };
 
