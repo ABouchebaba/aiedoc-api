@@ -298,6 +298,17 @@ module.exports = function (io) {
         console.log("Client Review: inexisting intervention");
       }
 
+      const nb_int = await Intervention.countDocuments({
+        sp_id: intervention.sp_id,
+        state: VALIDATED,
+      });
+
+      const sp = await ServiceProvider.findById(intervention.sp_id);
+
+      let new_rating = (sp.rating * (nb_int - 1) + rating) / nb_int;
+
+      sp.rating = new_rating;
+      sp.save();
       socket.emit("goHome");
       console.log("Intervention reviewed by Client");
     });
@@ -316,6 +327,20 @@ module.exports = function (io) {
       await ServiceProvider.findByIdAndUpdate(intervention.sp_id, {
         busy: false,
       });
+
+      // update client rating
+      const nb_int = await Intervention.countDocuments({
+        client_id: intervention.client_id,
+        state: VALIDATED,
+      });
+
+      const client = await Client.findById(intervention.client_id);
+
+      let new_rating = (client.rating * (nb_int - 1) + rating) / nb_int;
+
+      client.rating = new_rating;
+      client.save();
+
       socket.emit("goHome");
       console.log("Intervention reviewed by Sp");
     });

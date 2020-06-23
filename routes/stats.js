@@ -191,4 +191,15 @@ router.get("/commands/total", async (req, res) => {
   res.send(total);
 });
 
+router.get("/test", async (req, res) => {
+  const nb_int = await Intervention.countDocuments({
+    client_id: "5e9604a9d2d24c4c68985ddc",
+    state: "validated",
+  });
+
+  console.log(nb_int);
+
+  res.status(200).send({});
+});
+
 module.exports = router;
