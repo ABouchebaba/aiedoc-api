@@ -14,6 +14,7 @@ const {
   VALIDATED: SP_VALIDATED,
 } = require("../constants/serviceProvider");
 const { getDistance } = require("geolib");
+const { cli } = require("winston");
 
 module.exports = function (io) {
   // exploit io ...
@@ -305,7 +306,8 @@ module.exports = function (io) {
 
       const sp = await ServiceProvider.findById(intervention.sp_id);
 
-      let new_rating = (sp.rating * (nb_int - 1) + rating) / nb_int;
+      let old_rating = sp.rating || 0;
+      let new_rating = (old_rating * (nb_int - 1) + rating) / nb_int;
 
       sp.rating = new_rating;
       sp.save();
@@ -336,7 +338,8 @@ module.exports = function (io) {
 
       const client = await Client.findById(intervention.client_id);
 
-      let new_rating = (client.rating * (nb_int - 1) + rating) / nb_int;
+      let old_rating = client.rating || 0;
+      let new_rating = (old_rating * (nb_int - 1) + rating) / nb_int;
 
       client.rating = new_rating;
       client.save();

@@ -36,6 +36,11 @@ const clientSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    rating: {
+      type: Number,
+      min: 0,
+      max: 5,
+    },
     location: {
       type: location,
     },
