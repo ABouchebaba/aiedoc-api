@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/qodwvxke/app/
+    - export DEPLOYPATH=/home/qodwvxke/api.aiedoc.com/
     - /bin/cp -R * $DEPLOYPATH
