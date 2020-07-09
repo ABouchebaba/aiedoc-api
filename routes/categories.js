@@ -21,6 +21,10 @@ let roles = {
   DELETE: ADMINS,
 };
 
+/**
+ * 1. Add predefined values for level in model
+ */
+
 router.get("/", auth, _read);
 
 // router.get("/:id", auth, validateObjectId, _read_id);

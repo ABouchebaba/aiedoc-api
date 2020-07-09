@@ -21,6 +21,11 @@ let roles = {
   UPDATE_STATUS: ADMINS,
 };
 
+/**
+ * 1. Add role verification in /:id route
+ * 2. Add user_type predefined values in validate (not hardcoded)
+ */
+
 router.get("/", [auth, role(roles.READ_ALL)], _read);
 
 router.get("/:id", auth, validateObjectId, _read_id);

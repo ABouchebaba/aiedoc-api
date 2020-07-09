@@ -75,9 +75,9 @@ function validateAdmin(admin) {
     username: Joi.string().min(2).max(50).required(),
     firstname: Joi.string().min(2).max(50).required(),
     lastname: Joi.string().min(2).max(50).required(),
+    email: Joi.string().email().required(),
     birthdate: Joi.date(),
     picture: Joi.string(),
-    email: Joi.string().email().required(),
     roles: Joi.array()
       .min(1)
       .items(Joi.valid(...ADMINS))

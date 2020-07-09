@@ -22,6 +22,12 @@ let roles = {
   DELETE: [ADMIN],
 };
 
+/**
+ * 1. ADD /me route for profile instead of /:id
+ * 2. _create route : test email unique
+ * 3. Login : check user has not token
+ */
+
 // GET_ALL
 router.get("/", auth, role(roles.GET_ALL), _read);
 
@@ -31,8 +37,10 @@ router.get("/:id", auth, role(roles.GET_ONE), validateObjectId, _read_id);
 // CREATE
 router.post("/", auth, role(roles.CREATE), validateBody(validate), _create);
 
+// LOGIN
 router.post("/auth", validateBody(validateLogin), _authenticate);
 
+// DELETE ==> really not sure about this one
 router.delete("/:id", auth, role(roles.DELETE), validateObjectId, _delete);
 
 module.exports = router;

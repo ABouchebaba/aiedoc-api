@@ -21,15 +21,15 @@ let categorySchema = new mongoose.Schema({
   },
 });
 
-categorySchema.pre("findOneAndRemove", async function (next) {
-  // do something
+// categorySchema.pre("findOneAndRemove", async function (next) {
+//   // do something
 
-  // await Category.deleteMany({ parent: this._id });
-  console.log("pré");
-  console.log(this._id);
+//   // await Category.deleteMany({ parent: this._id });
+//   console.log("pré");
+//   console.log(this._id);
 
-  next();
-});
+//   next();
+// });
 
 const Category = mongoose.model("Category", categorySchema);
 

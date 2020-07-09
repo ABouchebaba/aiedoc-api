@@ -61,5 +61,5 @@ module.exports._verifyPhone = async (req, res) => {
     return res.header("x-auth-token", token).send(client);
   }
 
-  return res.status(404).send("No client with this phone number was found");
+  return res.status(404).send("Client Not found");
 };

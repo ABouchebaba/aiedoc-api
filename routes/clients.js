@@ -1,6 +1,7 @@
 const auth = require("../middlewares/auth");
 const role = require("../middlewares/role");
 const validateBody = require("../middlewares/validateBody");
+const validateObjectId = require("../middlewares/validateObjectId");
 const { validate, validatePhone } = require("../models/client");
 const express = require("express");
 const router = express.Router();
@@ -21,6 +22,17 @@ let roles = {
   GET_ONE_INTERVENTIONS: [...ADMINS, CLIENT],
   GET_ONE_COMMANDS: [...ADMINS, CLIENT],
 };
+/**
+ * 1. Add /me route for single client profile
+ * 2. Add /me/interventions route for my interventions
+ * 2. Add /me/commands route for my commands
+ * 3. Add validateObjectId in /:id
+ * 4. Add validateObjectId in /:id/interventions
+ * 5. Add validateObjectId in /:id/commands
+ * 6. Add not auth middleware in register
+ * 7. Verify email unique in register
+ * 6. Add not auth middleware in verifyPhone
+ */
 
 // GET_ALL
 router.get("/", auth, role(roles.GET_ALL), _read);
@@ -43,7 +55,6 @@ router.get("/:id/commands", auth, role(roles.GET_ONE_COMMANDS), _commands);
 router.post("/register", validateBody(validate), _create);
 
 // Verify if user is already registered via phone number
-// add body validation middleware
 router.post("/verifyPhone", validateBody(validatePhone), _verifyPhone);
 
 //TODO: Add put to update client infos

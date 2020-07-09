@@ -2,6 +2,11 @@ const { Category } = require("../models/category");
 const _ = require("lodash");
 
 module.exports._create = async (req, res) => {
+  let cat = await Category.findOne(req.body);
+  if (cat) {
+    return res.status(400).send("Category already exists");
+  }
+
   const category = await Category.create(req.body);
   res.send(category);
 };
