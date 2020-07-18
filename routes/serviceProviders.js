@@ -9,7 +9,7 @@ const express = require("express");
 const router = express.Router();
 const { ADMINS, CLIENT, SP } = require("../constants/roles");
 const { docStorage } = require("../controllers/storageController");
-const { picture, docs } = require("../middlewares/spFiles");
+const { picture, docs } = require("../middlewares/files");
 const { parseJson } = require("../middlewares/parseJson");
 const { multerErrorHandler } = require("../middlewares/multerErrorHandler");
 

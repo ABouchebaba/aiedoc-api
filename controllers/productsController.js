@@ -80,14 +80,6 @@ module.exports._read_id = async (req, res) => {
   res.send(product);
 };
 
-// module.exports._read_name = async (req, res) => {
-//   const searchQuery = new RegExp(`.*${req.params.name}.*`, "i");
-
-//   const courses = await Course.find({ name: searchQuery });
-
-//   res.send(courses);
-// };
-
 module.exports._update = async (req, res) => {
   const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
     new: true,

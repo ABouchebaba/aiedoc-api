@@ -11,7 +11,7 @@ const multerErrorHandler = (storage) => {
         // An unknown error occurred when uploading.
         // dunno yet what to put here
         console.log(err.message);
-        return res.status(500).send("Unexpected Multer error");
+        return res.status(500).send("Unexpected Multer error: ", err.message);
       }
 
       next();

@@ -27,3 +27,14 @@ var productStorage = multer.diskStorage({
   },
 });
 module.exports.productStorage = multer({ storage: productStorage });
+
+var serviceStorage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    let dest = path.join("public", "images", "services");
+    mkdirp(dest).then((val) => cb(null, dest));
+  },
+  filename: function (req, file, cb) {
+    cb(null, uuidv4() + path.extname(file.originalname)); //Appending .jpg
+  },
+});
+module.exports.servicesStorage = multer({ storage: serviceStorage });

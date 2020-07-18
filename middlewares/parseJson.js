@@ -1,4 +1,4 @@
-const { deleteFiles } = require("./spFiles");
+const { deleteFiles } = require("./files");
 
 const parseJson = (...fields) => {
   return async (req, res, next) => {

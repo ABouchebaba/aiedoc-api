@@ -5,7 +5,7 @@ const _ = require("lodash");
 const fs = require("fs");
 const path = require("path");
 const { promisify } = require("util");
-const { deleteFiles } = require("../middlewares/spFiles");
+const { deleteFiles } = require("../middlewares/files");
 
 const { EMERGENCY_READY, VALIDATED } = require("../constants/serviceProvider");
 
