@@ -46,8 +46,8 @@ router.post(
   [
     auth,
     role(roles.CREATE),
-    multerErrorHandler(categoryStorage.single("image")),
-    image,
+    multerErrorHandler(categoryStorage.array("image", 1)),
+    image(false),
     validateBody(validate),
   ],
   _create
@@ -84,7 +84,7 @@ const put_image_middlewares = [
   validateObjectId,
   documentExists(Category),
   multerErrorHandler(categoryStorage.single("image")),
-  image,
+  image(),
 ];
 router.put("/:id/image", put_image_middlewares, _update_image);
 

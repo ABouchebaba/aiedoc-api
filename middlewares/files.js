@@ -4,13 +4,20 @@ const { promisify } = require("util");
 
 const unlinkAsync = promisify(fs.unlink);
 
-/** puts service image in req.body.image */
-const image = (req, res, next) => {
-  if (!req.file)
-    return res.status(400).send("Service/Category image is required");
+/** puts image in req.body.image */
+const image = (required = true) => (req, res, next) => {
+  if (required) {
+    if (!req.file)
+      return res.status(400).send("Service/Category image is required");
 
-  const imagePath = req.file.path;
-  req.body.image = imagePath.slice(imagePath.indexOf(path.sep) + 1);
+    const imagePath = req.file.path;
+    req.body.image = imagePath.slice(imagePath.indexOf(path.sep) + 1);
+  } else {
+    if (req.files[0]) {
+      const imagePath = req.files[0].path;
+      req.body.image = imagePath.slice(imagePath.indexOf(path.sep) + 1);
+    }
+  }
 
   next();
 };

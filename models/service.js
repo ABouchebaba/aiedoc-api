@@ -16,7 +16,6 @@ let serviceSchema = new mongoose.Schema(
     },
     image: {
       type: String,
-      required: true,
     },
     level: {
       type: String,

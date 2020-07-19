@@ -2267,3 +2267,10 @@
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-07-19T18:52:41.743Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-07-19T18:54:18.664Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-07-19T18:54:26.713Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-07-19T19:04:34.679Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-07-19T19:05:08.769Z"}
+{"message":"Category validation failed: image: Path `image` is required.","errors":{"image":{"message":"Path `image` is required.","name":"ValidatorError","properties":{"message":"Path `image` is required.","type":"required","path":"image"},"kind":"required","path":"image"}},"_message":"Category validation failed","stack":"ValidationError: Category validation failed: image: Path `image` is required.\n    at new ValidationError (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\error\\validation.js:30:11)\n    at model.Document.invalidate (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\document.js:2317:32)\n    at p.doValidate.skipSchemaValidators (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\document.js:2166:17)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongoose\\lib\\schematype.js:1037:9\n    at process._tickCallback (internal/process/next_tick.js:61:11)","name":"ValidationError","level":"error","timestamp":"2020-07-19T19:06:25.146Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-07-19T19:07:12.377Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-07-19T19:10:40.189Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-07-19T19:10:52.795Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-07-19T19:11:11.197Z"}
