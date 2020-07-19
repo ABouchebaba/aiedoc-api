@@ -130,6 +130,8 @@ spSchema.methods.notify = function (intervention) {
       app_id: "aac6ed8b-9b71-4cd7-95c4-dc0931101a87",
       include_player_ids: [this.pushNotificationId],
       data: intervention,
+      android_channel_id: "70f69b26-02b2-492a-91ff-4dc2336aa4c6",
+      huawei_channel_id: "70f69b26-02b2-492a-91ff-4dc2336aa4c6",
       contents: { en: "Vous avez reçu une demande d'intervention." },
     })
     .then((res) => {
