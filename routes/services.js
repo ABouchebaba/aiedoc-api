@@ -26,9 +26,9 @@ let roles = {
   DELETE: ADMINS,
 };
 
-router.get("/", _read);
+router.get("/", auth, _read);
 
-router.get("/:id", validateObjectId, _read_id);
+router.get("/:id", auth, validateObjectId, _read_id);
 
 /*
  * The user needs

@@ -6,7 +6,8 @@ const unlinkAsync = promisify(fs.unlink);
 
 /** puts service image in req.body.image */
 const image = (req, res, next) => {
-  if (!req.file) return res.status(400).send("Service image is required");
+  if (!req.file)
+    return res.status(400).send("Service/Category image is required");
 
   const imagePath = req.file.path;
   req.body.image = imagePath.slice(imagePath.indexOf(path.sep) + 1);

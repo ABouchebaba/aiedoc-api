@@ -37,16 +37,21 @@ module.exports._update_image = async (req, res) => {
     image: req.body.image,
   });
 
-  unlinkAsync(path.join("public", oldService.image))
-    .then((response) => {
-      oldService.image = req.body.image;
-      res.send(oldService);
-    })
-    .catch((err) => {
-      res
-        .status(500)
-        .send("An unexpected error occured while deleting old image");
-    });
+  if (oldService.image) {
+    unlinkAsync(path.join("public", oldService.image))
+      .then((response) => {
+        oldService.image = req.body.image;
+        res.send(oldService);
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send("An unexpected error occured while deleting old image");
+      });
+  } else {
+    oldService.image = req.body.image;
+    res.send(oldService);
+  }
 };
 
 module.exports._delete = async (req, res) => {
