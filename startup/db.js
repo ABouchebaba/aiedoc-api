@@ -9,9 +9,10 @@ module.exports = function () {
   mongoose.set("useNewUrlParser", true);
   mongoose.set("useFindAndModify", false);
   mongoose.set("useCreateIndex", true);
-  mongoose.set("useUnifiedTopology", true);
 
-  mongoose.connect(db).then(() => winston.info(`Connected to ${db}...`));
+  mongoose
+    .connect(db, { useUnifiedTopology: true })
+    .then(() => winston.info(`Connected to ${db}...`));
   //the winston.handleExceptions handles the catch part of this promise
   // and stops the process
 };
