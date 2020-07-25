@@ -28,6 +28,7 @@ const {
   _add_payment,
   _set_services,
   _set_profile_picture,
+  _set_percentToPay,
   _closestEmergencyReady,
 } = require("../controllers/serviceProvidersController");
 
@@ -131,6 +132,15 @@ router.put(
   role(roles.VALIDATE),
   validateObjectId,
   _validate
+);
+
+// PercentToPay
+router.put(
+  "/:id/percentToPay",
+  auth,
+  role(roles.VALIDATE),
+  validateObjectId,
+  _set_percentToPay
 );
 
 router.put(

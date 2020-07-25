@@ -98,6 +98,19 @@ module.exports._validate = async (req, res) => {
   return res.send(sp);
 };
 
+module.exports._set_percentToPay = async (req, res) => {
+  const sp = await ServiceProvider.findByIdAndUpdate(
+    req.params.id,
+    {
+      percentToPay: req.body.percentToPay,
+    },
+    { new: true }
+  );
+  if (!sp) return res.status(404).send("Service provider id not found");
+
+  return res.send(sp);
+};
+
 module.exports._set_state = async (req, res) => {
   const { state, longitude, latitude } = req.body;
   const sp = await ServiceProvider.findByIdAndUpdate(

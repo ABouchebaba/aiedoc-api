@@ -71,7 +71,7 @@ const spSchema = new mongoose.Schema(
       ],
       required: true,
     },
-    PercentToPay: {
+    percentToPay: {
       type: Number,
       min: 0,
       max: 100,
