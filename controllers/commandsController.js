@@ -1,6 +1,8 @@
 const { Command } = require("../models/command");
+const { Product } = require("../models/product");
 const { ServiceProvider } = require("../models/serviceProvider");
 const { Client } = require("../models/client");
+const { COMPLETED } = require("../constants/command");
 const _ = require("lodash");
 
 module.exports._create = async (req, res) => {
@@ -48,6 +50,24 @@ module.exports._update_status = async (req, res) => {
     }
   );
   if (!command) return res.status(404).send("Command not found");
+
+  if (req.body.status === COMPLETED) {
+    /**Updating products' quantities after command confirmed(compelete) */
+    const { products } = command;
+
+    const r = await Promise.all(
+      products.map((p) =>
+        Product.findOneAndUpdate(
+          { _id: p.product, "options.option": p.option },
+          {
+            $inc: { "options.$.qty": -p.qty },
+          }
+        )
+      )
+    );
+
+    // console.log(r);
+  }
 
   res.send(command);
 };

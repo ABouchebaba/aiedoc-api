@@ -2274,3 +2274,11 @@
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-07-19T19:10:40.189Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-07-19T19:10:52.795Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-07-19T19:11:11.197Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-07-27T17:21:02.748Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-08T19:54:16.544Z"}
+{"message":"products.map is not a function","stack":"TypeError: products.map is not a function\n    at module.exports._update_status (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\commandsController.js:58:16)\n    at process._tickCallback (internal/process/next_tick.js:68:7)","level":"error","timestamp":"2020-08-08T20:07:52.132Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-08T20:08:31.114Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-08T20:11:03.494Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-08T20:19:09.314Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-08T20:32:40.908Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-08T20:32:46.602Z"}
