@@ -13,6 +13,7 @@ const {
   _read,
   _read_id,
   _update_status,
+  _return_product,
 } = require("../controllers/commandsController");
 
 let roles = {
@@ -54,6 +55,21 @@ const put_middlewares = [
   validateBody(validateStatus),
 ];
 router.put("/:id/status", ...put_middlewares, _update_status);
+
+/**
+ * Rent: return product
+ */
+const return_product_middlewares = [
+  auth,
+  validateObjectId,
+  role(roles.UPDATE_STATUS),
+];
+
+router.put(
+  "/:id/return_product/:index",
+  ...return_product_middlewares,
+  _return_product
+);
 
 /*
  * The user needs

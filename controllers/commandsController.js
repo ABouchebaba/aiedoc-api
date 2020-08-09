@@ -72,6 +72,55 @@ module.exports._update_status = async (req, res) => {
   res.send(command);
 };
 
+/**
+ * 1. params are : command id, product index (id given by mongoose in command.products)
+ * 2. find command by id
+ * 3. find product in command by index
+ * 4. update product qty
+ * 5. mark product as returned in command
+ */
+module.exports._return_product = async (req, res) => {
+  const command = await Command.findById(req.params.id);
+
+  if (!command) return res.status(404).send("Command not found");
+  if (command.status !== COMPLETED)
+    return res
+      .status(400)
+      .send("Cannot return product from uncomplete command");
+
+  const product = command.products.id(req.params.index);
+
+  if (!product) return res.status(404).send("Command product not found");
+  if (!product.from)
+    return res.status(400).send("Only rent products can be returned");
+  if (product.returned) return res.status(400).send("Product already returned");
+
+  const new_product = await Product.findOneAndUpdate(
+    { _id: product.product, "options.option": product.option },
+    {
+      $inc: { "options.$.qty": product.qty },
+    },
+    { new: true }
+  );
+
+  console.log(new_product);
+
+  const new_command = await Command.findOneAndUpdate(
+    {
+      _id: req.params.id,
+      "products._id": req.params.index,
+    },
+    {
+      "products.$.returned": true,
+    },
+    {
+      new: true,
+    }
+  );
+
+  res.send(new_command);
+};
+
 // module.exports._delete = async (req, res) => {
 //   const command = await Command.findByIdAndRemove(req.params.id);
 
