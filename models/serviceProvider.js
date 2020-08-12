@@ -51,7 +51,13 @@ const spSchema = new mongoose.Schema(
     amountToPay: { type: Number, default: 0 },
     location: { type: location, index: "2dsphere" },
     rating: { type: Number, min: 0, max: 5 },
-    services: [String],
+    services: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Service",
+        required: true,
+      },
+    ],
     picture: String,
     diplomas: {
       type: [
@@ -172,7 +178,7 @@ function validateSP(sp) {
     // types: Joi.array(), //.items(Joi.string().valid(DIPLOMAS)),
     // descriptions: Joi.array(), //.items(Joi.string().max(255)),
     // docs: Joi.array(), //.items(Joi.object()),
-    services: Joi.array().items(Joi.string()),
+    services: Joi.array().items(Joi.objectId().required()),
   };
 
   return Joi.validate(sp, schema);

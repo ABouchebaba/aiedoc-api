@@ -23,7 +23,8 @@ const interventionSchema = new mongoose.Schema(
     },
     services: [
       {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Service",
         required: true,
       },
     ],
@@ -81,7 +82,7 @@ function validateIntervention(intervention) {
     sp_id: Joi.objectId().required(),
     // client_name: Joi.string().required(),
     // sp_name: Joi.string().required(),
-    services: Joi.array().items(Joi.string()).required(),
+    services: Joi.array().items(Joi.objectId()).required(),
     totalPrice: Joi.number().min(0),
     client_comment: Joi.string().max(255),
     sp_comment: Joi.string().max(255),

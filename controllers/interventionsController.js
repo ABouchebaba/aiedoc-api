@@ -2,8 +2,9 @@ const { Intervention } = require("../models/intervention");
 const { Client } = require("../models/client");
 const { ServiceProvider } = require("../models/serviceProvider");
 
+/* !Services populated  */
 module.exports._create = async (req, res) => {
-  const intervention = await Intervention.create(req.body);
+  let intervention = await Intervention.create(req.body);
 
   const res1 = await Client.findByIdAndUpdate(intervention.client_id, {
     $push: { interventions: intervention._id },
@@ -12,6 +13,8 @@ module.exports._create = async (req, res) => {
   const res2 = await ServiceProvider.findByIdAndUpdate(intervention.sp_id, {
     $push: { interventions: intervention._id },
   });
+
+  // intervention = await intervention.populate("services").execPopulate();
 
   res.send(intervention);
 };
@@ -23,10 +26,12 @@ module.exports._read = async (req, res) => {
   res.send(interventions);
 };
 
+/* Services populated */
 module.exports._read_id = async (req, res) => {
   const intervention = await Intervention.findById(req.params.id)
     .populate("client_id", "firstname lastname phone")
-    .populate("sp_id", "firstname lastname phone");
+    .populate("sp_id", "firstname lastname phone")
+    .populate("services");
 
   if (!intervention) return res.status(404).send("Intervention not found");
 

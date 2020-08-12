@@ -13,6 +13,7 @@ const unlinkAsync = promisify(fs.unlink);
 
 /// TODO: Implement validation !!!
 /// ex :  case no picture || no docs
+/* !Services populated  */
 module.exports._create = async (req, res) => {
   let sp = await ServiceProvider.findOne({ phone: req.body.phone });
   if (sp) {
@@ -39,6 +40,8 @@ module.exports._create = async (req, res) => {
     ])
   );
 
+  // sp = await sp.populate("services").execPopulate();
+
   const token = sp.generateAuthToken();
 
   return res.header("x-auth-token", token).send(sp);
@@ -49,8 +52,9 @@ module.exports._read = async (req, res) => {
   return res.send(sps);
 };
 
+/* !Services populated  */
 module.exports._read_id = async (req, res) => {
-  const sp = await ServiceProvider.findById(req.params.id);
+  const sp = await ServiceProvider.findById(req.params.id).populate("services");
   if (!sp) return res.status(404).send("Service provider id not found");
 
   return res.send(sp);
@@ -67,8 +71,9 @@ module.exports._read_available = async (req, res) => {
   return res.send(sp);
 };
 
+/* !Services populated  */
 module.exports._verifyPhone = async (req, res) => {
-  const sp = await ServiceProvider.findOneAndUpdate(
+  let sp = await ServiceProvider.findOneAndUpdate(
     { phone: req.body.phone },
     {
       pushNotificationId: req.body.pushNotificationId,
@@ -76,6 +81,7 @@ module.exports._verifyPhone = async (req, res) => {
     { new: true }
   );
   if (sp) {
+    // sp = await sp.populate("services").execPopulate();
     const token = sp.generateAuthToken();
     return res.header("x-auth-token", token).send(sp);
   }
@@ -165,9 +171,13 @@ module.exports._ban = async (req, res) => {
   return res.send(sp);
 };
 
+/* !Services populated  */
 module.exports._interventions = async (req, res) => {
   const sp = await ServiceProvider.findById(req.params.id)
-    .populate("interventions")
+    .populate({
+      path: "interventions",
+      // populate: { path: "services" },
+    })
     .select("interventions");
 
   if (!sp) return res.status(404).send("Service Provider id not found");
@@ -214,8 +224,9 @@ module.exports._add_payment = async (req, res) => {
   return res.send(sp.payments);
 };
 
+/* !Services populated  */
 module.exports._set_services = async (req, res) => {
-  const sp = await ServiceProvider.findByIdAndUpdate(
+  let sp = await ServiceProvider.findByIdAndUpdate(
     req.params.id,
     {
       services: req.body.services,
@@ -226,6 +237,8 @@ module.exports._set_services = async (req, res) => {
   if (!sp) {
     return res.status(404).send("Service Provider not found");
   }
+
+  // sp = await sp.populate("services").execPopulate();
 
   res.send(sp);
 };
