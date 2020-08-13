@@ -13,7 +13,7 @@ const image = (required = true) => (req, res, next) => {
     const imagePath = req.file.path;
     req.body.image = imagePath.slice(imagePath.indexOf(path.sep) + 1);
   } else {
-    if (req.files[0]) {
+    if (req.files.length > 0 && req.files[0]) {
       const imagePath = req.files[0].path;
       req.body.image = imagePath.slice(imagePath.indexOf(path.sep) + 1);
     }
