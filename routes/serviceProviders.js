@@ -8,8 +8,8 @@ const validatePayment = require("../models/payment")["validate"];
 const express = require("express");
 const router = express.Router();
 const { ADMINS, CLIENT, SP } = require("../constants/roles");
-const { docStorage } = require("../controllers/storageController");
-const { picture, docs } = require("../middlewares/files");
+const { spStorage } = require("../controllers/storageController");
+const { picture, docs, setFilePath } = require("../middlewares/files");
 const { parseJson } = require("../middlewares/parseJson");
 const { multerErrorHandler } = require("../middlewares/multerErrorHandler");
 
@@ -51,11 +51,17 @@ let roles = {
 router.post(
   "/register",
   multerErrorHandler(
-    docStorage.fields([{ name: "docs" }, { name: "picture", maxCount: 1 }])
+    spStorage.fields([
+      { name: "picture", maxCount: 1 },
+      { name: "extNaissance", maxCount: 1 },
+      { name: "residence", maxCount: 1 },
+      { name: "idCard", maxCount: 1 },
+      { name: "docs" },
+    ])
   ),
+  setFilePath("picture", "extNaissance", "residence", "idCard"),
   parseJson("types", "descriptions", "services"),
-  picture,
-  docs,
+  docs, // uses types & descriptions which need to be parsed first
   validateBody(validate),
   _create
 );
@@ -65,7 +71,7 @@ router.put(
   auth,
   role(roles.PUT_ONE_PICTURE),
   validateObjectId,
-  multerErrorHandler(docStorage.fields([{ name: "picture", maxCount: 1 }])),
+  multerErrorHandler(spStorage.fields([{ name: "picture", maxCount: 1 }])),
   picture,
   _set_profile_picture
 );

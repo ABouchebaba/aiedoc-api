@@ -2316,3 +2316,17 @@
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-11T22:05:07.308Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-11T22:05:35.721Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-11T22:06:29.443Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T11:03:58.795Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T11:16:09.379Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T11:17:16.719Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T11:21:05.430Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T11:27:09.993Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T11:27:47.868Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T11:28:25.481Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T11:28:37.213Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T11:45:19.970Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T11:52:52.668Z"}
+{"message":"E11000 duplicate key error collection: aiedoc.serviceproviders index: email_1 dup key: { : \"fa_bouchebaba3@esi.dz\" }","stack":"MongoError: E11000 duplicate key error collection: aiedoc.serviceproviders index: email_1 dup key: { : \"fa_bouchebaba3@esi.dz\" }\n    at Function.create (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\error.js:43:12)\n    at toError (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\utils.js:149:22)\n    at coll.s.topology.insert (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb\\lib\\operations\\collection_ops.js:859:39)\n    at handler (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\sdam\\topology.js:893:24)\n    at C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\mongodb-core\\lib\\connection\\pool.js:397:18\n    at process._tickCallback (internal/process/next_tick.js:61:11)","driver":true,"name":"MongoError","index":0,"code":11000,"errmsg":"E11000 duplicate key error collection: aiedoc.serviceproviders index: email_1 dup key: { : \"fa_bouchebaba3@esi.dz\" }","level":"error","timestamp":"2020-08-13T11:53:47.342Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T12:13:54.701Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T12:15:29.629Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T12:19:13.885Z"}

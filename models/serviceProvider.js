@@ -58,7 +58,10 @@ const spSchema = new mongoose.Schema(
         required: true,
       },
     ],
-    picture: String,
+    picture: { type: String, required: true },
+    extNaissance: { type: String, required: true },
+    residence: { type: String, required: true },
+    idCard: { type: String, required: true },
     diplomas: {
       type: [
         {
@@ -162,23 +165,25 @@ function validateSP(sp) {
     rating: Joi.number().min(0).max(5),
     birthdate: Joi.date().required(),
     picture: Joi.string().required(),
-    email: Joi.string().email(),
+    extNaissance: Joi.string().required(),
+    residence: Joi.string().required(),
+    idCard: Joi.string().required(),
+    email: Joi.string().email().required(),
     wilaya: Joi.string()
       .valid(...WILAYAS)
       .required(),
     pushNotificationId: Joi.string(),
     commune: Joi.string().required(),
-    diplomas: Joi.array().items(
-      Joi.object({
-        type: Joi.string().required(),
-        description: Joi.string().required(),
-        file: Joi.any().required(),
-      })
-    ),
-    // types: Joi.array(), //.items(Joi.string().valid(DIPLOMAS)),
-    // descriptions: Joi.array(), //.items(Joi.string().max(255)),
-    // docs: Joi.array(), //.items(Joi.object()),
-    services: Joi.array().items(Joi.objectId().required()),
+    diplomas: Joi.array()
+      .items(
+        Joi.object({
+          type: Joi.string().required(),
+          description: Joi.string().required(),
+          file: Joi.any().required(),
+        })
+      )
+      .required(),
+    services: Joi.array().items(Joi.objectId().required()).required(),
   };
 
   return Joi.validate(sp, schema);

@@ -11,34 +11,18 @@ const { EMERGENCY_READY, VALIDATED } = require("../constants/serviceProvider");
 
 const unlinkAsync = promisify(fs.unlink);
 
-/// TODO: Implement validation !!!
-/// ex :  case no picture || no docs
 /* !Services populated  */
 module.exports._create = async (req, res) => {
-  let sp = await ServiceProvider.findOne({ phone: req.body.phone });
+  let sp = await ServiceProvider.findOne({
+    $or: [{ phone: req.body.phone }, { email: req.body.email }],
+  });
   if (sp) {
     // remove files ...
     deleteFiles(req.files);
     return res.status(400).send("Service provider already registered");
   }
 
-  sp = await ServiceProvider.create(
-    _.pick(req.body, [
-      "email",
-      "phone",
-      "jobTitle",
-      "firstname",
-      "lastname",
-      "birthdate",
-      "wilaya",
-      "commune",
-      "sex",
-      "services",
-      "pushNotificationId",
-      "diplomas",
-      "picture",
-    ])
-  );
+  sp = await ServiceProvider.create(req.body);
 
   // sp = await sp.populate("services").execPopulate();
 

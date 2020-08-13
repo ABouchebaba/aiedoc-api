@@ -3,11 +3,33 @@ const path = require("path");
 const mkdirp = require("mkdirp");
 const { v4: uuidv4 } = require("uuid");
 
-var docStorage = multer.diskStorage({
+var spStorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    let dest = path.join("public", "files", "diplomas");
-    if (file.fieldname === "picture")
-      dest = path.join("public", "images", "profiles", "sp");
+    let dest = "";
+    switch (file.fieldname) {
+      case "picture": {
+        dest = path.join("public", "images", "profiles", "sp");
+        break;
+      }
+      case "docs": {
+        dest = path.join("public", "files", "diplomas");
+        break;
+      }
+      case "extNaissance": {
+        dest = path.join("public", "files", "extsNaissance");
+        break;
+      }
+      case "residence": {
+        dest = path.join("public", "files", "residences");
+        break;
+      }
+      case "idCard": {
+        dest = path.join("public", "files", "idCards");
+        break;
+      }
+      default:
+        dest = null;
+    }
 
     mkdirp(dest).then((val) => cb(null, dest));
   },
@@ -15,7 +37,7 @@ var docStorage = multer.diskStorage({
     cb(null, uuidv4() + path.extname(file.originalname)); //Appending .jpg
   },
 });
-module.exports.docStorage = multer({ storage: docStorage });
+module.exports.spStorage = multer({ storage: spStorage });
 
 var productStorage = multer.diskStorage({
   destination: function (req, file, cb) {

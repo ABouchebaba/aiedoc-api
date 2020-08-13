@@ -36,6 +36,24 @@ const picture = (req, res, next) => {
   next();
 };
 
+/** puts keys file paths in req.body */
+const setFilePath = (...keys) => (req, res, next) => {
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+
+    if (!req.files[key] || req.files[key].length === 0) {
+      // delete saved files
+      deleteFiles(req.files);
+      return res.status(400).send(`${key} is required`);
+    }
+
+    const filePath = req.files[key][0].path;
+    req.body[key] = filePath.slice(filePath.indexOf(path.sep) + 1);
+  }
+
+  next();
+};
+
 /** puts diploma (including docs paths) in req.body.diplomas */
 const docs = (req, res, next) => {
   if (!req.files.docs || req.files.docs.length === 0) {
@@ -85,5 +103,6 @@ const deleteFiles = (files) => {
 
 module.exports.deleteFiles = deleteFiles;
 module.exports.picture = picture;
+module.exports.setFilePath = setFilePath;
 module.exports.docs = docs;
 module.exports.image = image;
