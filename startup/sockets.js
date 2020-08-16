@@ -117,7 +117,7 @@ module.exports = function (io) {
       };
       console.log("int : ", int);
       // save intervention to db
-      const intervention = await Intervention.create({
+      let intervention = await Intervention.create({
         ...int,
         location: client_location,
       });
@@ -145,6 +145,10 @@ module.exports = function (io) {
       console.log(lon, lat);
       const distance = getDistance({ lat, lon }, location);
       console.log("dist", distance);
+
+      // get intervention services
+      intervention = await intervention.populate("services").execPopulate();
+
       //Notify sp
       sp.notify({ intervention, client, distance });
 
