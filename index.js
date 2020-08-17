@@ -5,7 +5,11 @@ const http = require("http");
 const socketIo = require("socket.io");
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    allowedHeaders: "x-auth-token",
+  })
+);
 app.use(express.static("public"));
 
 require("./startup/logging")();
