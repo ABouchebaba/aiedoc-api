@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    allowedHeaders: "x-auth-token",
+    exposedHeaders: "x-auth-token",
   })
 );
 app.use(express.static("public"));
