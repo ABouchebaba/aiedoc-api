@@ -65,7 +65,7 @@ module.exports._verifyPhone = async (req, res) => {
     { new: true }
   );
   if (sp) {
-    // sp = await sp.populate("services").execPopulate();
+    sp = await sp.populate("services").execPopulate();
     const token = sp.generateAuthToken();
     return res.header("x-auth-token", token).send(sp);
   }
