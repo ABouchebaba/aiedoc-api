@@ -24,7 +24,7 @@ module.exports._create = async (req, res) => {
 
   sp = await ServiceProvider.create(req.body);
 
-  // sp = await sp.populate("services").execPopulate();
+  sp = await sp.populate("services").execPopulate();
 
   const token = sp.generateAuthToken();
 
