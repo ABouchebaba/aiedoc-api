@@ -2330,3 +2330,28 @@
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T12:13:54.701Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T12:15:29.629Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-08-13T12:19:13.885Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T10:56:55.565Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T10:57:27.841Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T11:04:08.888Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T11:06:35.088Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T11:07:32.196Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T11:09:29.111Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T11:10:09.114Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T11:10:30.288Z"}
+{"message":"Invalid status code: 3","stack":"RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: 3\n    at ServerResponse.writeHead (_http_server.js:209:11)\n    at ServerResponse._implicitHeader (_http_server.js:200:8)\n    at ServerResponse.end (_http_outgoing.js:705:10)\n    at ServerResponse.send (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\node_modules\\express\\lib\\response.js:221:10)\n    at module.exports._delete (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\categoriesController.js:92:14)\n    at process._tickCallback (internal/process/next_tick.js:68:7)","level":"error","timestamp":"2020-09-02T11:10:31.588Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T11:10:47.464Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T11:13:16.210Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T11:34:43.572Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T11:35:26.843Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T11:36:25.496Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T11:37:31.105Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T16:31:34.495Z"}
+{"message":"products.map is not a function","stack":"TypeError: products.map is not a function\n    at module.exports._delete (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\categoriesController.js:125:12)\n    at process._tickCallback (internal/process/next_tick.js:68:7)","level":"error","timestamp":"2020-09-02T16:31:47.009Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T16:33:49.846Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T16:34:02.931Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T16:34:53.558Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T16:36:41.402Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T16:37:39.089Z"}
+{"message":"products.map is not a function","stack":"TypeError: products.map is not a function\n    at module.exports._delete (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\categoriesController.js:127:12)\n    at process._tickCallback (internal/process/next_tick.js:68:7)","level":"error","timestamp":"2020-09-02T16:39:14.193Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T16:42:44.059Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T16:55:49.834Z"}

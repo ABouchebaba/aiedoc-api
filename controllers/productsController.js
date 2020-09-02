@@ -89,6 +89,7 @@ module.exports._update = async (req, res) => {
   res.send(product);
 };
 
+// remove images
 module.exports._delete = async (req, res) => {
   const product = await Product.findByIdAndRemove(req.params.id);
 
