@@ -1,6 +1,5 @@
 const { ServiceProvider } = require("../models/serviceProvider");
 const { Payment } = require("../models/payment");
-const { saveOne, saveAs } = require("./fileController");
 const _ = require("lodash");
 const fs = require("fs");
 const path = require("path");
@@ -14,7 +13,7 @@ const unlinkAsync = promisify(fs.unlink);
 /* !Services populated  */
 module.exports._create = async (req, res) => {
   let sp = await ServiceProvider.findOne({
-    $or: [{ phone: req.body.phone }, { email: req.body.email }],
+    $or: [{ phone: req.body.phone } /*, { email: req.body.email }*/],
   });
   if (sp) {
     // remove files ...
