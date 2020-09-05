@@ -17,6 +17,7 @@ const {
   _create,
   _read_id,
   _read,
+  _read_me_balance,
   _read_available,
   _verifyPhone,
   _validate,
@@ -39,6 +40,7 @@ let roles = {
   GET_ONE_INTERVENTIONS: [...ADMINS, SP],
   GET_ONE_COMMANDS: [...ADMINS, SP],
   GET_ONE_PAYMENTS: ADMINS,
+  GET_ME: [SP],
   VALIDATE: ADMINS,
   PUT_STATE: [SP],
   BAN: ADMINS,
@@ -84,6 +86,9 @@ router.post("/closest", _closestEmergencyReady);
 
 // GET_ALL
 router.get("/", auth, role(roles.GET_ALL), _read);
+
+// GET ME
+router.get("/me/balance", auth, role(roles.GET_ME), _read_me_balance);
 
 // GET_AVAILABLE
 router.get("/available", auth, role(roles.GET_AVAILABLE), _read_available);

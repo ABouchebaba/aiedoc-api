@@ -44,6 +44,15 @@ module.exports._read_id = async (req, res) => {
   return res.send(sp);
 };
 
+module.exports._read_me_balance = async (req, res) => {
+  const sp = await ServiceProvider.findById(req.user._id).select(
+    "balance percentToPay"
+  );
+  if (!sp) return res.status(404).send("Service provider id not found");
+
+  return res.send(sp);
+};
+
 module.exports._read_available = async (req, res) => {
   const sp = await ServiceProvider.find({
     state: { $in: ["ready", "emergencyReady"] },

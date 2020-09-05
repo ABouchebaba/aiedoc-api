@@ -2355,3 +2355,4 @@
 {"message":"products.map is not a function","stack":"TypeError: products.map is not a function\n    at module.exports._delete (C:\\Users\\amine\\Desktop\\Drahem\\aiedoc\\aiedoc-api\\controllers\\categoriesController.js:127:12)\n    at process._tickCallback (internal/process/next_tick.js:68:7)","level":"error","timestamp":"2020-09-02T16:39:14.193Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T16:42:44.059Z"}
 {"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-02T16:55:49.834Z"}
+{"level":"info","message":"Connected to mongodb://127.0.0.1:27017/aiedoc...","timestamp":"2020-09-05T13:12:07.499Z"}
