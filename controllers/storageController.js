@@ -27,10 +27,15 @@ var spStorage = multer.diskStorage({
         dest = path.join("public", "files", "idCards");
         break;
       }
+      case "casierJudiciaire": {
+        dest = path.join("public", "files", "casiersJudiciaires");
+        break;
+      }
       default:
         dest = null;
     }
 
+    // console.log(dest);
     mkdirp(dest).then((val) => cb(null, dest));
   },
   filename: function (req, file, cb) {

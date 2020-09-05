@@ -58,10 +58,17 @@ router.post(
       { name: "extNaissance", maxCount: 1 },
       { name: "residence", maxCount: 1 },
       { name: "idCard", maxCount: 1 },
+      { name: "casierJudiciaire", maxCount: 1 },
       { name: "docs" },
     ])
   ),
-  setFilePath("picture", "extNaissance", "residence", "idCard"),
+  setFilePath(
+    "picture",
+    "extNaissance",
+    "residence",
+    "idCard",
+    "casierJudiciaire"
+  ),
   parseJson("types", "descriptions", "services"),
   docs, // uses types & descriptions which need to be parsed first
   validateBody(validate),

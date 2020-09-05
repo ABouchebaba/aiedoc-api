@@ -62,6 +62,7 @@ const spSchema = new mongoose.Schema(
     extNaissance: { type: String, required: true },
     residence: { type: String, required: true },
     idCard: { type: String, required: true },
+    casierJudiciaire: { type: String, required: true },
     diplomas: {
       type: [
         {
@@ -168,6 +169,7 @@ function validateSP(sp) {
     extNaissance: Joi.string().required(),
     residence: Joi.string().required(),
     idCard: Joi.string().required(),
+    casierJudiciaire: Joi.string().required(),
     email: Joi.string().email().required(),
     wilaya: Joi.string()
       .valid(...WILAYAS)
