@@ -3,7 +3,7 @@ const Joi = require("joi");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const bcrypt = require("bcrypt");
-const { ADMINS } = require("../constants/roles");
+const { ALLROLES } = require("../constants/roles");
 
 const adminSchema = new mongoose.Schema(
   {
@@ -36,7 +36,7 @@ const adminSchema = new mongoose.Schema(
       type: [
         {
           type: String,
-          enum: ADMINS,
+          enum: ALLROLES,
         },
       ],
       required: true,
@@ -80,7 +80,7 @@ function validateAdmin(admin) {
     picture: Joi.string(),
     roles: Joi.array()
       .min(1)
-      .items(Joi.valid(...ADMINS))
+      .items(Joi.valid(...ALLROLES))
       .required(),
     password: Joi.string().min(8).required(),
   };

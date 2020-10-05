@@ -6,7 +6,7 @@ const { validate, validateStatus } = require("../models/command");
 
 const express = require("express");
 const router = express.Router();
-const { ADMINS, CLIENT, SP } = require("../constants/roles");
+const { CLIENT, SP, COMMANDES } = require("../constants/roles");
 
 const {
   _create,
@@ -17,9 +17,9 @@ const {
 } = require("../controllers/commandsController");
 
 let roles = {
-  READ_ALL: ADMINS,
+  READ_ALL: COMMANDES,
   CREATE: [CLIENT, SP],
-  UPDATE_STATUS: ADMINS,
+  UPDATE_STATUS: COMMANDES,
 };
 
 /**

@@ -5,7 +5,7 @@ const validateBody = require("../middlewares/validateBody");
 const { validate } = require("../models/intervention");
 const express = require("express");
 const router = express.Router();
-const { ADMINS, CLIENT } = require("../constants/roles");
+const { INTERVENTIONS, CLIENT } = require("../constants/roles");
 const {
   _create,
   _read_id,
@@ -13,7 +13,7 @@ const {
 } = require("../controllers/interventionsController");
 
 let roles = {
-  GET_ALL: ADMINS,
+  GET_ALL: INTERVENTIONS,
   CREATE: [CLIENT],
 };
 

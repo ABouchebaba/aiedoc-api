@@ -6,7 +6,7 @@ const { validate, validateUpdate } = require("../models/product");
 
 const express = require("express");
 const router = express.Router();
-const { ADMINS } = require("../constants/roles");
+const { STORE } = require("../constants/roles");
 const { productStorage } = require("../controllers/storageController");
 
 const {
@@ -20,11 +20,11 @@ const {
 } = require("../controllers/productsController");
 
 let roles = {
-  CREATE: ADMINS,
-  UPDATE: ADMINS,
-  DELETE: ADMINS,
-  ADD_IMAGES: ADMINS,
-  REMOVE_IMAGES: ADMINS,
+  CREATE: STORE,
+  UPDATE: STORE,
+  DELETE: STORE,
+  ADD_IMAGES: STORE,
+  REMOVE_IMAGES: STORE,
 };
 
 router.get("/", auth, _read);

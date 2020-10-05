@@ -3,7 +3,7 @@ const role = require("../middlewares/role");
 const validateBody = require("../middlewares/validateBody");
 const validateObjectId = require("../middlewares/validateObjectId");
 const { validate, validateUpdate, Category } = require("../models/category");
-const { ADMINS } = require("../constants/roles");
+const { STORE } = require("../constants/roles");
 const { categoryStorage } = require("../controllers/storageController");
 const { multerErrorHandler } = require("../middlewares/multerErrorHandler");
 const { image } = require("../middlewares/files");
@@ -21,9 +21,9 @@ const {
 } = require("../controllers/categoriesController");
 
 let roles = {
-  CREATE: ADMINS,
-  UPDATE: ADMINS,
-  DELETE: ADMINS,
+  CREATE: STORE,
+  UPDATE: STORE,
+  DELETE: STORE,
 };
 
 /**
