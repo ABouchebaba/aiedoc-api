@@ -21,4 +21,4 @@ exports.ADMINS = [admin, moderateur];
 exports.ALLROLES = [admin, moderateur, modService, modSap, modCom];
 exports.STORE = [admin, modCom]; // acces boutique
 exports.INTERVENTIONS = [admin, modService, modSap]; // préstation seulement
-exports.COMMANDES = [admin, modSap]; //service après vente (commandes )
+exports.COMMANDES = [admin, modSap, modCom]; //service après vente (commandes )
