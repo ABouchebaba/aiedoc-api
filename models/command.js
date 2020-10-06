@@ -37,6 +37,10 @@ let commandSchema = new mongoose.Schema(
       enum: COMMAND_TYPES,
       required: true,
     },
+    promoCode: {
+      type: String,
+      default: null,
+    },
     products: [
       {
         product: {
@@ -90,6 +94,7 @@ function validateCommand(command) {
       )
       .required(),
     type: Joi.string().valid(COMMAND_TYPES).required(),
+    promoCode: Joi.string(),
   };
 
   return Joi.validate(command, schema);
