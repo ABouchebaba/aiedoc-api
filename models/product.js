@@ -44,7 +44,8 @@ let productSchema = new mongoose.Schema({
   promoted: {
     type: Number,
     min: 0,
-    default: 0,
+    max: 10,
+    default: null,
   },
   options: [
     {
@@ -70,7 +71,7 @@ function validateProduct(product) {
     price: Joi.number().min(0).required(),
     priceHT: Joi.number().min(0).required(),
     discount: Joi.number().min(0).max(100),
-    promoted: Joi.number().min(0),
+    promoted: Joi.number().min(0).max(10),
     options: Joi.string(),
     images: Joi.array(),
   };
@@ -87,7 +88,7 @@ function validateProductUpdate(product) {
     price: Joi.number().min(0),
     priceHT: Joi.number().min(0),
     discount: Joi.number().min(0).max(100),
-    promoted: Joi.number().min(0),
+    promoted: Joi.number().min(0).max(10),
     options: Joi.array().items(
       Joi.object({
         qty: Joi.number().min(0),

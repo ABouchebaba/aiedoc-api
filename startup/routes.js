@@ -18,6 +18,7 @@ const payments = require("../routes/payments");
 const commands = require("../routes/commands");
 const stats = require("../routes/stats");
 const promoCode = require("../routes/promoCode");
+const advertisements = require("../routes/advertisements");
 
 module.exports = function (app) {
   app.use(express.json());
@@ -38,6 +39,7 @@ module.exports = function (app) {
   app.use("/api/commands", commands);
   app.use("/api/stats", stats);
   app.use("/api/promoCode", promoCode);
+  app.use("/api/advertisements", advertisements);
 
   app.use(error);
 };
