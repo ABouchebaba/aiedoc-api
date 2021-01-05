@@ -30,6 +30,9 @@ const clientSchema = new mongoose.Schema(
       required: true,
     },
     birthdate: { type: Date, required: true },
+    score: { type: Number, min: 0, default: 0 },
+    codeAffiliate: { type: String, required: true },
+    codeAffiliatedTo: { type: String, default: null },
     picture: String,
     email: {
       type: String,
@@ -88,6 +91,7 @@ function validateClient(client) {
     lastname: Joi.string().min(2).max(50).required(),
     birthdate: Joi.date().required(),
     email: Joi.string().email().required(),
+    codeAffiliatedTo: Joi.string(),
     picture: Joi.string(),
   };
 

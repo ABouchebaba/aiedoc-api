@@ -1,5 +1,8 @@
 const { Client } = require("../models/client");
+const { ServiceProvider } = require("../models/serviceProvider");
 const _ = require("lodash");
+const { generateAffiliateCode } = require("../helper/generate");
+const { AuthPoints } = require("../constants/points");
 
 module.exports._read = async (req, res) => {
   const client = await Client.find();
@@ -11,16 +14,37 @@ module.exports._create = async (req, res) => {
   let client = await Client.findOne({ phone: req.body.phone });
   if (client) return res.status(400).send("Client already registered");
 
+  const codeAffiliate = generateAffiliateCode();
+
   client = await Client.create(
-    _.pick(req.body, [
-      "email",
-      "phone",
-      "firstname",
-      "lastname",
-      "picture",
-      "birthdate",
-    ])
+    _.pick(
+      {
+        ...req.body,
+        codeAffiliate: codeAffiliate,
+      },
+      [
+        "email",
+        "phone",
+        "firstname",
+        "lastname",
+        "picture",
+        "birthdate",
+        "codeAffiliate",
+        "codeAffiliatedTo",
+      ]
+    )
   );
+
+  const addPointsSp = await ServiceProvider.findOneAndUpdate(
+    { codeAffiliate: req.body.codeAffiliatedTo },
+    { $inc: { score: AuthPoints } }
+  );
+  if (!addPointsSp) {
+    await Client.findOneAndUpdate(
+      { codeAffiliate: req.body.codeAffiliatedTo },
+      { $inc: { score: AuthPoints } }
+    );
+  }
 
   const token = client.generateAuthToken();
 

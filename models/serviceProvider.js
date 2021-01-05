@@ -51,6 +51,9 @@ const spSchema = new mongoose.Schema(
     amountToPay: { type: Number, default: 0 },
     location: { type: location, index: "2dsphere" },
     rating: { type: Number, min: 0, max: 5 },
+    score: { type: Number, min: 0, default: 0 },
+    codeAffiliate: { type: String, required: true },
+    codeAffiliatedTo: { type: String, default: null },
     services: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -176,6 +179,7 @@ function validateSP(sp) {
       .required(),
     pushNotificationId: Joi.string(),
     commune: Joi.string().required(),
+    codeAffiliatedTo: Joi.string(),
     diplomas: Joi.array()
       .items(
         Joi.object({

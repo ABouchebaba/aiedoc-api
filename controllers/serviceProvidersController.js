@@ -1,10 +1,13 @@
 const { ServiceProvider } = require("../models/serviceProvider");
+const { Client } = require("../models/client");
 const { Payment } = require("../models/payment");
 const _ = require("lodash");
 const fs = require("fs");
 const path = require("path");
 const { promisify } = require("util");
 const { deleteFiles } = require("../middlewares/files");
+const { generateAffiliateCode } = require("../helper/generate");
+const { AuthPoints } = require("../constants/points");
 
 const { EMERGENCY_READY, VALIDATED } = require("../constants/serviceProvider");
 
@@ -21,7 +24,23 @@ module.exports._create = async (req, res) => {
     return res.status(400).send("Service provider already registered");
   }
 
-  sp = await ServiceProvider.create(req.body);
+  const codeAffiliate = generateAffiliateCode();
+
+  sp = await ServiceProvider.create({
+    ...req.body,
+    codeAffiliate: codeAffiliate,
+  });
+
+  const addPointsSp = await ServiceProvider.findOneAndUpdate(
+    { codeAffiliate: req.body.codeAffiliatedTo },
+    { $inc: { score: AuthPoints } }
+  );
+  if (!addPointsSp) {
+    await Client.findOneAndUpdate(
+      { codeAffiliate: req.body.codeAffiliatedTo },
+      { $inc: { score: AuthPoints } }
+    );
+  }
 
   sp = await sp.populate("services").execPopulate();
 

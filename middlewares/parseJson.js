@@ -6,6 +6,7 @@ const parseJson = (...fields) => {
       let f = fields[i];
       try {
         req.body[f] = await JSON.parse(req.body[f]);
+        //console.log(req.body[f]);
       } catch (e) {
         deleteFiles(req.files);
         return res.status(400).send("Unexpected json format in field : " + f);

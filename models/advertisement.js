@@ -7,6 +7,12 @@ let advertisementSchema = new mongoose.Schema({
     required: true,
     maxlength: 100,
   },
+  location: {
+    type: String,
+    required: true,
+    maxlength: 100,
+    default: "",
+  },
   url: {
     type: String,
     required: true,
@@ -15,6 +21,10 @@ let advertisementSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  isActive: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const Advertisement = mongoose.model("Advertisement", advertisementSchema);
@@ -22,8 +32,10 @@ const Advertisement = mongoose.model("Advertisement", advertisementSchema);
 function validateAdvertisement(advertisement) {
   const schema = {
     name: Joi.string().max(100).required(),
+    location: Joi.string().max(100).required(),
     url: Joi.string().required(),
     image: Joi.string().required(),
+    isActive: Joi.boolean(),
   };
 
   return Joi.validate(advertisement, schema);
@@ -31,8 +43,10 @@ function validateAdvertisement(advertisement) {
 function validateAdvertisementUpdate(advertisement) {
   const schema = {
     name: Joi.string().max(100),
+    location: Joi.string().max(100),
     url: Joi.string(),
     image: Joi.string(),
+    isActive: Joi.boolean(),
   };
 
   return Joi.validate(advertisement, schema);
