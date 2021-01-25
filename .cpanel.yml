@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/qodwvxke/back.aiedoc.dz/
+    - export DEPLOYPATH=/home/qodwvxke/back.aiedoc.com/
     - /bin/cp -R * $DEPLOYPATH
